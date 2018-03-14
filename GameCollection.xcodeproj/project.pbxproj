@@ -1,0 +1,728 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3F6A30AE2059C7F2002F11A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6A30AD2059C7F2002F11A7 /* AppDelegate.swift */; };
+		3F6A30B02059C7F2002F11A7 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6A30AF2059C7F2002F11A7 /* SearchViewController.swift */; };
+		3F6A30B22059C7F2002F11A7 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6A30B12059C7F2002F11A7 /* CollectionViewController.swift */; };
+		3F6A30B52059C7F2002F11A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F6A30B32059C7F2002F11A7 /* Main.storyboard */; };
+		3F6A30B72059C7F2002F11A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F6A30B62059C7F2002F11A7 /* Assets.xcassets */; };
+		3F6A30BA2059C7F2002F11A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F6A30B82059C7F2002F11A7 /* LaunchScreen.storyboard */; };
+		3F6A30C52059C7F2002F11A7 /* GameCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6A30C42059C7F2002F11A7 /* GameCollectionTests.swift */; };
+		3F6A30D02059C7F2002F11A7 /* GameCollectionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6A30CF2059C7F2002F11A7 /* GameCollectionUITests.swift */; };
+		3FC2B3992059C96E005A2B09 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FC2B39B2059C96E005A2B09 /* SwiftyJSON.framework */; };
+		3FC2B39C2059C9A9005A2B09 /* KIF.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FC2B39D2059C9A9005A2B09 /* KIF.framework */; };
+		3FC2B39F2059CA6B005A2B09 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC2B39E2059CA6B005A2B09 /* SettingsViewController.swift */; };
+		990CAD4B550B646935C72396 /* Pods_GameCollectionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59B3E80B4D8D634EDA486D7D /* Pods_GameCollectionTests.framework */; };
+		BDD6C9A3A96D18CD6A20BE68 /* Pods_GameCollection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E62B3BE51A79DE60B49BC38F /* Pods_GameCollection.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3F6A30C12059C7F2002F11A7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3F6A30A22059C7F2002F11A7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3F6A30A92059C7F2002F11A7;
+			remoteInfo = GameCollection;
+		};
+		3F6A30CC2059C7F2002F11A7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3F6A30A22059C7F2002F11A7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3F6A30A92059C7F2002F11A7;
+			remoteInfo = GameCollection;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3F6A30AA2059C7F2002F11A7 /* GameCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F6A30AD2059C7F2002F11A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3F6A30AF2059C7F2002F11A7 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		3F6A30B12059C7F2002F11A7 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		3F6A30B42059C7F2002F11A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3F6A30B62059C7F2002F11A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3F6A30B92059C7F2002F11A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3F6A30BB2059C7F2002F11A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F6A30C02059C7F2002F11A7 /* GameCollectionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GameCollectionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F6A30C42059C7F2002F11A7 /* GameCollectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCollectionTests.swift; sourceTree = "<group>"; };
+		3F6A30C62059C7F2002F11A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F6A30CB2059C7F2002F11A7 /* GameCollectionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GameCollectionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F6A30CF2059C7F2002F11A7 /* GameCollectionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCollectionUITests.swift; sourceTree = "<group>"; };
+		3F6A30D12059C7F2002F11A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FC2B39A2059C96E005A2B09 /* KIF.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = KIF.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FC2B39B2059C96E005A2B09 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FC2B39D2059C9A9005A2B09 /* KIF.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = KIF.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FC2B39E2059CA6B005A2B09 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		52DAFB108300E5A52D46E6BF /* Pods-GameCollectionTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameCollectionTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GameCollectionTests/Pods-GameCollectionTests.debug.xcconfig"; sourceTree = "<group>"; };
+		59B3E80B4D8D634EDA486D7D /* Pods_GameCollectionTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GameCollectionTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1276DFDC3A8ED200AF21A79 /* Pods-GameCollection.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameCollection.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GameCollection/Pods-GameCollection.debug.xcconfig"; sourceTree = "<group>"; };
+		E62B3BE51A79DE60B49BC38F /* Pods_GameCollection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GameCollection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9315607FAD01740DF54513D /* Pods-GameCollectionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameCollectionTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GameCollectionTests/Pods-GameCollectionTests.release.xcconfig"; sourceTree = "<group>"; };
+		F8CF492AE8BE32D3749A02B9 /* Pods-GameCollection.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameCollection.release.xcconfig"; path = "Pods/Target Support Files/Pods-GameCollection/Pods-GameCollection.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3F6A30A72059C7F2002F11A7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FC2B3992059C96E005A2B09 /* SwiftyJSON.framework in Frameworks */,
+				BDD6C9A3A96D18CD6A20BE68 /* Pods_GameCollection.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F6A30BD2059C7F2002F11A7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FC2B39C2059C9A9005A2B09 /* KIF.framework in Frameworks */,
+				990CAD4B550B646935C72396 /* Pods_GameCollectionTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F6A30C82059C7F2002F11A7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		012794CF61742F7E722056EE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D1276DFDC3A8ED200AF21A79 /* Pods-GameCollection.debug.xcconfig */,
+				F8CF492AE8BE32D3749A02B9 /* Pods-GameCollection.release.xcconfig */,
+				52DAFB108300E5A52D46E6BF /* Pods-GameCollectionTests.debug.xcconfig */,
+				E9315607FAD01740DF54513D /* Pods-GameCollectionTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		3F6A30A12059C7F2002F11A7 = {
+			isa = PBXGroup;
+			children = (
+				3F6A30AC2059C7F2002F11A7 /* GameCollection */,
+				3F6A30C32059C7F2002F11A7 /* GameCollectionTests */,
+				3F6A30CE2059C7F2002F11A7 /* GameCollectionUITests */,
+				3F6A30AB2059C7F2002F11A7 /* Products */,
+				012794CF61742F7E722056EE /* Pods */,
+				E9080229003BDBC47746532F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		3F6A30AB2059C7F2002F11A7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3F6A30AA2059C7F2002F11A7 /* GameCollection.app */,
+				3F6A30C02059C7F2002F11A7 /* GameCollectionTests.xctest */,
+				3F6A30CB2059C7F2002F11A7 /* GameCollectionUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3F6A30AC2059C7F2002F11A7 /* GameCollection */ = {
+			isa = PBXGroup;
+			children = (
+				3F6A30AD2059C7F2002F11A7 /* AppDelegate.swift */,
+				3F6A30AF2059C7F2002F11A7 /* SearchViewController.swift */,
+				3F6A30B12059C7F2002F11A7 /* CollectionViewController.swift */,
+				3FC2B39E2059CA6B005A2B09 /* SettingsViewController.swift */,
+				3F6A30B32059C7F2002F11A7 /* Main.storyboard */,
+				3F6A30B62059C7F2002F11A7 /* Assets.xcassets */,
+				3F6A30B82059C7F2002F11A7 /* LaunchScreen.storyboard */,
+				3F6A30BB2059C7F2002F11A7 /* Info.plist */,
+			);
+			path = GameCollection;
+			sourceTree = "<group>";
+		};
+		3F6A30C32059C7F2002F11A7 /* GameCollectionTests */ = {
+			isa = PBXGroup;
+			children = (
+				3F6A30C42059C7F2002F11A7 /* GameCollectionTests.swift */,
+				3F6A30C62059C7F2002F11A7 /* Info.plist */,
+			);
+			path = GameCollectionTests;
+			sourceTree = "<group>";
+		};
+		3F6A30CE2059C7F2002F11A7 /* GameCollectionUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3F6A30CF2059C7F2002F11A7 /* GameCollectionUITests.swift */,
+				3F6A30D12059C7F2002F11A7 /* Info.plist */,
+			);
+			path = GameCollectionUITests;
+			sourceTree = "<group>";
+		};
+		E9080229003BDBC47746532F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3FC2B39D2059C9A9005A2B09 /* KIF.framework */,
+				3FC2B39A2059C96E005A2B09 /* KIF.framework */,
+				3FC2B39B2059C96E005A2B09 /* SwiftyJSON.framework */,
+				E62B3BE51A79DE60B49BC38F /* Pods_GameCollection.framework */,
+				59B3E80B4D8D634EDA486D7D /* Pods_GameCollectionTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3F6A30A92059C7F2002F11A7 /* GameCollection */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F6A30D42059C7F2002F11A7 /* Build configuration list for PBXNativeTarget "GameCollection" */;
+			buildPhases = (
+				523FAF5FA05D2269CCEFA8C3 /* [CP] Check Pods Manifest.lock */,
+				3F6A30A62059C7F2002F11A7 /* Sources */,
+				3F6A30A72059C7F2002F11A7 /* Frameworks */,
+				3F6A30A82059C7F2002F11A7 /* Resources */,
+				19BA27669BBB4271E208E39A /* [CP] Embed Pods Frameworks */,
+				1BEA0C899301B2819552AE13 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GameCollection;
+			productName = GameCollection;
+			productReference = 3F6A30AA2059C7F2002F11A7 /* GameCollection.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3F6A30BF2059C7F2002F11A7 /* GameCollectionTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F6A30D72059C7F2002F11A7 /* Build configuration list for PBXNativeTarget "GameCollectionTests" */;
+			buildPhases = (
+				B43DA94F1D14049310A28560 /* [CP] Check Pods Manifest.lock */,
+				3F6A30BC2059C7F2002F11A7 /* Sources */,
+				3F6A30BD2059C7F2002F11A7 /* Frameworks */,
+				3F6A30BE2059C7F2002F11A7 /* Resources */,
+				701D6F87B7734851A932A045 /* [CP] Embed Pods Frameworks */,
+				FA6642EC4C34D54D5884CFF6 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3F6A30C22059C7F2002F11A7 /* PBXTargetDependency */,
+			);
+			name = GameCollectionTests;
+			productName = GameCollectionTests;
+			productReference = 3F6A30C02059C7F2002F11A7 /* GameCollectionTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3F6A30CA2059C7F2002F11A7 /* GameCollectionUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F6A30DA2059C7F2002F11A7 /* Build configuration list for PBXNativeTarget "GameCollectionUITests" */;
+			buildPhases = (
+				3F6A30C72059C7F2002F11A7 /* Sources */,
+				3F6A30C82059C7F2002F11A7 /* Frameworks */,
+				3F6A30C92059C7F2002F11A7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3F6A30CD2059C7F2002F11A7 /* PBXTargetDependency */,
+			);
+			name = GameCollectionUITests;
+			productName = GameCollectionUITests;
+			productReference = 3F6A30CB2059C7F2002F11A7 /* GameCollectionUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3F6A30A22059C7F2002F11A7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = renangreca;
+				TargetAttributes = {
+					3F6A30A92059C7F2002F11A7 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					3F6A30BF2059C7F2002F11A7 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 3F6A30A92059C7F2002F11A7;
+					};
+					3F6A30CA2059C7F2002F11A7 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 3F6A30A92059C7F2002F11A7;
+					};
+				};
+			};
+			buildConfigurationList = 3F6A30A52059C7F2002F11A7 /* Build configuration list for PBXProject "GameCollection" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3F6A30A12059C7F2002F11A7;
+			productRefGroup = 3F6A30AB2059C7F2002F11A7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3F6A30A92059C7F2002F11A7 /* GameCollection */,
+				3F6A30BF2059C7F2002F11A7 /* GameCollectionTests */,
+				3F6A30CA2059C7F2002F11A7 /* GameCollectionUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3F6A30A82059C7F2002F11A7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F6A30BA2059C7F2002F11A7 /* LaunchScreen.storyboard in Resources */,
+				3F6A30B72059C7F2002F11A7 /* Assets.xcassets in Resources */,
+				3F6A30B52059C7F2002F11A7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F6A30BE2059C7F2002F11A7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F6A30C92059C7F2002F11A7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		19BA27669BBB4271E208E39A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GameCollection/Pods-GameCollection-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GameCollection/Pods-GameCollection-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1BEA0C899301B2819552AE13 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GameCollection/Pods-GameCollection-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		523FAF5FA05D2269CCEFA8C3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GameCollection-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		701D6F87B7734851A932A045 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GameCollectionTests/Pods-GameCollectionTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/KIF/KIF.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KIF.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GameCollectionTests/Pods-GameCollectionTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B43DA94F1D14049310A28560 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GameCollectionTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA6642EC4C34D54D5884CFF6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GameCollectionTests/Pods-GameCollectionTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3F6A30A62059C7F2002F11A7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F6A30B22059C7F2002F11A7 /* CollectionViewController.swift in Sources */,
+				3F6A30AE2059C7F2002F11A7 /* AppDelegate.swift in Sources */,
+				3F6A30B02059C7F2002F11A7 /* SearchViewController.swift in Sources */,
+				3FC2B39F2059CA6B005A2B09 /* SettingsViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F6A30BC2059C7F2002F11A7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F6A30C52059C7F2002F11A7 /* GameCollectionTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F6A30C72059C7F2002F11A7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F6A30D02059C7F2002F11A7 /* GameCollectionUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3F6A30C22059C7F2002F11A7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3F6A30A92059C7F2002F11A7 /* GameCollection */;
+			targetProxy = 3F6A30C12059C7F2002F11A7 /* PBXContainerItemProxy */;
+		};
+		3F6A30CD2059C7F2002F11A7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3F6A30A92059C7F2002F11A7 /* GameCollection */;
+			targetProxy = 3F6A30CC2059C7F2002F11A7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3F6A30B32059C7F2002F11A7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F6A30B42059C7F2002F11A7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3F6A30B82059C7F2002F11A7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F6A30B92059C7F2002F11A7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3F6A30D22059C7F2002F11A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3F6A30D32059C7F2002F11A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3F6A30D52059C7F2002F11A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1276DFDC3A8ED200AF21A79 /* Pods-GameCollection.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z9L342AVFZ;
+				INFOPLIST_FILE = GameCollection/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = renangreca.GameCollection;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3F6A30D62059C7F2002F11A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8CF492AE8BE32D3749A02B9 /* Pods-GameCollection.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z9L342AVFZ;
+				INFOPLIST_FILE = GameCollection/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = renangreca.GameCollection;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3F6A30D82059C7F2002F11A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52DAFB108300E5A52D46E6BF /* Pods-GameCollectionTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z9L342AVFZ;
+				INFOPLIST_FILE = GameCollectionTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = renangreca.GameCollectionTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GameCollection.app/GameCollection";
+			};
+			name = Debug;
+		};
+		3F6A30D92059C7F2002F11A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9315607FAD01740DF54513D /* Pods-GameCollectionTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z9L342AVFZ;
+				INFOPLIST_FILE = GameCollectionTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = renangreca.GameCollectionTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GameCollection.app/GameCollection";
+			};
+			name = Release;
+		};
+		3F6A30DB2059C7F2002F11A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z9L342AVFZ;
+				INFOPLIST_FILE = GameCollectionUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = renangreca.GameCollectionUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GameCollection;
+			};
+			name = Debug;
+		};
+		3F6A30DC2059C7F2002F11A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z9L342AVFZ;
+				INFOPLIST_FILE = GameCollectionUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = renangreca.GameCollectionUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GameCollection;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3F6A30A52059C7F2002F11A7 /* Build configuration list for PBXProject "GameCollection" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F6A30D22059C7F2002F11A7 /* Debug */,
+				3F6A30D32059C7F2002F11A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F6A30D42059C7F2002F11A7 /* Build configuration list for PBXNativeTarget "GameCollection" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F6A30D52059C7F2002F11A7 /* Debug */,
+				3F6A30D62059C7F2002F11A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F6A30D72059C7F2002F11A7 /* Build configuration list for PBXNativeTarget "GameCollectionTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F6A30D82059C7F2002F11A7 /* Debug */,
+				3F6A30D92059C7F2002F11A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F6A30DA2059C7F2002F11A7 /* Build configuration list for PBXNativeTarget "GameCollectionUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F6A30DB2059C7F2002F11A7 /* Debug */,
+				3F6A30DC2059C7F2002F11A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3F6A30A22059C7F2002F11A7 /* Project object */;
+}

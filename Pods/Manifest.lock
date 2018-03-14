@@ -1,0 +1,20 @@
+PODS:
+  - KIF (3.7.1):
+    - KIF/Core (= 3.7.1)
+  - KIF/Core (3.7.1)
+  - KIF/IdentifierTests (3.7.1):
+    - KIF/Core
+  - SwiftyJSON (4.0.0)
+
+DEPENDENCIES:
+  - KIF
+  - KIF/IdentifierTests
+  - SwiftyJSON
+
+SPEC CHECKSUMS:
+  KIF: af73f6a04539bd205622c2e5ce5f910cc2123d4b
+  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
+
+PODFILE CHECKSUM: a327bebdd7bd4a53c3859f65209b3a54565a678c
+
+COCOAPODS: 1.4.0
