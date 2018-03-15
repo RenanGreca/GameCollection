@@ -1,20 +1,12 @@
 PODS:
-  - KIF (3.7.1):
-    - KIF/Core (= 3.7.1)
-  - KIF/Core (3.7.1)
-  - KIF/IdentifierTests (3.7.1):
-    - KIF/Core
-  - SwiftyJSON (4.0.0)
+  - SwiftHTTP (3.0.1)
 
 DEPENDENCIES:
-  - KIF
-  - KIF/IdentifierTests
-  - SwiftyJSON
+  - SwiftHTTP
 
 SPEC CHECKSUMS:
-  KIF: af73f6a04539bd205622c2e5ce5f910cc2123d4b
-  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
+  SwiftHTTP: e94f1aa8cde58637dcc0100f6349de31a3337fde
 
-PODFILE CHECKSUM: a327bebdd7bd4a53c3859f65209b3a54565a678c
+PODFILE CHECKSUM: 550b824452c2a5dbc9da2cb8062fefcbac929384
 
 COCOAPODS: 1.4.0

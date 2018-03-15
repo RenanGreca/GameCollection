@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:GameManagedObject+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:GameManagedObject+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
       location = "group:GameCollection.xcodeproj">
    </FileRef>
    <FileRef

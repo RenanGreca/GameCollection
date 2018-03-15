@@ -1,0 +1,400 @@
+{
+    "error": "OK",
+    "limit": 10,
+    "offset": 0,
+    "number_of_page_results": 10,
+    "number_of_total_results": 28,
+    "status_code": 1,
+    "results": [
+                {
+                "guid": "3030-11949",
+                "image": {
+                "icon_url": "https:\/\/www.giantbomb.com\/api\/image\/square_avatar\/10169-legendofzelda-goldbox.png",
+                "medium_url": "https:\/\/www.giantbomb.com\/api\/image\/scale_medium\/10169-legendofzelda-goldbox.png",
+                "screen_url": "https:\/\/www.giantbomb.com\/api\/image\/screen_medium\/10169-legendofzelda-goldbox.png",
+                "screen_large_url": "https:\/\/www.giantbomb.com\/api\/image\/screen_kubrick\/10169-legendofzelda-goldbox.png",
+                "small_url": "https:\/\/www.giantbomb.com\/api\/image\/scale_small\/10169-legendofzelda-goldbox.png",
+                "super_url": "https:\/\/www.giantbomb.com\/api\/image\/scale_large\/10169-legendofzelda-goldbox.png",
+                "thumb_url": "https:\/\/www.giantbomb.com\/api\/image\/scale_avatar\/10169-legendofzelda-goldbox.png",
+                "tiny_url": "https:\/\/www.giantbomb.com\/api\/image\/square_mini\/10169-legendofzelda-goldbox.png",
+                "original_url": "https:\/\/www.giantbomb.com\/api\/image\/original\/10169-legendofzelda-goldbox.png",
+                "image_tags": "All Images"
+                },
+                "name": "The Legend of Zelda",
+                "original_release_date": "1986-02-21 00:00:00",
+                "platforms": [
+                              {
+                              "api_detail_url": "https:\/\/www.giantbomb.com\/api\/platform\/3045-4\/",
+                              "id": 4,
+                              "name": "Game Boy Advance",
+                              "site_detail_url": "https:\/\/www.giantbomb.com\/game-boy-advance\/3045-4\/",
+                              "abbreviation": "GBA"
+                              },
+                              {
+                              "api_detail_url": "https:\/\/www.giantbomb.com\/api\/platform\/3045-21\/",
+                              "id": 21,
+                              "name": "Nintendo Entertainment System",
+                              "site_detail_url": "https:\/\/www.giantbomb.com\/nintendo-entertainment-system\/3045-21\/",
+                              "abbreviation": "NES"
+                              },
+                              {
+                              "api_detail_url": "https:\/\/www.giantbomb.com\/api\/platform\/3045-87\/",
+                              "id": 87,
+                              "name": "Wii Shop",
+                              "site_detail_url": "https:\/\/www.giantbomb.com\/wii-shop\/3045-87\/",
+                              "abbreviation": "WSHP"
+                              },
+                              {
+                              "api_detail_url": "https:\/\/www.giantbomb.com\/api\/platform\/3045-91\/",
+                              "id": 91,
+                              "name": "Famicom Disk System",
+                              "site_detail_url": "https:\/\/www.giantbomb.com\/famicom-disk-system\/3045-91\/",
+                              "abbreviation": "FDS"
+                              },
+                              {
+                              "api_detail_url": "https:\/\/www.giantbomb.com\/api\/platform\/3045-138\/",
+                              "id": 138,
+                              "name": "Nintendo 3DS eShop",
+                              "site_detail_url": "https:\/\/www.giantbomb.com\/nintendo-3ds-eshop\/3045-138\/",
+                              "abbreviation": "3DSE"
+                              },
+                              {
+                              "api_detail_url": "https:\/\/www.giantbomb.com\/api\/platform\/3045-139\/",
+                              "id": 139,
+                              "name": "Wii U",
+                              "site_detail_url": "https:\/\/www.giantbomb.com\/wii-u\/3045-139\/",
+                              "abbreviation": "WiiU"
+                              }
+                              ],
+                "resource_type": "game"
+                },
+                {
+                "guid": "3030-49994",
+                "image": {
+                "icon_url": "https:\/\/www.giantbomb.com\/api\/image\/square_avatar\/2778000-tloztfh.jpg",
+                "medium_url": "https:\/\/www.giantbomb.com\/api\/image\/scale_medium\/2778000-tloztfh.jpg",
+                "screen_url": "https:\/\/www.giantbomb.com\/api\/image\/screen_medium\/2778000-tloztfh.jpg",
+                "screen_large_url": "https:\/\/www.giantbomb.com\/api\/image\/screen_kubrick\/2778000-tloztfh.jpg",
+                "small_url": "https:\/\/www.giantbomb.com\/api\/image\/scale_small\/2778000-tloztfh.jpg",
+                "super_url": "https:\/\/www.giantbomb.com\/api\/image\/scale_large\/2778000-tloztfh.jpg",
+                "thumb_url": "https:\/\/www.giantbomb.com\/api\/image\/scale_avatar\/2778000-tloztfh.jpg",
+                "tiny_url": "https:\/\/www.giantbomb.com\/api\/image\/square_mini\/2778000-tloztfh.jpg",
+                "original_url": "https:\/\/www.giantbomb.com\/api\/image\/original\/2778000-tloztfh.jpg",
+                "image_tags": "All Images,Box Art"
+                },
+                "name": "The Legend of Zelda: Tri Force Heroes",
+                "original_release_date": "2015-10-23 00:00:00",
+                "platforms": [
+                              {
+                              "api_detail_url": "https:\/\/www.giantbomb.com\/api\/platform\/3045-117\/",
+                              "id": 117,
+                              "name": "Nintendo 3DS",
+                              "site_detail_url": "https:\/\/www.giantbomb.com\/nintendo-3ds\/3045-117\/",
+                              "abbreviation": "3DS"
+                              },
+                              {
+                              "api_detail_url": "https:\/\/www.giantbomb.com\/api\/platform\/3045-138\/",
+                              "id": 138,
+                              "name": "Nintendo 3DS eShop",
+                              "site_detail_url": "https:\/\/www.giantbomb.com\/nintendo-3ds-eshop\/3045-138\/",
+                              "abbreviation": "3DSE"
+                              }
+                              ],
+                "resource_type": "game"
+                },
+                {
+                "guid": "3030-42402",
+                "image": {
+                "icon_url": "https:\/\/www.giantbomb.com\/api\/image\/square_avatar\/2537465-albwcleanbox.jpg",
+                "medium_url": "https:\/\/www.giantbomb.com\/api\/image\/scale_medium\/2537465-albwcleanbox.jpg",
+                "screen_url": "https:\/\/www.giantbomb.com\/api\/image\/screen_medium\/2537465-albwcleanbox.jpg",
+                "screen_large_url": "https:\/\/www.giantbomb.com\/api\/image\/screen_kubrick\/2537465-albwcleanbox.jpg",
+                "small_url": "https:\/\/www.giantbomb.com\/api\/image\/scale_small\/2537465-albwcleanbox.jpg",
+                "super_url": "https:\/\/www.giantbomb.com\/api\/image\/scale_large\/2537465-albwcleanbox.jpg",
+                "thumb_url": "https:\/\/www.giantbomb.com\/api\/image\/scale_avatar\/2537465-albwcleanbox.jpg",
+                "tiny_url": "https:\/\/www.giantbomb.com\/api\/image\/square_mini\/2537465-albwcleanbox.jpg",
+                "original_url": "https:\/\/www.giantbomb.com\/api\/image\/original\/2537465-albwcleanbox.jpg",
+                "image_tags": "All Images,Box Art"
+                },
+                "name": "The Legend of Zelda: A Link Between Worlds",
+                "original_release_date": "2013-11-22 00:00:00",
+                "platforms": [
+                              {
+                              "api_detail_url": "https:\/\/www.giantbomb.com\/api\/platform\/3045-117\/",
+                              "id": 117,
+                              "name": "Nintendo 3DS",
+                              "site_detail_url": "https:\/\/www.giantbomb.com\/nintendo-3ds\/3045-117\/",
+                              "abbreviation": "3DS"
+                              },
+                              {
+                              "api_detail_url": "https:\/\/www.giantbomb.com\/api\/platform\/3045-138\/",
+                              "id": 138,
+                              "name": "Nintendo 3DS eShop",
+                              "site_detail_url": "https:\/\/www.giantbomb.com\/nintendo-3ds-eshop\/3045-138\/",
+                              "abbreviation": "3DSE"
+                              }
+                              ],
+                "resource_type": "game"
+                },
+                {
+                "guid": "3030-7856",
+                "image": {
+                "icon_url": "https:\/\/www.giantbomb.com\/api\/image\/square_avatar\/2593599-fsaclean.jpg",
+                "medium_url": "https:\/\/www.giantbomb.com\/api\/image\/scale_medium\/2593599-fsaclean.jpg",
+                "screen_url": "https:\/\/www.giantbomb.com\/api\/image\/screen_medium\/2593599-fsaclean.jpg",
+                "screen_large_url": "https:\/\/www.giantbomb.com\/api\/image\/screen_kubrick\/2593599-fsaclean.jpg",
+                "small_url": "https:\/\/www.giantbomb.com\/api\/image\/scale_small\/2593599-fsaclean.jpg",
+                "super_url": "https:\/\/www.giantbomb.com\/api\/image\/scale_large\/2593599-fsaclean.jpg",
+                "thumb_url": "https:\/\/www.giantbomb.com\/api\/image\/scale_avatar\/2593599-fsaclean.jpg",
+                "tiny_url": "https:\/\/www.giantbomb.com\/api\/image\/square_mini\/2593599-fsaclean.jpg",
+                "original_url": "https:\/\/www.giantbomb.com\/api\/image\/original\/2593599-fsaclean.jpg",
+                "image_tags": "All Images,Box Art"
+                },
+                "name": "The Legend of Zelda: Four Swords Adventures",
+                "original_release_date": "2004-06-07 00:00:00",
+                "platforms": [
+                              {
+                              "api_detail_url": "https:\/\/www.giantbomb.com\/api\/platform\/3045-23\/",
+                              "id": 23,
+                              "name": "GameCube",
+                              "site_detail_url": "https:\/\/www.giantbomb.com\/gamecube\/3045-23\/",
+                              "abbreviation": "GCN"
+                              }
+                              ],
+                "resource_type": "game"
+                },
+                {
+                "guid": "3030-14114",
+                "image": {
+                "icon_url": "https:\/\/www.giantbomb.com\/api\/image\/square_avatar\/777595-919239_52155_front.jpg",
+                "medium_url": "https:\/\/www.giantbomb.com\/api\/image\/scale_medium\/777595-919239_52155_front.jpg",
+                "screen_url": "https:\/\/www.giantbomb.com\/api\/image\/screen_medium\/777595-919239_52155_front.jpg",
+                "screen_large_url": "https:\/\/www.giantbomb.com\/api\/image\/screen_kubrick\/777595-919239_52155_front.jpg",
+                "small_url": "https:\/\/www.giantbomb.com\/api\/image\/scale_small\/777595-919239_52155_front.jpg",
+                "super_url": "https:\/\/www.giantbomb.com\/api\/image\/scale_large\/777595-919239_52155_front.jpg",
+                "thumb_url": "https:\/\/www.giantbomb.com\/api\/image\/scale_avatar\/777595-919239_52155_front.jpg",
+                "tiny_url": "https:\/\/www.giantbomb.com\/api\/image\/square_mini\/777595-919239_52155_front.jpg",
+                "original_url": "https:\/\/www.giantbomb.com\/api\/image\/original\/777595-919239_52155_front.jpg",
+                "image_tags": "All Images,Box Art"
+                },
+                "name": "The Legend of Zelda: Collector's Edition",
+                "original_release_date": "2003-11-24 00:00:00",
+                "platforms": [
+                              {
+                              "api_detail_url": "https:\/\/www.giantbomb.com\/api\/platform\/3045-23\/",
+                              "id": 23,
+                              "name": "GameCube",
+                              "site_detail_url": "https:\/\/www.giantbomb.com\/gamecube\/3045-23\/",
+                              "abbreviation": "GCN"
+                              }
+                              ],
+                "resource_type": "game"
+                },
+                {
+                "guid": "3030-13594",
+                "image": {
+                "icon_url": "https:\/\/www.giantbomb.com\/api\/image\/square_avatar\/2204861-box_tlozmm.png",
+                "medium_url": "https:\/\/www.giantbomb.com\/api\/image\/scale_medium\/2204861-box_tlozmm.png",
+                "screen_url": "https:\/\/www.giantbomb.com\/api\/image\/screen_medium\/2204861-box_tlozmm.png",
+                "screen_large_url": "https:\/\/www.giantbomb.com\/api\/image\/screen_kubrick\/2204861-box_tlozmm.png",
+                "small_url": "https:\/\/www.giantbomb.com\/api\/image\/scale_small\/2204861-box_tlozmm.png",
+                "super_url": "https:\/\/www.giantbomb.com\/api\/image\/scale_large\/2204861-box_tlozmm.png",
+                "thumb_url": "https:\/\/www.giantbomb.com\/api\/image\/scale_avatar\/2204861-box_tlozmm.png",
+                "tiny_url": "https:\/\/www.giantbomb.com\/api\/image\/square_mini\/2204861-box_tlozmm.png",
+                "original_url": "https:\/\/www.giantbomb.com\/api\/image\/original\/2204861-box_tlozmm.png",
+                "image_tags": "All Images,Box Art"
+                },
+                "name": "The Legend of Zelda: Majora's Mask",
+                "original_release_date": "2000-04-27 00:00:00",
+                "platforms": [
+                              {
+                              "api_detail_url": "https:\/\/www.giantbomb.com\/api\/platform\/3045-43\/",
+                              "id": 43,
+                              "name": "Nintendo 64",
+                              "site_detail_url": "https:\/\/www.giantbomb.com\/nintendo-64\/3045-43\/",
+                              "abbreviation": "N64"
+                              },
+                              {
+                              "api_detail_url": "https:\/\/www.giantbomb.com\/api\/platform\/3045-87\/",
+                              "id": 87,
+                              "name": "Wii Shop",
+                              "site_detail_url": "https:\/\/www.giantbomb.com\/wii-shop\/3045-87\/",
+                              "abbreviation": "WSHP"
+                              },
+                              {
+                              "api_detail_url": "https:\/\/www.giantbomb.com\/api\/platform\/3045-117\/",
+                              "id": 117,
+                              "name": "Nintendo 3DS",
+                              "site_detail_url": "https:\/\/www.giantbomb.com\/nintendo-3ds\/3045-117\/",
+                              "abbreviation": "3DS"
+                              },
+                              {
+                              "api_detail_url": "https:\/\/www.giantbomb.com\/api\/platform\/3045-138\/",
+                              "id": 138,
+                              "name": "Nintendo 3DS eShop",
+                              "site_detail_url": "https:\/\/www.giantbomb.com\/nintendo-3ds-eshop\/3045-138\/",
+                              "abbreviation": "3DSE"
+                              },
+                              {
+                              "api_detail_url": "https:\/\/www.giantbomb.com\/api\/platform\/3045-139\/",
+                              "id": 139,
+                              "name": "Wii U",
+                              "site_detail_url": "https:\/\/www.giantbomb.com\/wii-u\/3045-139\/",
+                              "abbreviation": "WiiU"
+                              }
+                              ],
+                "resource_type": "game"
+                },
+                {
+                "guid": "3030-12572",
+                "image": {
+                "icon_url": "https:\/\/www.giantbomb.com\/api\/image\/square_avatar\/2204862-box_tlozoot.png",
+                "medium_url": "https:\/\/www.giantbomb.com\/api\/image\/scale_medium\/2204862-box_tlozoot.png",
+                "screen_url": "https:\/\/www.giantbomb.com\/api\/image\/screen_medium\/2204862-box_tlozoot.png",
+                "screen_large_url": "https:\/\/www.giantbomb.com\/api\/image\/screen_kubrick\/2204862-box_tlozoot.png",
+                "small_url": "https:\/\/www.giantbomb.com\/api\/image\/scale_small\/2204862-box_tlozoot.png",
+                "super_url": "https:\/\/www.giantbomb.com\/api\/image\/scale_large\/2204862-box_tlozoot.png",
+                "thumb_url": "https:\/\/www.giantbomb.com\/api\/image\/scale_avatar\/2204862-box_tlozoot.png",
+                "tiny_url": "https:\/\/www.giantbomb.com\/api\/image\/square_mini\/2204862-box_tlozoot.png",
+                "original_url": "https:\/\/www.giantbomb.com\/api\/image\/original\/2204862-box_tlozoot.png",
+                "image_tags": "All Images,Box Art"
+                },
+                "name": "The Legend of Zelda: Ocarina of Time",
+                "original_release_date": "1998-11-21 00:00:00",
+                "platforms": [
+                              {
+                              "api_detail_url": "https:\/\/www.giantbomb.com\/api\/platform\/3045-43\/",
+                              "id": 43,
+                              "name": "Nintendo 64",
+                              "site_detail_url": "https:\/\/www.giantbomb.com\/nintendo-64\/3045-43\/",
+                              "abbreviation": "N64"
+                              },
+                              {
+                              "api_detail_url": "https:\/\/www.giantbomb.com\/api\/platform\/3045-87\/",
+                              "id": 87,
+                              "name": "Wii Shop",
+                              "site_detail_url": "https:\/\/www.giantbomb.com\/wii-shop\/3045-87\/",
+                              "abbreviation": "WSHP"
+                              },
+                              {
+                              "api_detail_url": "https:\/\/www.giantbomb.com\/api\/platform\/3045-117\/",
+                              "id": 117,
+                              "name": "Nintendo 3DS",
+                              "site_detail_url": "https:\/\/www.giantbomb.com\/nintendo-3ds\/3045-117\/",
+                              "abbreviation": "3DS"
+                              },
+                              {
+                              "api_detail_url": "https:\/\/www.giantbomb.com\/api\/platform\/3045-138\/",
+                              "id": 138,
+                              "name": "Nintendo 3DS eShop",
+                              "site_detail_url": "https:\/\/www.giantbomb.com\/nintendo-3ds-eshop\/3045-138\/",
+                              "abbreviation": "3DSE"
+                              },
+                              {
+                              "api_detail_url": "https:\/\/www.giantbomb.com\/api\/platform\/3045-139\/",
+                              "id": 139,
+                              "name": "Wii U",
+                              "site_detail_url": "https:\/\/www.giantbomb.com\/wii-u\/3045-139\/",
+                              "abbreviation": "WiiU"
+                              }
+                              ],
+                "resource_type": "game"
+                },
+                {
+                "guid": "3030-8881",
+                "image": {
+                "icon_url": "https:\/\/www.giantbomb.com\/api\/image\/square_avatar\/2267398-929090-lozlinksawakeningdxus.jpg",
+                "medium_url": "https:\/\/www.giantbomb.com\/api\/image\/scale_medium\/2267398-929090-lozlinksawakeningdxus.jpg",
+                "screen_url": "https:\/\/www.giantbomb.com\/api\/image\/screen_medium\/2267398-929090-lozlinksawakeningdxus.jpg",
+                "screen_large_url": "https:\/\/www.giantbomb.com\/api\/image\/screen_kubrick\/2267398-929090-lozlinksawakeningdxus.jpg",
+                "small_url": "https:\/\/www.giantbomb.com\/api\/image\/scale_small\/2267398-929090-lozlinksawakeningdxus.jpg",
+                "super_url": "https:\/\/www.giantbomb.com\/api\/image\/scale_large\/2267398-929090-lozlinksawakeningdxus.jpg",
+                "thumb_url": "https:\/\/www.giantbomb.com\/api\/image\/scale_avatar\/2267398-929090-lozlinksawakeningdxus.jpg",
+                "tiny_url": "https:\/\/www.giantbomb.com\/api\/image\/square_mini\/2267398-929090-lozlinksawakeningdxus.jpg",
+                "original_url": "https:\/\/www.giantbomb.com\/api\/image\/original\/2267398-929090-lozlinksawakeningdxus.jpg",
+                "image_tags": "All Images,Box Art"
+                },
+                "name": "The Legend of Zelda: Link's Awakening DX",
+                "original_release_date": "1998-10-31 00:00:00",
+                "platforms": [
+                              {
+                              "api_detail_url": "https:\/\/www.giantbomb.com\/api\/platform\/3045-57\/",
+                              "id": 57,
+                              "name": "Game Boy Color",
+                              "site_detail_url": "https:\/\/www.giantbomb.com\/game-boy-color\/3045-57\/",
+                              "abbreviation": "GBC"
+                              },
+                              {
+                              "api_detail_url": "https:\/\/www.giantbomb.com\/api\/platform\/3045-138\/",
+                              "id": 138,
+                              "name": "Nintendo 3DS eShop",
+                              "site_detail_url": "https:\/\/www.giantbomb.com\/nintendo-3ds-eshop\/3045-138\/",
+                              "abbreviation": "3DSE"
+                              }
+                              ],
+                "resource_type": "game"
+                },
+                {
+                "guid": "3030-41355",
+                "image": {
+                "icon_url": "https:\/\/www.giantbomb.com\/api\/image\/square_avatar\/2920687-the%20legend%20of%20zelda%20-%20breath%20of%20the%20wild%20v7.jpg",
+                "medium_url": "https:\/\/www.giantbomb.com\/api\/image\/scale_medium\/2920687-the%20legend%20of%20zelda%20-%20breath%20of%20the%20wild%20v7.jpg",
+                "screen_url": "https:\/\/www.giantbomb.com\/api\/image\/screen_medium\/2920687-the%20legend%20of%20zelda%20-%20breath%20of%20the%20wild%20v7.jpg",
+                "screen_large_url": "https:\/\/www.giantbomb.com\/api\/image\/screen_kubrick\/2920687-the%20legend%20of%20zelda%20-%20breath%20of%20the%20wild%20v7.jpg",
+                "small_url": "https:\/\/www.giantbomb.com\/api\/image\/scale_small\/2920687-the%20legend%20of%20zelda%20-%20breath%20of%20the%20wild%20v7.jpg",
+                "super_url": "https:\/\/www.giantbomb.com\/api\/image\/scale_large\/2920687-the%20legend%20of%20zelda%20-%20breath%20of%20the%20wild%20v7.jpg",
+                "thumb_url": "https:\/\/www.giantbomb.com\/api\/image\/scale_avatar\/2920687-the%20legend%20of%20zelda%20-%20breath%20of%20the%20wild%20v7.jpg",
+                "tiny_url": "https:\/\/www.giantbomb.com\/api\/image\/square_mini\/2920687-the%20legend%20of%20zelda%20-%20breath%20of%20the%20wild%20v7.jpg",
+                "original_url": "https:\/\/www.giantbomb.com\/api\/image\/original\/2920687-the%20legend%20of%20zelda%20-%20breath%20of%20the%20wild%20v7.jpg",
+                "image_tags": "All Images"
+                },
+                "name": "The Legend of Zelda: Breath of the Wild",
+                "original_release_date": "2017-03-03 00:00:00",
+                "platforms": [
+                              {
+                              "api_detail_url": "https:\/\/www.giantbomb.com\/api\/platform\/3045-139\/",
+                              "id": 139,
+                              "name": "Wii U",
+                              "site_detail_url": "https:\/\/www.giantbomb.com\/wii-u\/3045-139\/",
+                              "abbreviation": "WiiU"
+                              },
+                              {
+                              "api_detail_url": "https:\/\/www.giantbomb.com\/api\/platform\/3045-157\/",
+                              "id": 157,
+                              "name": "Nintendo Switch",
+                              "site_detail_url": "https:\/\/www.giantbomb.com\/nintendo-switch\/3045-157\/",
+                              "abbreviation": "NSW"
+                              }
+                              ],
+                "resource_type": "game"
+                },
+                {
+                "guid": "3030-53074",
+                "image": {
+                "icon_url": "https:\/\/www.giantbomb.com\/api\/image\/square_avatar\/2835287-screen%20shot%202016-03-16%20at%209.24.26%20pm.png",
+                "medium_url": "https:\/\/www.giantbomb.com\/api\/image\/scale_medium\/2835287-screen%20shot%202016-03-16%20at%209.24.26%20pm.png",
+                "screen_url": "https:\/\/www.giantbomb.com\/api\/image\/screen_medium\/2835287-screen%20shot%202016-03-16%20at%209.24.26%20pm.png",
+                "screen_large_url": "https:\/\/www.giantbomb.com\/api\/image\/screen_kubrick\/2835287-screen%20shot%202016-03-16%20at%209.24.26%20pm.png",
+                "small_url": "https:\/\/www.giantbomb.com\/api\/image\/scale_small\/2835287-screen%20shot%202016-03-16%20at%209.24.26%20pm.png",
+                "super_url": "https:\/\/www.giantbomb.com\/api\/image\/scale_large\/2835287-screen%20shot%202016-03-16%20at%209.24.26%20pm.png",
+                "thumb_url": "https:\/\/www.giantbomb.com\/api\/image\/scale_avatar\/2835287-screen%20shot%202016-03-16%20at%209.24.26%20pm.png",
+                "tiny_url": "https:\/\/www.giantbomb.com\/api\/image\/square_mini\/2835287-screen%20shot%202016-03-16%20at%209.24.26%20pm.png",
+                "original_url": "https:\/\/www.giantbomb.com\/api\/image\/original\/2835287-screen%20shot%202016-03-16%20at%209.24.26%20pm.png",
+                "image_tags": "All Images"
+                },
+                "name": "My Nintendo Picross: The Legend of Zelda Twilight Princess",
+                "original_release_date": "2016-03-17 00:00:00",
+                "platforms": [
+                              {
+                              "api_detail_url": "https:\/\/www.giantbomb.com\/api\/platform\/3045-138\/",
+                              "id": 138,
+                              "name": "Nintendo 3DS eShop",
+                              "site_detail_url": "https:\/\/www.giantbomb.com\/nintendo-3ds-eshop\/3045-138\/",
+                              "abbreviation": "3DSE"
+                              }
+                              ],
+                "resource_type": "game"
+                }
+                ],
+    "version": "1.0"
+}
