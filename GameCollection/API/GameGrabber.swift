@@ -36,12 +36,12 @@ class GameGrabber {
 //            "api_key": apiKey,
 //            "format": "json",
 //            "resources": "game",
-//            "limit": "10",
+//            "limit": "50",
 //            "query": "\"\(query.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!)\"",
-////            "field_list": "guid,image,name,original_release_date,platforms,publisher",
+//            "field_list": "guid,image,name,original_release_date,platforms,publisher",
 //        ]
         
-        let url = "\(apiURL)search/?api_key=\(apiKey)&format=json&limit=10&resources=game&field_list=guid%2Cimage%2Cname%2Coriginal_release_date%2Cplatforms%2Cpublisher&query=\(query.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!)"
+        let url = "\(apiURL)search/?api_key=\(apiKey)&format=json&limit=50&resources=game&field_list=guid%2Cimage%2Cname%2Coriginal_release_date%2Cplatforms%2Cpublisher&query=\(query.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!)"
         
         let group = DispatchGroup()
         

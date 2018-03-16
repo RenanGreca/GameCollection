@@ -20,6 +20,7 @@ class GameCollectionTests: XCTestCase {
     let context: NSManagedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     var gameCount = 0
+    var platformCounts = [String: Int]()
     
     override func setUp() {
         super.setUp()
@@ -29,6 +30,7 @@ class GameCollectionTests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         deleteAllGames()
+        deleteAllPlatforms()
         
         super.tearDown()
     }
@@ -50,9 +52,13 @@ class GameCollectionTests: XCTestCase {
         ]
         
         let game = Game(with: data)
-        
-        game.insert(to: context)
+        var platformCount = 0
+        for platform in game.platforms {
+            game.insert(platform: platform, to: context)
+            platformCount += 1
+        }
         gameCount += 1
+        platformCounts[game.guid] = platformCount
         
         if let fetchedGame = Game.fetchOne(from: context) {
             XCTAssertEqual(guid, fetchedGame.guid, "Values are not equal!")
@@ -72,8 +78,13 @@ class GameCollectionTests: XCTestCase {
                     if let results = json["results"] as? [[String: Any]] {
                         for result in results {
                             let game = Game(with: result)
-                            game.insert(to: context)
+                            var platformCount = 0
+                            for platform in game.platforms {
+                                game.insert(platform: platform, to: context)
+                                platformCount += 1
+                            }
                             gameCount += 1
+                            platformCounts[game.guid] = platformCount
                         }
                     }
                 } else {
@@ -86,9 +97,13 @@ class GameCollectionTests: XCTestCase {
             XCTAssertTrue(false, "Invalid filename/path.")
         }
         
-        let games = Game.fetchAll(from: context)
+        let games = [Game](Game.fetchAll(from: context).values)
         
         XCTAssertEqual(games.count, gameCount, "Incorrect number of games!")
+        
+        for game in games {
+            XCTAssertEqual(game.platforms.count, platformCounts[game.guid], "Incorrect number of platforms for game \(game.title)!")
+        }
         
     }
     
@@ -139,8 +154,7 @@ class GameCollectionTests: XCTestCase {
 
     }
     
-    func deleteAllGames()
-    {
+    func deleteAllGames() {
         let fetchRequest = NSFetchRequest<GameManagedObject>(entityName: "Game")
         fetchRequest.returnsObjectsAsFaults = false
         do
@@ -152,7 +166,23 @@ class GameCollectionTests: XCTestCase {
                 context.delete(managedObjectData)
             }
         } catch let error as NSError {
-            print("Detele all data in Game error : \(error) \(error.userInfo)")
+            print("Error deleting all data in Game : \(error) \(error.userInfo)")
+        }
+    }
+    
+    func deleteAllPlatforms() {
+        let fetchRequest = NSFetchRequest<PlatformManagedObject>(entityName: "Platform")
+        fetchRequest.returnsObjectsAsFaults = false
+        do
+        {
+            let results = try context.fetch(fetchRequest as! NSFetchRequest<NSFetchRequestResult>)
+            for managedObject in results
+            {
+                let managedObjectData:NSManagedObject = managedObject as! NSManagedObject
+                context.delete(managedObjectData)
+            }
+        } catch let error as NSError {
+            print("Error deleting all data in Platform : \(error) \(error.userInfo)")
         }
     }
     

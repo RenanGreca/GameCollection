@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:PlatformManagedObject+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:PlatformManagedObject+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
       location = "group:GameManagedObject+CoreDataClass.swift">
    </FileRef>
    <FileRef

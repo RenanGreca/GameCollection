@@ -13,6 +13,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDa
 //    let searchController = UISearchController()
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     let gameGrabber = GameGrabber()
     
@@ -23,10 +24,15 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDa
         
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        self.tableView.tableFooterView = UIView()
+        
+        self.activityIndicator.isHidden = true
         
         let searchBar = UISearchBar()
         searchBar.delegate = self
         searchBar.placeholder = "Search for a game..."
+//        searchBar.backgroundColor = UIColor.darkGray
+//        searchBar.textColor = UIColor.white
         searchBar.showsScopeBar = true
         searchBar.returnKeyType = .search
         self.navigationItem.titleView = searchBar
@@ -41,9 +47,13 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDa
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let text = searchBar.text {
             searchBar.resignFirstResponder()
+            self.activityIndicator.isHidden = false
+            self.activityIndicator.startAnimating()
             self.gameGrabber.searchForGamesWith(query: text) {
                 error in
                 
+                self.activityIndicator.isHidden = true
+                self.activityIndicator.stopAnimating()
                 self.tableView.reloadData()
             }
         }
@@ -67,27 +77,16 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDa
         let game = gameGrabber.list[indexPath.row]
         
         cell.textLabel?.text = game.title
-        cell.detailTextLabel?.text = (game.platforms.flatMap({ item -> String in
-                                         return String(describing: item[Fields.platformAbbrev.rawValue]!)
+        cell.detailTextLabel?.text = (game.platforms.flatMap({ platform -> String in
+                                         return platform.abbreviation
                                      }) as Array).joined(separator: ", ")
         
-//        let gameTitleArray = game.title.split(separator: ":", maxSplits: 1)
-//
-//        if  gameTitleArray.count > 1,
-//            let subtitle = gameTitleArray.last {
-//            cell.textLabel?.text = String(describing: gameTitleArray.first!)
-//            cell.detailTextLabel?.text = String(describing: subtitle).trimmingCharacters(in: CharacterSet.whitespaces)
-//        } else {
-//            if let date = game.releaseDate {
-//                let dateFormatter = DateFormatter()
-//                dateFormatter.dateFormat = "yyyy"
-//
-//                cell.textLabel?.text = dateFormatter.string(from: date)
-//            }
-//            cell.detailTextLabel?.text = String(describing: gameTitleArray.first!)
-//        }
-        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = self.tableView.cellForRow(at: indexPath)!
+        cell.isSelected = false
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -95,6 +94,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDa
             let gameViewController = segue.destination as! GameDetailsViewController
             let indexPath = self.tableView.indexPath(for: sender as! UITableViewCell)!
             gameViewController.game = self.gameGrabber.list[indexPath.row]
+            gameViewController.canAddPlatforms = true
         }
     }
     

@@ -7,12 +7,133 @@
 //
 
 import UIKit
+import CoreData
 
-class CollectionViewController: UIViewController {
+class CollectionViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet weak var collectionTableView: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    var games: [String: [Game]]?
+    
+    var indexSections: [String] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        self.collectionTableView.dataSource = self
+        self.collectionTableView.delegate = self
+        self.collectionTableView.tableFooterView = UIView()
+        self.collectionTableView.sectionIndexColor = .green
+
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.activityIndicator.startAnimating()
+        
+        DispatchQueue.global().sync {
+            
+            let context: NSManagedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            
+            self.games = Game.fetchAll(from: context)
+            self.indexSections = [String](self.games!.keys).sorted()
+            
+            DispatchQueue.main.async {
+                self.activityIndicator.isHidden = true
+                self.activityIndicator.stopAnimating()
+                self.collectionTableView.reloadData()
+            }
+            
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        let charIndex = self.indexSections[section]
+        
+        if let games = self.games?[charIndex] {
+            return games.count
+        } else {
+            return 0
+        }
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return self.indexSections.count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return self.indexSections[section]
+    }
+    
+    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return self.indexSections
+    }
+    
+    func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
+        return index
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 55
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        self.tableView(tableView, titleForHeaderInSection: section)
+        
+        guard let sectionTitle = self.tableView(tableView, titleForHeaderInSection: section) else {
+            return nil
+        }
+    
+        let label = UILabel()
+        label.frame = CGRect(x: 20, y: 8, width: 320, height: 20)
+        label.backgroundColor = .clear
+        label.textColor = .white
+        label.font = UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.heavy)
+        label.text = sectionTitle
+        
+        let view = UIView()
+        view.addSubview(label)
+        
+        return view
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cellIdentifier = "GameCollectionCell"
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+        
+        let charIndex = self.indexSections[indexPath.section]
+        
+        if let game = self.games?[charIndex]?[indexPath.row] {
+            cell.textLabel?.text = game.title
+            cell.detailTextLabel?.text = (game.platforms.flatMap({ platform -> String in
+                return platform.abbreviation
+            }) as Array).joined(separator: ", ")
+        }
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = self.collectionTableView.cellForRow(at: indexPath)!
+        cell.isSelected = false
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "collectionToGameSegue" {
+            let gameViewController = segue.destination as! GameDetailsViewController
+            let indexPath = self.collectionTableView.indexPath(for: sender as! UITableViewCell)!
+            let charIndex = self.indexSections[indexPath.section]
+            gameViewController.game = self.games?[charIndex]?[indexPath.row]
+            gameViewController.canAddPlatforms = false
+        }
     }
 
 }

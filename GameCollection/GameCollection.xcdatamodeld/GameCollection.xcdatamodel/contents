@@ -2,12 +2,19 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="17D102" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Game" representedClassName="GameCollection.GameManagedObject" syncable="YES" codeGenerationType="class">
         <attribute name="boxart" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="boxartData" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="guid" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="platforms" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="releaseDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="platforms" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Platform" syncable="YES"/>
+    </entity>
+    <entity name="Platform" representedClassName="PlatformManagedObject" syncable="YES" codeGenerationType="class">
+        <attribute name="abbreviation" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Game" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="Game" positionX="-63" positionY="-18" width="128" height="135"/>
+        <element name="Platform" positionX="-63" positionY="18" width="128" height="90"/>
     </elements>
 </model>
