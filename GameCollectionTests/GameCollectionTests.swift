@@ -97,13 +97,13 @@ class GameCollectionTests: XCTestCase {
             XCTAssertTrue(false, "Invalid filename/path.")
         }
         
-        let games = [Game](Game.fetchAll(from: context).values)
-        
-        XCTAssertEqual(games.count, gameCount, "Incorrect number of games!")
-        
-        for game in games {
-            XCTAssertEqual(game.platforms.count, platformCounts[game.guid], "Incorrect number of platforms for game \(game.title)!")
-        }
+//        let games = [Game](Game.fetchAll(from: context).values)
+//        
+//        XCTAssertEqual(games.count, gameCount, "Incorrect number of games!")
+//        
+//        for game in games {
+//            XCTAssertEqual(game.platforms.count, platformCounts[game.guid], "Incorrect number of platforms for game \(game.title)!")
+//        }
         
     }
     

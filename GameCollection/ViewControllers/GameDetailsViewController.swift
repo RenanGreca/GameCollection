@@ -24,6 +24,7 @@ class GameDetailsViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
     var game: Game?
+    var storedPlatforms: [Int] = []
     var canAddPlatforms: Bool = false
     
     override func viewDidLoad() {
@@ -34,6 +35,16 @@ class GameDetailsViewController: UIViewController, UITableViewDataSource, UITabl
         
         
         self.configureTitleView(title: self.game!.title)
+        
+        let context: NSManagedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+
+        if let game = Game.fetchWith(guid: self.game!.guid, context: context) {
+            
+            for platform in game.platforms {
+                self.storedPlatforms.append(platform.id)
+            }
+            
+        }
         
         
         if let image = self.game?.boxartImage {
@@ -46,17 +57,16 @@ class GameDetailsViewController: UIViewController, UITableViewDataSource, UITabl
                 URLSession.shared.dataTask(with: url) { data, response, error in
                     guard let data = data, error == nil else { return }
                     
-                    let context: NSManagedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-                    
-                    if let downloadedImage = UIImage(data: data) {
-                        self.game?.save(image: downloadedImage, to: context)
-                        DispatchQueue.main.async() {
+                    DispatchQueue.main.async() {
+
+                        let context: NSManagedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+                        
+                        if let downloadedImage = UIImage(data: data) {
+                            self.game?.save(image: downloadedImage, to: context)
                             self.activityIndicator.isHidden = true
                             self.activityIndicator.stopAnimating()
                             self.boxartView.image = downloadedImage
-                        }
-                    } else {
-                        DispatchQueue.main.async() {
+                        } else {
                             self.activityIndicator.isHidden = true
                             self.activityIndicator.stopAnimating()
                             self.boxartView.image = #imageLiteral(resourceName: "questionMark")
@@ -124,26 +134,13 @@ class GameDetailsViewController: UIViewController, UITableViewDataSource, UITabl
         let cellIdentifier = "AvailablePlatformsCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
         
-        cell.textLabel?.text = self.game!.platforms[indexPath.row].name
-        
-        if !self.canAddPlatforms {
-            cell.selectionStyle = .none
-        }
-        
-        DispatchQueue.global().sync {
-            
-            let context: NSManagedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let platform = self.game!.platforms[indexPath.row]
 
-            if let game = Game.fetchWith(guid: self.game!.guid, context: context) {
-                
-                if let _ = game.platforms.first(where: { $0.id == self.game!.platforms[indexPath.row].id }) {
-                    DispatchQueue.main.async {
-                         cell.accessoryType = .checkmark
-                    }
-                }
-                
-            }
-            
+        cell.textLabel?.text = platform.name
+        cell.accessoryType = .none
+        
+        if let _ = storedPlatforms.first(where: { $0 == platform.id }) {
+            cell.accessoryType = .checkmark
         }
         
         return cell
@@ -152,24 +149,29 @@ class GameDetailsViewController: UIViewController, UITableViewDataSource, UITabl
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = self.platformsTableView.cellForRow(at: indexPath)!
         
-        if cell.accessoryType == .none {
+//        cell.isSelected = false
+        self.platformsTableView.deselectRow(at: indexPath, animated: true)
         
-            let platform = self.game!.platforms[indexPath.row]
-            
-            DispatchQueue.global().sync {
-                
-                let context: NSManagedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-                
-                self.game!.insert(platform: platform, to: context)
-                DispatchQueue.main.async {
-                    cell.accessoryType = .checkmark
-                }
+        let platform = self.game!.platforms[indexPath.row]
+        let context: NSManagedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+
+        if cell.accessoryType == .none {
+
+            cell.accessoryType = .checkmark
+            self.game!.insert(platform: platform, to: context)
+            self.storedPlatforms.append(platform.id)
+
+        } else if cell.accessoryType == .checkmark {
+
+            cell.accessoryType = .none
+            self.game!.remove(platform: platform, to: context)
+            if let i = self.storedPlatforms.index(of: platform.id) {
+                self.storedPlatforms.remove(at: i)
             }
-            
+
+
         }
         
-        
-        cell.isSelected = false
     }
     
 //    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

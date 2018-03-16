@@ -139,6 +139,19 @@ class Game: Hashable {
     
     }
     
+    func remove(platform: Platform, to context:NSManagedObjectContext) {
+        
+        if  let managedPlatform = Platform.fetchManagedWith(id: platform.id, context: context),
+            let game = Game.fetchManagedWith(guid: self.guid, context: context) {
+            // Both game and platform are in database. Remove relationship.
+            
+            var platformSet = game.platforms as! Set<PlatformManagedObject>
+            platformSet.remove(managedPlatform)
+            game.platforms = platformSet as NSSet
+        }
+        
+    }
+    
     func save(image: UIImage, to context:NSManagedObjectContext) {
         self.boxartImage = image
 

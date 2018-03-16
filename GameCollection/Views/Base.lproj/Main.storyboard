@@ -24,6 +24,7 @@
                     <connections>
                         <segue destination="Exh-Pu-sFW" kind="relationship" relationship="viewControllers" id="aAa-7R-Vgo"/>
                         <segue destination="XLs-4p-maZ" kind="relationship" relationship="viewControllers" id="dk7-Ax-Uqo"/>
+                        <segue destination="Ta1-ch-WOl" kind="relationship" relationship="viewControllers" id="EFm-Cn-4iN"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -39,7 +40,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2kq-Pl-Rd2">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="116" width="375" height="502"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="GameSearchCell" textLabel="Jcw-Sb-2iE" detailTextLabel="Vhf-Em-1ol" rowHeight="60" style="IBUITableViewCellStyleSubtitle" id="R4a-zV-QwE">
@@ -73,7 +74,7 @@
                                 </prototypes>
                             </tableView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="jsQ-lb-u9f">
-                                <rect key="frame" x="169" y="322.5" width="37" height="37"/>
+                                <rect key="frame" x="169" y="348.5" width="37" height="37"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -314,32 +315,32 @@
             </objects>
             <point key="canvasLocation" x="1588" y="474.51274362818594"/>
         </scene>
-        <!--Settings View Controller-->
+        <!--Settings-->
         <scene sceneID="mNf-pt-tx5">
             <objects>
                 <viewController id="D1b-Aj-LY0" customClass="SettingsViewController" customModule="GameCollection" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yMF-fR-y4C">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="pLg-WH-6Pv"/>
                     </view>
-                    <navigationItem key="navigationItem" id="v2O-E0-tQk"/>
+                    <navigationItem key="navigationItem" title="Settings" id="v2O-E0-tQk"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mQ0-7t-6A5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1588" y="1248"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Search-->
         <scene sceneID="eLh-yd-aHt">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XLs-4p-maZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="search" id="M5b-sY-xaz">
+                    <tabBarItem key="tabBarItem" title="Search" image="search" id="M5b-sY-xaz">
                         <color key="badgeColor" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="06b-9v-pC2">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" largeTitles="YES" id="06b-9v-pC2">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
                         <color key="barTintColor" white="0.10000000000000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -359,11 +360,11 @@
             </objects>
             <point key="canvasLocation" x="692.79999999999995" y="-340.02998500749629"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Collection-->
         <scene sceneID="eK5-8Z-BV0">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Exh-Pu-sFW" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="mostViewed" id="vI9-l3-9Os">
+                    <tabBarItem key="tabBarItem" title="Collection" image="game_controller" id="vI9-l3-9Os">
                         <color key="badgeColor" name="systemYellowColor" catalog="System" colorSpace="catalog"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -385,11 +386,11 @@
             </objects>
             <point key="canvasLocation" x="692.79999999999995" y="474.96251874062972"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Settings-->
         <scene sceneID="rTl-hZ-18L">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ta1-ch-WOl" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="more" id="cyD-cv-SbY">
+                    <tabBarItem key="tabBarItem" title="Settings" image="settings" id="cyD-cv-SbY">
                         <color key="badgeColor" name="systemPurpleColor" catalog="System" colorSpace="catalog"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -412,7 +413,12 @@
             <point key="canvasLocation" x="692.79999999999995" y="1248.5757121439281"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="game_controller" width="30" height="30"/>
+        <image name="search" width="30" height="30"/>
+        <image name="settings" width="30" height="30"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="sTJ-0v-QM9"/>
+        <segue reference="Smu-xu-XKt"/>
     </inferredMetricsTieBreakers>
 </document>
