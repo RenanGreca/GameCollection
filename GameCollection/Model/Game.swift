@@ -216,8 +216,10 @@ class Game: Hashable {
             // Game already exists in database. Include new platform.
 
             game.addToPlatforms(managedPlatform)
-            self.platforms.append(platform)
             
+            if !self.platforms.contains(platform) {
+                self.platforms.append(platform)
+            }
         } else {
             // Game does not exist in database. Add it.
             
@@ -252,16 +254,16 @@ class Game: Hashable {
             // Both game and platform are in database. Remove relationship.
             
             game.removeFromPlatforms(managedPlatform)
-            if let i = self.platforms.index(of: platform) {
-                self.platforms.remove(at: i)
-            }
-            
-            if  self.platforms.count == 0,
-                let game = Game.fetchManagedWith(guid: self.guid) {
-                
-                context.delete(game)
-                self.status = .notInCollection
-            }
+//            if let i = self.platforms.index(of: platform) {
+//                self.platforms.remove(at: i)
+//            }
+//
+//            if  self.platforms.count == 0,
+//                let game = Game.fetchManagedWith(guid: self.guid) {
+//
+//                context.delete(game)
+//                self.status = .notInCollection
+//            }
 
         }
         
