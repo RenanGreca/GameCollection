@@ -35,18 +35,63 @@
         <!--Wishlist-->
         <scene sceneID="PIg-V1-P2o">
             <objects>
-                <viewController id="Lr6-I5-K3d" sceneMemberID="viewController">
+                <viewController id="Lr6-I5-K3d" customClass="CollectionViewController" customModule="GameCollection" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rWV-WN-2gc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TbE-J9-PFd">
+                                <rect key="frame" x="0.0" y="116" width="375" height="502"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="x8h-Sk-dEH" detailTextLabel="Bhx-KP-dZz" style="IBUITableViewCellStyleSubtitle" id="nMB-d6-GSH">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nMB-d6-GSH" id="zUM-Fq-Oqt">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="x8h-Sk-dEH">
+                                                    <rect key="frame" x="15" y="5" width="38" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="black" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Bhx-KP-dZz">
+                                                    <rect key="frame" x="15" y="25.5" width="44" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <segue destination="Qmb-vr-8nu" kind="show" identifier="wishlistToGameSegue" id="E2U-5a-CG4"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="TbE-J9-PFd" firstAttribute="top" secondItem="hR3-D2-NM8" secondAttribute="top" id="7aw-Si-S6K"/>
+                            <constraint firstItem="hR3-D2-NM8" firstAttribute="bottom" secondItem="TbE-J9-PFd" secondAttribute="bottom" id="OOp-Le-n1z"/>
+                            <constraint firstItem="TbE-J9-PFd" firstAttribute="leading" secondItem="hR3-D2-NM8" secondAttribute="leading" id="iyJ-1G-fhC"/>
+                            <constraint firstItem="hR3-D2-NM8" firstAttribute="trailing" secondItem="TbE-J9-PFd" secondAttribute="trailing" id="pUA-of-tET"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="hR3-D2-NM8"/>
                     </view>
                     <navigationItem key="navigationItem" title="Wishlist" id="cle-Da-Vbq"/>
+                    <connections>
+                        <outlet property="collectionTableView" destination="TbE-J9-PFd" id="rPH-KS-eTo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ycu-ye-SZD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1588" y="-1039"/>
+            <point key="canvasLocation" x="1588" y="-1039.4302848575712"/>
         </scene>
         <!--Add games-->
         <scene sceneID="nLb-9S-eUU">
@@ -374,7 +419,7 @@
         <!--Collection-->
         <scene sceneID="Sm4-O5-MKg">
             <objects>
-                <viewController id="5I0-YD-99H" customClass="CollectionViewController" customModule="GameCollection" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Collection" title="Collection" id="5I0-YD-99H" customClass="CollectionViewController" customModule="GameCollection" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4ym-Ug-kRL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -414,7 +459,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="jzC-he-mZr">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="jzC-he-mZr">
                                 <rect key="frame" x="169" y="348.5" width="37" height="37"/>
                             </activityIndicatorView>
                         </subviews>
@@ -437,7 +482,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="activityIndicator" destination="jzC-he-mZr" id="CSE-Zc-stp"/>
                         <outlet property="collectionTableView" destination="rdB-Sl-apX" id="HfD-I6-rCy"/>
                     </connections>
                 </viewController>

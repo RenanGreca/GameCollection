@@ -12,7 +12,7 @@ import CoreData
 class CollectionViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var collectionTableView: UITableView!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+//    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var games: [String: [Game]]?
     
@@ -20,20 +20,26 @@ class CollectionViewController: UIViewController, UITableViewDataSource, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.collectionTableView.dataSource = self
         self.collectionTableView.delegate = self
         self.collectionTableView.tableFooterView = UIView()
         self.collectionTableView.sectionIndexColor = .green
         
-        self.activityIndicator.isHidden = true
+//        self.activityIndicator.isHidden = true
 
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.reload(with: nil)
+        
+        if let title = self.title,
+            title == "Wishlist" {
+            self.reload(with: .wishlist)
+        } else {
+            self.reload(with: nil)
+        }
+
     }
     
     func reload(with status: Status?) {
