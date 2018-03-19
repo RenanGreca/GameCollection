@@ -94,7 +94,6 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDa
             let gameViewController = segue.destination as! GameDetailsViewController
             let indexPath = self.tableView.indexPath(for: sender as! UITableViewCell)!
             gameViewController.game = self.gameGrabber.list[indexPath.row]
-            gameViewController.canAddPlatforms = true
         }
     }
     

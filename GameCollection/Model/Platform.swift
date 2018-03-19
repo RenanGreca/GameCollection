@@ -8,8 +8,13 @@
 
 import Foundation
 import CoreData
+import UIKit
 
 class Platform: Hashable {
+    
+//    let unsupportedPlatforms = [
+//        "3DSE": "3DS",
+//    ]
     
     var hashValue: Int {
         return self.id.hashValue
@@ -19,14 +24,37 @@ class Platform: Hashable {
         return (lhs.id == rhs.id)
     }
     
-    var abbreviation: String
-    var name: String
-    var id: Int
+    var color:UIColor {
+        if let company = self.company?.name {
+            switch(company) {
+            case "Nintendo":
+                return .red
+            case "Sony Interactive Entertainment":
+                return .blue
+            case "Microsoft Studios":
+                return .green
+            default:
+                return .black
+            }
+        }
+        return .black
+    }
+    
+    let abbreviation: String
+    let name: String
+    let id: Int
+    var games: [Game]
+    var company: Company?
     
     init(id:Int, abbreviation: String, name: String) {
+//        if self.unsupportedPlatforms.contains(where: { $0.key == abbreviation }) {
+//
+//        }
+        
         self.abbreviation = abbreviation
         self.name = name
         self.id = id
+        self.games = []
         
     }
     
@@ -34,9 +62,29 @@ class Platform: Hashable {
         self.abbreviation = managedPlatform.abbreviation!
         self.name = managedPlatform.name!
         self.id = Int(managedPlatform.id)
+        if let company = managedPlatform.company {
+            self.company = Company(from: company)
+        }
+        
+        self.games = []
+        for game in managedPlatform.games as! Set<GameManagedObject> {
+            self.games.append(Game(with: game))
+        }
     }
     
-    func insert(to context: NSManagedObjectContext) -> PlatformManagedObject {
+    // To avoid recursion with Game
+    init(with managedPlatform:PlatformManagedObject) {
+        self.abbreviation = managedPlatform.abbreviation!
+        self.name = managedPlatform.name!
+        self.id = Int(managedPlatform.id)
+        if let company = managedPlatform.company {
+            self.company = Company(from: company)
+        }
+        
+        self.games = []
+    }
+    
+    func insert() -> PlatformManagedObject {
     
         let managedPlatform = NSEntityDescription.insertNewObject(forEntityName: "Platform", into: context) as! PlatformManagedObject
         
@@ -44,11 +92,28 @@ class Platform: Hashable {
         managedPlatform.name = self.name
         managedPlatform.id = Int64(self.id)
         
+        let gameGrabber = GameGrabber()
+        
+        gameGrabber.findCompanyForPlatformWith(id: self.id) {
+            company, error in
+            
+            if let company = company {
+                self.company = company
+                
+                if let managedCompany = Company.fetchManagedWith(id: company.id) {
+                    managedPlatform.company = managedCompany
+                } else {
+                    managedPlatform.company = company.insert()
+                }
+                
+            }
+        }
+        
         return managedPlatform
     }
     
-    class func fetchWith(id:Int, context:NSManagedObjectContext) -> Platform? {
-        if let managedPlatform = Platform.fetchManagedWith(id: id, context: context) {
+    class func fetchWith(id:Int) -> Platform? {
+        if let managedPlatform = Platform.fetchManagedWith(id: id) {
             return Platform(from: managedPlatform)
         }
         
@@ -56,7 +121,7 @@ class Platform: Hashable {
         
     }
     
-    class func fetchManagedWith(id:Int, context:NSManagedObjectContext) -> PlatformManagedObject? {
+    class func fetchManagedWith(id:Int) -> PlatformManagedObject? {
         let fetchRequest = NSFetchRequest<PlatformManagedObject>(entityName: "Platform")
         let searchFilter = NSPredicate(format: "id = %d", id)
         fetchRequest.predicate = searchFilter
@@ -69,5 +134,21 @@ class Platform: Hashable {
         
         return nil
         
+    }
+    
+    class func deleteAll() {        
+        let fetchRequest = NSFetchRequest<PlatformManagedObject>(entityName: "Platform")
+        fetchRequest.returnsObjectsAsFaults = false
+        do
+        {
+            let results = try context.fetch(fetchRequest as! NSFetchRequest<NSFetchRequestResult>)
+            for managedObject in results
+            {
+                let managedObjectData:NSManagedObject = managedObject as! NSManagedObject
+                context.delete(managedObjectData)
+            }
+        } catch let error as NSError {
+            print("Error deleting all data in Platform : \(error) \(error.userInfo)")
+        }
     }
 }

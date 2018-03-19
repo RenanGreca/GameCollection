@@ -8,12 +8,29 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController {
+class SettingsViewController: UITableViewController {
+    
+    enum ReuseIdentifier:String {
+        case deleteAllData = "DeleteAllDataCell"
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath)
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        if let reuseIdentifier = cell?.reuseIdentifier {
+            switch (ReuseIdentifier(rawValue: reuseIdentifier)!) {
+            case .deleteAllData:
+                clearAllData()
+            }
+        }
     }
 
     /*

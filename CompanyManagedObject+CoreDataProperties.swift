@@ -1,5 +1,5 @@
 //
-//  GameManagedObject+CoreDataProperties.swift
+//  CompanyManagedObject+CoreDataProperties.swift
 //  
 //
 //  Created by Cinq Technologies on 19/03/18.
@@ -10,25 +10,20 @@ import Foundation
 import CoreData
 
 
-extension GameManagedObject {
+extension CompanyManagedObject {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<GameManagedObject> {
-        return NSFetchRequest<GameManagedObject>(entityName: "Game")
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<CompanyManagedObject> {
+        return NSFetchRequest<CompanyManagedObject>(entityName: "Company")
     }
 
-    @NSManaged public var boxart: String?
-    @NSManaged public var boxartData: NSData?
-    @NSManaged public var guid: String?
-    @NSManaged public var notes: String?
-    @NSManaged public var releaseDate: NSDate?
-    @NSManaged public var title: String?
-    @NSManaged public var status: Int64
+    @NSManaged public var id: Int64
+    @NSManaged public var name: String?
     @NSManaged public var platforms: NSSet?
 
 }
 
 // MARK: Generated accessors for platforms
-extension GameManagedObject {
+extension CompanyManagedObject {
 
     @objc(addPlatformsObject:)
     @NSManaged public func addToPlatforms(_ value: PlatformManagedObject)

@@ -25,24 +25,33 @@ class CollectionViewController: UIViewController, UITableViewDataSource, UITable
         self.collectionTableView.delegate = self
         self.collectionTableView.tableFooterView = UIView()
         self.collectionTableView.sectionIndexColor = .green
+        
+        self.activityIndicator.isHidden = true
 
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.activityIndicator.startAnimating()
+        self.reload(with: nil)
+    }
+    
+    func reload(with status: Status?) {
+//        self.activityIndicator.startAnimating()
         
         DispatchQueue.global().sync {
             
-            let context: NSManagedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            if let status = status {
+                self.games = Game.fetchAll(with: status)
+            } else {
+                self.games = Game.fetchAllInCollection()
+            }
             
-            self.games = Game.fetchAll(from: context)
             self.indexSections = [String](self.games!.keys).sorted()
             
             DispatchQueue.main.async {
-                self.activityIndicator.isHidden = true
-                self.activityIndicator.stopAnimating()
+//                self.activityIndicator.isHidden = true
+//                self.activityIndicator.stopAnimating()
                 self.collectionTableView.reloadData()
             }
             
@@ -126,13 +135,43 @@ class CollectionViewController: UIViewController, UITableViewDataSource, UITable
         cell.isSelected = false
     }
     
+    @IBAction func didTapFilterButton(_ sender: UIBarButtonItem) {
+        
+        let alertController = UIAlertController(title: "Filter", message: "Find games with status:", preferredStyle: .actionSheet)
+        
+        let action = UIAlertAction(title: "All", style: .default) {
+            action in
+            
+            self.reload(with: nil)
+        }
+        alertController.addAction(action)
+        
+        for i in 0..<Status.count {
+            let status = Status(rawValue: i)!
+            
+            if status == .notInCollection || status == .wishlist {
+                continue
+            }
+            
+            let action = UIAlertAction(title: status.string, style: .default) {
+                action in
+                self.reload(with: status)
+            }
+            alertController.addAction(action)
+        }
+        
+        
+        
+        present(alertController, animated: true)
+    }
+    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "collectionToGameSegue" {
             let gameViewController = segue.destination as! GameDetailsViewController
             let indexPath = self.collectionTableView.indexPath(for: sender as! UITableViewCell)!
             let charIndex = self.indexSections[indexPath.section]
             gameViewController.game = self.games?[charIndex]?[indexPath.row]
-            gameViewController.canAddPlatforms = false
         }
     }
 

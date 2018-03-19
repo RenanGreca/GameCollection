@@ -10,6 +10,7 @@ import Foundation
 import SwiftHTTP
 
 typealias CompletionClosure = (_ error: Error?) -> Void
+typealias CompanyClosure = (_ company: Company?, _ error: Error?) -> Void
 
 class GameGrabber {
     
@@ -53,8 +54,8 @@ class GameGrabber {
             if let err = response.error {
                 storedError = err
             }
-            print("opt finished: \(response.description)")
-            print("data is: \(response.data)") // access the response of the data with response.data
+//            print("opt finished: \(response.description)")
+//            print("data is: \(response.data)") // access the response of the data with response.data
             
             do {
                 let jsonObj = try JSONSerialization.jsonObject(with: response.data, options: .allowFragments) as? [String: Any]
@@ -74,6 +75,39 @@ class GameGrabber {
         
         group.notify(queue: DispatchQueue.main) {
             completion?(storedError)
+        }
+        
+    }
+    
+    func findCompanyForPlatformWith(id: Int, _ completion: CompanyClosure? ) {
+        var company:Company?
+        
+        var storedError: Error?
+                
+        let url = "\(apiURL)platform/\(id)/?api_key=\(apiKey)&format=json&field_list=company"
+        print(url)
+        
+        HTTP.GET(url) {
+            response in
+            
+            if let err = response.error {
+                storedError = err
+            }
+            print("data is: \(response.data)") // access the response of the data with response.data
+
+            do {
+                if  let json = try JSONSerialization.jsonObject(with: response.data, options: .allowFragments) as? [String: Any],
+                    let results = json["results"] as? [String: Any],
+                    let result = results["company"] as? [String: Any] {
+                        
+                    company = Company(with: result)
+
+                }
+            } catch let error {
+                storedError = error
+            }
+            
+            completion?(company, storedError)
         }
         
     }

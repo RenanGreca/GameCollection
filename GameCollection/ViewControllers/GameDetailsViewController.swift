@@ -22,30 +22,36 @@ class GameDetailsViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet weak var subtitleLabel: UILabel!
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-
+    @IBOutlet weak var statusButton: UIButton!
+    @IBOutlet weak var notesButton: UIBarButtonItem!
+    
     var game: Game?
     var storedPlatforms: [Int] = []
-    var canAddPlatforms: Bool = false
+    var isCollection: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.platformsTableView.dataSource = self
-        self.platformsTableView.delegate = self
+        self.platformsTableView.delegate = self        
         
-        
-        self.configureTitleView(title: self.game!.title)
-        
-        let context: NSManagedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-
-        if let game = Game.fetchWith(guid: self.game!.guid, context: context) {
+        if let game = Game.fetchWith(guid: self.game!.guid) {
             
             for platform in game.platforms {
                 self.storedPlatforms.append(platform.id)
             }
             
+            self.game?.status = game.status
+//            self.game = game
         }
         
+        self.configureTitleView(title: self.game!.title)
+        
+//        self.statusButton.setTitle(self.game?.status.string, for: UIControlState.normal)
+//
+//        self.isCollection = (self.storedPlatforms.count > 0)
+//        self.notesButton.isEnabled = self.isCollection
+//        self.statusButton.isEnabled = self.isCollection
         
         if let image = self.game?.boxartImage {
             self.boxartView.image = image
@@ -58,11 +64,9 @@ class GameDetailsViewController: UIViewController, UITableViewDataSource, UITabl
                     guard let data = data, error == nil else { return }
                     
                     DispatchQueue.main.async() {
-
-                        let context: NSManagedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
                         
                         if let downloadedImage = UIImage(data: data) {
-                            self.game?.save(image: downloadedImage, to: context)
+                            self.game?.boxartImage = downloadedImage
                             self.activityIndicator.isHidden = true
                             self.activityIndicator.stopAnimating()
                             self.boxartView.image = downloadedImage
@@ -82,11 +86,12 @@ class GameDetailsViewController: UIViewController, UITableViewDataSource, UITabl
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy"
 
-            self.releaseDateLabel.text = "Released: \(dateFormatter.string(from: date))"
+            self.releaseDateLabel.text = "Released in \(dateFormatter.string(from: date))"
         } else {
             self.releaseDateLabel.text = ""
         }
-        self.platformsTableView.reloadData()
+        
+        self.updateButtons(status: self.game!.status)
     }
     
     private func configureTitleView(title: String) {
@@ -109,13 +114,6 @@ class GameDetailsViewController: UIViewController, UITableViewDataSource, UITabl
         
         self.navigationItem.backBarButtonItem?.title = ""
         
-//        self.gameTitleView.widthAnchor.constraint(equalToConstant: 200).isActive = true
-//        self.gameTitleView.heightAnchor.constraint(equalToConstant: 44).isActive = true
-//
-//        self.navigationController?.navigationBar.addSubview(self.gameTitleView)
-        
-
-    
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -139,7 +137,7 @@ class GameDetailsViewController: UIViewController, UITableViewDataSource, UITabl
         cell.textLabel?.text = platform.name
         cell.accessoryType = .none
         
-        if let _ = storedPlatforms.first(where: { $0 == platform.id }) {
+        if storedPlatforms.contains(where: { $0 == platform.id }) {
             cell.accessoryType = .checkmark
         }
         
@@ -153,20 +151,24 @@ class GameDetailsViewController: UIViewController, UITableViewDataSource, UITabl
         self.platformsTableView.deselectRow(at: indexPath, animated: true)
         
         let platform = self.game!.platforms[indexPath.row]
-        let context: NSManagedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
         if cell.accessoryType == .none {
 
             cell.accessoryType = .checkmark
-            self.game!.insert(platform: platform, to: context)
+            self.game!.insert(platform: platform)
             self.storedPlatforms.append(platform.id)
+            self.updateButtons(status: self.game!.status)
 
         } else if cell.accessoryType == .checkmark {
 
             cell.accessoryType = .none
-            self.game!.remove(platform: platform, to: context)
+            self.game!.remove(platform: platform)
             if let i = self.storedPlatforms.index(of: platform.id) {
                 self.storedPlatforms.remove(at: i)
+            }
+            
+            if self.storedPlatforms.count == 0 {
+                self.updateButtons(status: .notInCollection)
             }
 
 
@@ -174,7 +176,37 @@ class GameDetailsViewController: UIViewController, UITableViewDataSource, UITabl
         
     }
     
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    @IBAction func didTapStatusButton(_ sender: UIButton) {
+        let alertController = UIAlertController(title: "Select status", message: "What is this game's current status?", preferredStyle: .actionSheet)
+        
+        for i in 0..<Status.count {
+            let status = Status(rawValue: i)!
+            
+            let action = UIAlertAction(title: status.string, style: .default) {
+                action in
+                self.game?.status = status
+                
+                DispatchQueue.main.async {
+                    self.updateButtons(status: status)
+                }
+            }
+            alertController.addAction(action)
+        }
+        
+        present(alertController, animated: true)
+    }
+    
+    func updateButtons(status: Status) {
+        let isCollection = (status != .notInCollection)
+        self.isCollection = isCollection
+        self.notesButton.isEnabled = isCollection
+        self.statusButton.isEnabled = isCollection
+        self.statusButton.setTitle(status.string, for: UIControlState.normal)
+        
+        self.platformsTableView.reloadData()
+    }
+    
+    //    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 //        return "Available on: "
 //    }
 //    
@@ -198,14 +230,14 @@ class GameDetailsViewController: UIViewController, UITableViewDataSource, UITabl
 //        
 //    }
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "gameToNotesSegue" {
+            let notesViewController = segue.destination as! GameNotesViewController
+            notesViewController.game = self.game
+        }
     }
-    */
 
 }

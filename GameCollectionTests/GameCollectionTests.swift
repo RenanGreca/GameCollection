@@ -17,20 +17,21 @@ enum TestError: Error {
 
 class GameCollectionTests: XCTestCase {
     
-    let context: NSManagedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    
     var gameCount = 0
     var platformCounts = [String: Int]()
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        
+        Game.deleteAll()
+        Platform.deleteAll()
+        Company.deleteAll()
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        deleteAllGames()
-        deleteAllPlatforms()
+        Game.deleteAll()
+        Platform.deleteAll()
+        Company.deleteAll()
         
         super.tearDown()
     }
@@ -46,22 +47,30 @@ class GameCollectionTests: XCTestCase {
             ],
             Fields.releaseDate.rawValue: "2017-10-27 00:00:00",
             Fields.platforms.rawValue: [
-                Fields.title.rawValue: "Nintendo Switch",
-                Fields.platformAbbrev.rawValue: "NSW"
+                [
+                    Fields.title.rawValue: "Nintendo Switch",
+                    Fields.platformAbbrev.rawValue: "NSW",
+                    Fields.id.rawValue: 157
+                ]
             ]
         ]
         
         let game = Game(with: data)
         var platformCount = 0
         for platform in game.platforms {
-            game.insert(platform: platform, to: context)
+            game.insert(platform: platform)
             platformCount += 1
         }
         gameCount += 1
         platformCounts[game.guid] = platformCount
         
-        if let fetchedGame = Game.fetchOne(from: context) {
+        sleep(10)
+        
+        if let fetchedGame = Game.fetchOne() {
             XCTAssertEqual(guid, fetchedGame.guid, "Values are not equal!")
+            
+            print(fetchedGame.platforms)
+            print(fetchedGame.platforms.first!.company!.name)
         } else {
             XCTAssertTrue(false, "Not able to fetch object!")
         }
@@ -80,7 +89,7 @@ class GameCollectionTests: XCTestCase {
                             let game = Game(with: result)
                             var platformCount = 0
                             for platform in game.platforms {
-                                game.insert(platform: platform, to: context)
+                                game.insert(platform: platform)
                                 platformCount += 1
                             }
                             gameCount += 1
@@ -97,13 +106,61 @@ class GameCollectionTests: XCTestCase {
             XCTAssertTrue(false, "Invalid filename/path.")
         }
         
-//        let games = [Game](Game.fetchAll(from: context).values)
-//        
-//        XCTAssertEqual(games.count, gameCount, "Incorrect number of games!")
-//        
-//        for game in games {
-//            XCTAssertEqual(game.platforms.count, platformCounts[game.guid], "Incorrect number of platforms for game \(game.title)!")
-//        }
+        let gamesLetters = [[Game]](Game.fetchAll().values)
+        
+        var gamesCount = 0
+        for games in gamesLetters {
+            gamesCount += games.count
+            for game in games {
+                XCTAssertEqual(game.platforms.count, platformCounts[game.guid], "Incorrect number of platforms for game \(game.title)!")
+            }
+        }
+        
+        XCTAssertEqual(gamesCount, gameCount, "Incorrect number of games!")
+        
+    }
+    
+    func test12RemovePlatformFromGame() {
+        let guid = "3030-56733"
+        let data: [String: Any] = [
+            Fields.title.rawValue: "The Legend of Zelda: Breath of the Wild",
+            Fields.guid.rawValue: guid,
+            Fields.image.rawValue: [
+                Fields.imageScale.rawValue: "https://www.giantbomb.com/api/image/scale_avatar/2972168-smoboxartfinal.jpg"
+            ],
+            Fields.releaseDate.rawValue: "2017-10-27 00:00:00",
+            Fields.platforms.rawValue: [
+                [
+                    Fields.title.rawValue: "Nintendo Switch",
+                    Fields.platformAbbrev.rawValue: "NSW",
+                    Fields.id.rawValue: 0
+                ],
+                [
+                    Fields.title.rawValue: "Wii U",
+                    Fields.platformAbbrev.rawValue: "WiiU",
+                    Fields.id.rawValue: 1
+                ]
+            ]
+        ]
+        
+        let game = Game(with: data)
+        var platformCount = 0
+        for platform in game.platforms {
+            game.insert(platform: platform)
+            platformCount += 1
+        }
+        gameCount += 1
+        platformCounts[game.guid] = platformCount
+        
+        if let fetchedGame = Game.fetchOne(),
+            let platform = fetchedGame.platforms.first {
+                
+            fetchedGame.remove(platform: platform)
+            
+            XCTAssertEqual(fetchedGame.platforms.count, platformCount - 1)
+        } else {
+            XCTAssertTrue(false)
+        }
         
     }
     
@@ -127,7 +184,39 @@ class GameCollectionTests: XCTestCase {
         waitForExpectations(timeout: 10, handler: nil)
     }
     
-    func test11GameTitleSplit() {
+    func test11GetCompanyForPlatform() {
+        let promise = expectation(description: "A company")
+        
+        let platform = Platform(id: 32, abbreviation: "XBOX", name: "Xbox")
+        
+        let gameGrabber = GameGrabber()
+        
+        gameGrabber.findCompanyForPlatformWith(id: platform.id) {
+            company, error in
+            
+            if let company = company {
+                XCTAssertEqual(company.id, 340)
+                platform.company = company
+                promise.fulfill()
+            } else {
+                XCTAssertTrue(false)
+            }
+            
+        }
+        
+        waitForExpectations(timeout: 10, handler: nil)
+        
+    }
+    
+    func test12SetCompanyForPlatform() {
+        let platform = Platform(id: 32, abbreviation: "XBOX", name: "Xbox")
+        
+        let managedPlatform = platform.insert()
+        sleep(10)
+        XCTAssertEqual(managedPlatform.company!.id, 340)
+    }
+    
+    func test20GameTitleSplit() {
         var title = "The Legend of Zelda: Breath of the Wild"
         
         var gameTitleArray = title.split(separator: ":", maxSplits: 1)
@@ -152,38 +241,6 @@ class GameCollectionTests: XCTestCase {
             XCTAssertEqual("Ace Attorney: Justice for All", subtitle)
         }
 
-    }
-    
-    func deleteAllGames() {
-        let fetchRequest = NSFetchRequest<GameManagedObject>(entityName: "Game")
-        fetchRequest.returnsObjectsAsFaults = false
-        do
-        {
-            let results = try context.fetch(fetchRequest as! NSFetchRequest<NSFetchRequestResult>)
-            for managedObject in results
-            {
-                let managedObjectData:NSManagedObject = managedObject as! NSManagedObject
-                context.delete(managedObjectData)
-            }
-        } catch let error as NSError {
-            print("Error deleting all data in Game : \(error) \(error.userInfo)")
-        }
-    }
-    
-    func deleteAllPlatforms() {
-        let fetchRequest = NSFetchRequest<PlatformManagedObject>(entityName: "Platform")
-        fetchRequest.returnsObjectsAsFaults = false
-        do
-        {
-            let results = try context.fetch(fetchRequest as! NSFetchRequest<NSFetchRequestResult>)
-            for managedObject in results
-            {
-                let managedObjectData:NSManagedObject = managedObject as! NSManagedObject
-                context.delete(managedObjectData)
-            }
-        } catch let error as NSError {
-            print("Error deleting all data in Platform : \(error) \(error.userInfo)")
-        }
     }
     
 }

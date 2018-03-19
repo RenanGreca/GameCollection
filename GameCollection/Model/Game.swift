@@ -10,19 +10,35 @@ import Foundation
 import CoreData
 import UIKit
 
-enum Fields:String {
-    case guid = "guid"
-    case image = "image"
-    case imageScale = "small_url"
-    case title = "name"
-    case releaseDate = "original_release_date"
-    case platforms =  "platforms"
-    case platformAbbrev = "abbreviation"
-    case id = "id"
+enum Status:Int {
+    case notInCollection
+    case backlog
+    case playing
+    case completed
+    case abandoned
+    case wishlist
+    
+    var string:String {
+        switch(self) {
+        case .notInCollection:
+            return "Not in collection"
+        case .backlog:
+            return "Backlog"
+        case .playing:
+            return "Playing"
+        case .completed:
+            return "Completed"
+        case .abandoned:
+            return "Abandoned"
+        case .wishlist:
+            return "Wishlist"
+        }
+    }
+    
+    static let count:Int = 6
 }
 
 class Game: Hashable {
-    
     
     var hashValue: Int {
         return self.guid.hashValue
@@ -32,12 +48,59 @@ class Game: Hashable {
         return (lhs.guid == rhs.guid)
     }
     
-    var title: String
-    var guid: String
+    let title: String
+    let guid: String
     var boxart: String
-    var boxartImage: UIImage?
+    var notes: String {
+        didSet {
+            if let game = Game.fetchManagedWith(guid: self.guid) {
+                // Game already exists in database. Save notes.
+                
+                game.notes = self.notes
+            }
+        }
+    }
+    var status: Status {
+        didSet {
+            if let game = Game.fetchManagedWith(guid: self.guid) {
+                // Game already exists in database. Save status.
+                
+                game.status = Int64(self.status.rawValue)
+                
+                if self.status == .notInCollection {
+                    // If new status is Not in Collection, remove game from database
+                    
+                    for platform in self.platforms {
+                        if  let managedPlatform = Platform.fetchManagedWith(id: platform.id) {
+                            game.removeFromPlatforms(managedPlatform)
+                        }
+                    }
+                    context.delete(game)
+                }
+            }
+        }
+    }
+    var boxartImage: UIImage? {
+        didSet {
+            if let game = Game.fetchManagedWith(guid: self.guid) {
+                // Game already exists in database. Save image.
+                
+                game.boxartData = UIImagePNGRepresentation(self.boxartImage!)
+            }
+        }
+    }
     var platforms: [Platform]
     var releaseDate: Date?
+    
+    func save(notes: String) {
+        self.notes = notes
+        
+        
+    }
+    
+    func save(status: Status) {
+        
+    }
     
     init(with data:[String: Any]) {
         if let title = data[Fields.title.rawValue] as? String {
@@ -52,6 +115,8 @@ class Game: Hashable {
             self.guid = ""
         }
         
+        self.notes = ""
+        
         if  let imageList = data[Fields.image.rawValue] as? [String:String],
             let boxartURL = imageList[Fields.imageScale.rawValue] {
             
@@ -65,6 +130,8 @@ class Game: Hashable {
             formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
             self.releaseDate = formatter.date(from: date)
         }
+        
+        self.status = Status.notInCollection
         
         self.platforms = []
         if let platforms = data[Fields.platforms.rawValue] as? [[String: Any]] {
@@ -84,85 +151,123 @@ class Game: Hashable {
     init(from managedGame:GameManagedObject) {
         self.title = managedGame.title!
         self.guid = managedGame.guid!
+        self.notes = managedGame.notes!
+        
         self.boxart = managedGame.boxart!
         
-        if let imageData = managedGame.boxartData as Data? {
-            self.boxartImage = UIImage(data: imageData)
+        if let imageData = managedGame.boxartData as Data?,
+           let image = UIImage(data: imageData) {
+            self.boxartImage = image
         }
         
         if let date = managedGame.releaseDate as Date? {
             self.releaseDate = date
         }
         
+        if let status = Status(rawValue: Int(managedGame.status)) {
+            self.status = status
+        } else {
+            self.status = Status.notInCollection
+        }
+        
         self.platforms = []
         for platform in managedGame.platforms as! Set<PlatformManagedObject> {
-            self.platforms.append(Platform(from: platform))
+            self.platforms.append(Platform(with: platform))
         }
         
     }
     
-    func insert(platform: Platform, to context:NSManagedObjectContext) {
+    // To avoid recursion with Platform
+    init(with managedGame:GameManagedObject) {
+        self.title = managedGame.title!
+        self.guid = managedGame.guid!
+        self.notes = managedGame.notes!
         
-        let managedPlatform:PlatformManagedObject
-        if let p = Platform.fetchManagedWith(id: platform.id, context: context) {
-            managedPlatform = p
-        } else {
-            managedPlatform = platform.insert(to: context)
+        self.boxart = managedGame.boxart!
+        
+        if let imageData = managedGame.boxartData as Data?,
+            let image = UIImage(data: imageData) {
+            self.boxartImage = image
         }
         
-        if let game = Game.fetchManagedWith(guid: self.guid, context: context) {
+        if let date = managedGame.releaseDate as Date? {
+            self.releaseDate = date
+        }
+        
+        if let status = Status(rawValue: Int(managedGame.status)) {
+            self.status = status
+        } else {
+            self.status = Status.notInCollection
+        }
+        
+        self.platforms = []        
+    }
+    
+    func insert(platform: Platform) {
+        
+        let managedPlatform:PlatformManagedObject
+        if let p = Platform.fetchManagedWith(id: platform.id) {
+            managedPlatform = p
+        } else {
+            managedPlatform = platform.insert()
+        }
+        
+        if let game = Game.fetchManagedWith(guid: self.guid) {
             // Game already exists in database. Include new platform.
-            
-            var platformSet = game.platforms as! Set<PlatformManagedObject>
-            platformSet.insert(managedPlatform)
-            game.platforms = platformSet as NSSet
+
+            game.addToPlatforms(managedPlatform)
+            self.platforms.append(platform)
             
         } else {
             // Game does not exist in database. Add it.
             
             let game = NSEntityDescription.insertNewObject(forEntityName: "Game", into: context) as! GameManagedObject
+            self.status = .backlog
             
             game.title = self.title
             game.guid = self.guid
+            game.notes = self.notes
             game.releaseDate = self.releaseDate
             game.boxart = self.boxart
+            game.status = Int64(self.status.rawValue)
             
             if let image = self.boxartImage {
                 game.boxartData = UIImagePNGRepresentation(image)
             }
             
-            var platformSet = Set<PlatformManagedObject>()
-            platformSet.insert(managedPlatform)
-            game.platforms = platformSet as NSSet
+            game.addToPlatforms(managedPlatform)
+            
+            if !self.platforms.contains(platform) {
+                self.platforms.append(platform)
+            }
 
         }
     
     }
     
-    func remove(platform: Platform, to context:NSManagedObjectContext) {
+    func remove(platform: Platform) {
         
-        if  let managedPlatform = Platform.fetchManagedWith(id: platform.id, context: context),
-            let game = Game.fetchManagedWith(guid: self.guid, context: context) {
+        if  let managedPlatform = Platform.fetchManagedWith(id: platform.id),
+            let game = Game.fetchManagedWith(guid: self.guid) {
             // Both game and platform are in database. Remove relationship.
             
-            var platformSet = game.platforms as! Set<PlatformManagedObject>
-            platformSet.remove(managedPlatform)
-            game.platforms = platformSet as NSSet
+            game.removeFromPlatforms(managedPlatform)
+            if let i = self.platforms.index(of: platform) {
+                self.platforms.remove(at: i)
+            }
+            
+            if  self.platforms.count == 0,
+                let game = Game.fetchManagedWith(guid: self.guid) {
+                
+                context.delete(game)
+                self.status = .notInCollection
+            }
+
         }
         
     }
     
-    func save(image: UIImage, to context:NSManagedObjectContext) {
-        self.boxartImage = image
-
-        if let game = Game.fetchManagedWith(guid: self.guid, context: context) {
-            // Game already exists in database. Save image.
-            
-            game.boxartData = UIImagePNGRepresentation(image)
-        }
-    }
-    
-    class func fetchOne(from context:NSManagedObjectContext) -> Game? {
+    class func fetchOne() -> Game? {        
         let fetchRequest = NSFetchRequest<GameManagedObject>(entityName: "Game")
 
         let results = try? context.fetch(fetchRequest as! NSFetchRequest<NSFetchRequestResult>) as! [GameManagedObject]
@@ -174,15 +279,16 @@ class Game: Hashable {
         }
     }
     
-    class func fetchWith(guid:String, context:NSManagedObjectContext) -> Game? {
-        if let managedGame = Game.fetchManagedWith(guid: guid, context: context) {
+    class func fetchWith(guid:String) -> Game? {
+        
+        if let managedGame = Game.fetchManagedWith(guid: guid) {
             return Game(from: managedGame)
         }
         
         return nil
     }
     
-    class func fetchManagedWith(guid:String, context:NSManagedObjectContext) -> GameManagedObject? {
+    class func fetchManagedWith(guid:String) -> GameManagedObject? {
         let fetchRequest = NSFetchRequest<GameManagedObject>(entityName: "Game")
         let searchFilter = NSPredicate(format: "guid = %@", guid)
         fetchRequest.predicate = searchFilter
@@ -196,8 +302,12 @@ class Game: Hashable {
         }
     }
     
-    class func fetchAll(from context:NSManagedObjectContext) -> [String: [Game]] {
+    class func fetchAllInCollection() -> [String: [Game]] {
         let fetchRequest = NSFetchRequest<GameManagedObject>(entityName: "Game")
+        
+        let searchFilter = NSPredicate(format: "status != %d && status != %d", Status.wishlist.rawValue, Status.notInCollection.rawValue)
+        fetchRequest.predicate = searchFilter
+        
         let sortDescriptor = NSSortDescriptor(key: "title", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
         
@@ -219,7 +329,51 @@ class Game: Hashable {
         }
         
         return games
-
+    }
+    
+    class func fetchAll(with status: Status) -> [String: [Game]] {
+        let fetchRequest = NSFetchRequest<GameManagedObject>(entityName: "Game")
+        
+        let searchFilter = NSPredicate(format: "status == %d", status.rawValue)
+        fetchRequest.predicate = searchFilter
+        
+        let sortDescriptor = NSSortDescriptor(key: "title", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        
+        var games = [String: [Game]]()
+        
+        if let results = try? context.fetch(fetchRequest as! NSFetchRequest<NSFetchRequestResult>) as! [GameManagedObject] {
+            for result in results {
+                let game = Game(from: result)
+                if let char = game.title.first {
+                    let charIndex = String(describing: char)
+                    if let _ = games[charIndex] {
+                        games[charIndex]!.append(game)
+                    } else {
+                        games[charIndex] = [Game]()
+                        games[charIndex]!.append(game)
+                    }
+                }
+            }
+        }
+        
+        return games
+    }
+    
+    class func deleteAll() {
+        let fetchRequest = NSFetchRequest<GameManagedObject>(entityName: "Game")
+        fetchRequest.returnsObjectsAsFaults = false
+        do
+        {
+            let results = try context.fetch(fetchRequest as! NSFetchRequest<NSFetchRequestResult>)
+            for managedObject in results
+            {
+                let managedObjectData:NSManagedObject = managedObject as! NSManagedObject
+                context.delete(managedObjectData)
+            }
+        } catch let error as NSError {
+            print("Error deleting all data in Game : \(error) \(error.userInfo)")
+        }
     }
 
 }
