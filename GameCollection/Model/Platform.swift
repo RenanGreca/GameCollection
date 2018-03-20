@@ -12,10 +12,6 @@ import UIKit
 
 class Platform: Hashable {
     
-//    let unsupportedPlatforms = [
-//        "3DSE": "3DS",
-//    ]
-    
     var hashValue: Int {
         return self.id.hashValue
     }
@@ -24,6 +20,12 @@ class Platform: Hashable {
         return (lhs.id == rhs.id)
     }
     
+    // TODO: Aggregate related platforms. i.e. 3DS eShop -> 3DS; PlayStation Network (PS3) -> PS3
+    //    let unsupportedPlatforms = [
+    //        "3DSE": "3DS",
+    //    ]
+    
+    // TODO: Display platform with color depending on family of systems
     var color:UIColor {
         if let company = self.company?.name {
             switch(company) {
@@ -47,10 +49,6 @@ class Platform: Hashable {
     var company: Company?
     
     init(id:Int, abbreviation: String, name: String) {
-//        if self.unsupportedPlatforms.contains(where: { $0.key == abbreviation }) {
-//
-//        }
-        
         self.abbreviation = abbreviation
         self.name = name
         self.id = id
@@ -72,7 +70,8 @@ class Platform: Hashable {
         }
     }
     
-    // To avoid recursion with Game
+    // To avoid infinite recursion with Game(from:)
+    // There might be a better solution to this...
     init(with managedPlatform:PlatformManagedObject) {
         self.abbreviation = managedPlatform.abbreviation!
         self.name = managedPlatform.name!
@@ -92,8 +91,8 @@ class Platform: Hashable {
         managedPlatform.name = self.name
         managedPlatform.id = Int64(self.id)
         
+        // Asynchronously request company that owns the platform
         let gameGrabber = GameGrabber()
-        
         gameGrabber.findCompanyForPlatformWith(id: self.id) {
             company, error in
             

@@ -39,20 +39,21 @@ class GameCollectionTests: XCTestCase {
     func test00InsertGameAndFetch() {
         
         let guid = "3030-56733"
+        let platforms = [
+            [
+                Fields.title.rawValue: "Nintendo Switch",
+                Fields.platformAbbrev.rawValue: "NSW",
+                Fields.id.rawValue: 157
+            ]
+        ]
         let data: [String: Any] = [
-            Fields.title.rawValue: "Super Mario Odyssey",
+            Fields.name.rawValue: "Super Mario Odyssey",
             Fields.guid.rawValue: guid,
             Fields.image.rawValue: [
                 Fields.imageScale.rawValue: "https://www.giantbomb.com/api/image/scale_avatar/2972168-smoboxartfinal.jpg"
             ],
             Fields.releaseDate.rawValue: "2017-10-27 00:00:00",
-            Fields.platforms.rawValue: [
-                [
-                    Fields.title.rawValue: "Nintendo Switch",
-                    Fields.platformAbbrev.rawValue: "NSW",
-                    Fields.id.rawValue: 157
-                ]
-            ]
+            Fields.platforms.rawValue: platforms
         ]
         
         let game = Game(with: data)
@@ -106,7 +107,7 @@ class GameCollectionTests: XCTestCase {
             XCTAssertTrue(false, "Invalid filename/path.")
         }
         
-        let gamesLetters = [[Game]](Game.fetchAll().values)
+        let gamesLetters = [[Game]](Game.fetchAllInCollection().values)
         
         var gamesCount = 0
         for games in gamesLetters {
@@ -122,25 +123,26 @@ class GameCollectionTests: XCTestCase {
     
     func test12RemovePlatformFromGame() {
         let guid = "3030-56733"
+        let platforms = [
+            [
+                Fields.title.rawValue: "Nintendo Switch",
+                Fields.platformAbbrev.rawValue: "NSW",
+                Fields.id.rawValue: 0
+            ],
+            [
+                Fields.title.rawValue: "Wii U",
+                Fields.platformAbbrev.rawValue: "WiiU",
+                Fields.id.rawValue: 1
+            ]
+        ]
         let data: [String: Any] = [
-            Fields.title.rawValue: "The Legend of Zelda: Breath of the Wild",
+            Fields.name.rawValue: "The Legend of Zelda: Breath of the Wild",
             Fields.guid.rawValue: guid,
             Fields.image.rawValue: [
                 Fields.imageScale.rawValue: "https://www.giantbomb.com/api/image/scale_avatar/2972168-smoboxartfinal.jpg"
             ],
             Fields.releaseDate.rawValue: "2017-10-27 00:00:00",
-            Fields.platforms.rawValue: [
-                [
-                    Fields.title.rawValue: "Nintendo Switch",
-                    Fields.platformAbbrev.rawValue: "NSW",
-                    Fields.id.rawValue: 0
-                ],
-                [
-                    Fields.title.rawValue: "Wii U",
-                    Fields.platformAbbrev.rawValue: "WiiU",
-                    Fields.id.rawValue: 1
-                ]
-            ]
+            Fields.platforms.rawValue: platforms
         ]
         
         let game = Game(with: data)

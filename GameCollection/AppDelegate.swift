@@ -20,16 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if let tabBarController = window?.rootViewController as? UITabBarController {
             tabBarController.tabBar.tintColor = .green
-//            tabBarController.tabBar.barTintColor = .green
-            
-            if let first = tabBarController.tabBar.items?.first {
-                first.title = "Collection"
-            }
-                
-//            let first = FirstViewController()
-//            let second = SecondViewController()
-            
-//            tabBarController.viewControllers = [first, second]
         }
         
         return true

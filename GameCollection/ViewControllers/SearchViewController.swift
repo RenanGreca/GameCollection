@@ -10,8 +10,6 @@ import UIKit
 
 class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate {
     
-//    let searchController = UISearchController()
-    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
@@ -20,31 +18,27 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        self.navigationItem.searchController = self.searchController
-        
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.tableFooterView = UIView()
         
         self.activityIndicator.isHidden = true
         
+        // Configure SearchBar for the NavigationItem
         let searchBar = UISearchBar()
         searchBar.delegate = self
         searchBar.placeholder = "Search for a game..."
-//        searchBar.backgroundColor = UIColor.darkGray
-//        searchBar.textColor = UIColor.white
         searchBar.showsScopeBar = true
         searchBar.returnKeyType = .search
         self.navigationItem.titleView = searchBar
         
         self.tableView.reloadData()
         
-        // Do any additional setup after loading the view, typically from a nib.
-
     }
     
-    // MARK : SearchBar delegate
+    // MARK: - SearchBar delegate
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        // Clear TableView before searching
         self.gameGrabber.clear()
         self.tableView.reloadData()
         
@@ -58,16 +52,13 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDa
                 self.activityIndicator.isHidden = true
                 self.activityIndicator.stopAnimating()
                 self.tableView.reloadData()
+                
+                // TODO: Alert if error?
             }
         }
     }
     
-//    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-//        self.gameGrabber.clear()
-//        self.tableView.reloadData()
-//    }
-    
-    // MARK : TableView data source
+    // MARK: - TableView data source & delegate
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return gameGrabber.count
     }
@@ -80,6 +71,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDa
         let game = gameGrabber.list[indexPath.row]
         
         cell.textLabel?.text = game.title
+        // List of platform abbreviations
         cell.detailTextLabel?.text = (game.platforms.flatMap({ platform -> String in
                                          return platform.abbreviation
                                      }) as Array).joined(separator: ", ")

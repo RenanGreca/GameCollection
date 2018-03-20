@@ -26,6 +26,7 @@ class GameNotesViewController: UIViewController, UITextViewDelegate {
         
         self.textView.text = self.game!.notes
         
+        // Fake a placeholder text
         if textView.text == "" ||
            textView.text == "Write notes about your progress, your thoughts on the game and anything else here." {
             textView.text = "Write notes about your progress, your thoughts on the game and anything else here."
@@ -34,13 +35,16 @@ class GameNotesViewController: UIViewController, UITextViewDelegate {
             textView.textColor = .white
         }
 
-        // Do any additional setup after loading the view.
     }
     
+    // Save notes before leaving view
     override func viewWillDisappear(_ animated: Bool) {
         self.game!.notes = self.textView.text
     }
     
+    // MARK: - TextView delegate
+    
+    // These two functions are also for the fake placeholder
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.text == "Write notes about your progress, your thoughts on the game and anything else here." {
             textView.text = ""
@@ -67,15 +71,5 @@ class GameNotesViewController: UIViewController, UITextViewDelegate {
         self.navigationItem.backBarButtonItem?.title = ""
  
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

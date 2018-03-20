@@ -26,7 +26,7 @@ class Company {
     }
     
     init(with data:[String:Any]) {
-        if let name = data[Fields.title.rawValue] as? String {
+        if let name = data[Fields.name.rawValue] as? String {
             self.name = name
         } else {
             self.name = ""

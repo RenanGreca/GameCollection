@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Tried using this for a custom header title, but it didn't work out.
 class GameTitleView: UIView {
 
     /*

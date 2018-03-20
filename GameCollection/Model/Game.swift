@@ -10,6 +10,7 @@ import Foundation
 import CoreData
 import UIKit
 
+// Possible statuses for games.
 enum Status:Int {
     case notInCollection
     case backlog
@@ -35,9 +36,11 @@ enum Status:Int {
         }
     }
     
+    // This MUST be manually updated if the number of cases changes.
     static let count:Int = 6
 }
 
+// Abstraction layer for GameManagedObject.
 class Game: Hashable {
     
     var hashValue: Int {
@@ -53,23 +56,20 @@ class Game: Hashable {
     var boxart: String
     var notes: String {
         didSet {
+            // Save notes if game is in database.
             if let game = Game.fetchManagedWith(guid: self.guid) {
-                // Game already exists in database. Save notes.
-                
                 game.notes = self.notes
             }
         }
     }
     var status: Status {
         didSet {
+            // Save status if game is in database.
             if let game = Game.fetchManagedWith(guid: self.guid) {
-                // Game already exists in database. Save status.
-                
                 game.status = Int64(self.status.rawValue)
                 
+                // If new status is "Not in Collection", remove game from database
                 if self.status == .notInCollection {
-                    // If new status is Not in Collection, remove game from database
-                    
                     for platform in self.platforms {
                         if  let managedPlatform = Platform.fetchManagedWith(id: platform.id) {
                             game.removeFromPlatforms(managedPlatform)
@@ -82,9 +82,8 @@ class Game: Hashable {
     }
     var boxartImage: UIImage? {
         didSet {
+            // Save boxart if game is in database.
             if let game = Game.fetchManagedWith(guid: self.guid) {
-                // Game already exists in database. Save image.
-                
                 game.boxartData = UIImagePNGRepresentation(self.boxartImage!)
             }
         }
@@ -92,18 +91,9 @@ class Game: Hashable {
     var platforms: [Platform]
     var releaseDate: Date?
     
-    func save(notes: String) {
-        self.notes = notes
-        
-        
-    }
-    
-    func save(status: Status) {
-        
-    }
     
     init(with data:[String: Any]) {
-        if let title = data[Fields.title.rawValue] as? String {
+        if let title = data[Fields.name.rawValue] as? String {
             self.title = title
         } else {
             self.title = ""
@@ -136,8 +126,8 @@ class Game: Hashable {
         self.platforms = []
         if let platforms = data[Fields.platforms.rawValue] as? [[String: Any]] {
             for platform in platforms {
-                if let abbreviation = platform[Fields.platformAbbrev.rawValue] as? String,
-                   let platformName = platform[Fields.title.rawValue] as? String,
+                if let abbreviation = platform[Fields.abbreviation.rawValue] as? String,
+                   let platformName = platform[Fields.name.rawValue] as? String,
                    let platformId = platform[Fields.id.rawValue] as? Int {
                     
                     let platform = Platform(id: platformId, abbreviation: abbreviation, name: platformName)
@@ -177,7 +167,8 @@ class Game: Hashable {
         
     }
     
-    // To avoid recursion with Platform
+    // To avoid infinite recursion with Platform(from:)
+    // There might be a better solution to this...
     init(with managedGame:GameManagedObject) {
         self.title = managedGame.title!
         self.guid = managedGame.guid!
@@ -217,9 +208,6 @@ class Game: Hashable {
 
             game.addToPlatforms(managedPlatform)
             
-            if !self.platforms.contains(platform) {
-                self.platforms.append(platform)
-            }
         } else {
             // Game does not exist in database. Add it.
             
@@ -238,22 +226,27 @@ class Game: Hashable {
             }
             
             game.addToPlatforms(managedPlatform)
-            
-            if !self.platforms.contains(platform) {
-                self.platforms.append(platform)
-            }
 
+        }
+        
+        if !self.platforms.contains(platform) {
+            self.platforms.append(platform)
         }
     
     }
     
     func remove(platform: Platform) {
-        
+
+        // If both game and platform are in database, remove relationship.
         if  let managedPlatform = Platform.fetchManagedWith(id: platform.id),
             let game = Game.fetchManagedWith(guid: self.guid) {
-            // Both game and platform are in database. Remove relationship.
             
             game.removeFromPlatforms(managedPlatform)
+            
+            // Ideally, the game should be removed from the collection if it has no more platforms.
+            // This has been removed because it was causing a bug in the TableView coming from Search.
+            // TODO: Think of a way to do this avoiding the bug.
+            
 //            if let i = self.platforms.index(of: platform) {
 //                self.platforms.remove(at: i)
 //            }
@@ -304,6 +297,7 @@ class Game: Hashable {
         }
     }
     
+    // Collection is formed by all games without status .notInCollection or .wishlist
     class func fetchAllInCollection() -> [String: [Game]] {
         let fetchRequest = NSFetchRequest<GameManagedObject>(entityName: "Game")
         

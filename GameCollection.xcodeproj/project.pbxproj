@@ -14,11 +14,8 @@
 		3F2D929C205A9A7100E92244 /* GameCollection.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3F2D929A205A9A7100E92244 /* GameCollection.xcdatamodeld */; };
 		3F3C84F420600FEA00003F8C /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3C84F320600FEA00003F8C /* Company.swift */; };
 		3F3C84F6206012DC00003F8C /* GameNotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3C84F5206012DC00003F8C /* GameNotesViewController.swift */; };
-		3F3C84F8206015E800003F8C /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3C84F7206015E800003F8C /* Functions.swift */; };
 		3F4FA7E0205ADEA4002C45C9 /* SwiftHTTP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F4FA7E1205ADEA4002C45C9 /* SwiftHTTP.framework */; };
 		3F4FA7E3205AF922002C45C9 /* GameDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4FA7E2205AF922002C45C9 /* GameDetailsViewController.swift */; };
-		3F57ACA52060604E0074972B /* WishlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F57ACA42060604E0074972B /* WishlistViewController.swift */; };
-		3F5E12E0205C022000FE7B45 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5E12DF205C022000FE7B45 /* Extensions.swift */; };
 		3F5E12E2205C065500FE7B45 /* GameTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5E12E1205C065500FE7B45 /* GameTitleView.swift */; };
 		3F6A30AE2059C7F2002F11A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6A30AD2059C7F2002F11A7 /* AppDelegate.swift */; };
 		3F6A30B02059C7F2002F11A7 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6A30AF2059C7F2002F11A7 /* SearchViewController.swift */; };
@@ -59,11 +56,8 @@
 		3F2D929B205A9A7100E92244 /* GameCollection.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GameCollection.xcdatamodel; sourceTree = "<group>"; };
 		3F3C84F320600FEA00003F8C /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		3F3C84F5206012DC00003F8C /* GameNotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameNotesViewController.swift; sourceTree = "<group>"; };
-		3F3C84F7206015E800003F8C /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		3F4FA7E1205ADEA4002C45C9 /* SwiftHTTP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftHTTP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F4FA7E2205AF922002C45C9 /* GameDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailsViewController.swift; sourceTree = "<group>"; };
-		3F57ACA42060604E0074972B /* WishlistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistViewController.swift; sourceTree = "<group>"; };
-		3F5E12DF205C022000FE7B45 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		3F5E12E1205C065500FE7B45 /* GameTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTitleView.swift; sourceTree = "<group>"; };
 		3F6A30AA2059C7F2002F11A7 /* GameCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F6A30AD2059C7F2002F11A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -157,7 +151,6 @@
 				3FC2B39E2059CA6B005A2B09 /* SettingsViewController.swift */,
 				3F4FA7E2205AF922002C45C9 /* GameDetailsViewController.swift */,
 				3F3C84F5206012DC00003F8C /* GameNotesViewController.swift */,
-				3F57ACA42060604E0074972B /* WishlistViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -199,8 +192,6 @@
 			children = (
 				3F6A30AD2059C7F2002F11A7 /* AppDelegate.swift */,
 				3F2D9251205A97C200E92244 /* Constants.swift */,
-				3F5E12DF205C022000FE7B45 /* Extensions.swift */,
-				3F3C84F7206015E800003F8C /* Functions.swift */,
 				3F2D9298205A9A3B00E92244 /* ViewControllers */,
 				3F2D9297205A9A3400E92244 /* API */,
 				3F2D9296205A9A2B00E92244 /* Model */,
@@ -498,12 +489,9 @@
 				3F5E12E2205C065500FE7B45 /* GameTitleView.swift in Sources */,
 				3F2D9258205A993800E92244 /* Game.swift in Sources */,
 				3F73ED24205C2D55002F44EE /* Platform.swift in Sources */,
-				3F3C84F8206015E800003F8C /* Functions.swift in Sources */,
-				3F5E12E0205C022000FE7B45 /* Extensions.swift in Sources */,
 				3F6A30AE2059C7F2002F11A7 /* AppDelegate.swift in Sources */,
 				3F2D9256205A98D900E92244 /* GameGrabber.swift in Sources */,
 				3F6A30B02059C7F2002F11A7 /* SearchViewController.swift in Sources */,
-				3F57ACA52060604E0074972B /* WishlistViewController.swift in Sources */,
 				3F3C84F420600FEA00003F8C /* Company.swift in Sources */,
 				3FC2B39F2059CA6B005A2B09 /* SettingsViewController.swift in Sources */,
 			);

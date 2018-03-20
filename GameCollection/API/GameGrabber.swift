@@ -32,11 +32,15 @@ class GameGrabber {
     
     let apiKey = "5bd368f7ac8e636668e952a16f2e58fce297e516"
     
+    // Standard game search
     func searchForGamesWith(query: String, _ completion: CompletionClosure? ) {
         self.games = []
         
         var storedError: Error?
      
+        // For some reason, SwiftHTTP didn't like the params Dictionary.
+        // TODO: Find out why and try to fix it.
+        
 //        let params:[String: String] = [
 //            "api_key": apiKey,
 //            "format": "json",
@@ -48,23 +52,18 @@ class GameGrabber {
         
         let url = "\(apiURL)search/?api_key=\(apiKey)&format=json&limit=50&resources=game&field_list=guid%2Cimage%2Cname%2Coriginal_release_date%2Cplatforms%2Cpublisher&query=\(query.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!)"
         
-        let group = DispatchGroup()
-        
-        group.enter()
-
         HTTP.GET(url) {
             response in
             
             if let err = response.error {
                 storedError = err
             }
-//            print("opt finished: \(response.description)")
-//            print("data is: \(response.data)") // access the response of the data with response.data
             
+            // TODO: Check necessity of further error handling
             do {
                 let jsonObj = try JSONSerialization.jsonObject(with: response.data, options: .allowFragments) as? [String: Any]
                 if let json = jsonObj {
-                    if let results = json["results"] as? [[String: Any]] {
+                    if let results = json[Fields.results.rawValue] as? [[String: Any]] {
                         for result in results {
                             let game = Game(with: result)
                             self.games.append(game)
@@ -74,22 +73,19 @@ class GameGrabber {
             } catch let error {
                 storedError = error
             }
-            group.leave()
-        }
-        
-        group.notify(queue: DispatchQueue.main) {
+            
             completion?(storedError)
         }
         
     }
     
+    // Check the company that owns the platform
     func findCompanyForPlatformWith(id: Int, _ completion: CompanyClosure? ) {
         var company:Company?
         
         var storedError: Error?
                 
         let url = "\(apiURL)platform/\(id)/?api_key=\(apiKey)&format=json&field_list=company"
-        print(url)
         
         HTTP.GET(url) {
             response in
@@ -97,12 +93,12 @@ class GameGrabber {
             if let err = response.error {
                 storedError = err
             }
-            print("data is: \(response.data)") // access the response of the data with response.data
 
+            // TODO: Check necessity of further error handling
             do {
                 if  let json = try JSONSerialization.jsonObject(with: response.data, options: .allowFragments) as? [String: Any],
-                    let results = json["results"] as? [String: Any],
-                    let result = results["company"] as? [String: Any] {
+                    let results = json[Fields.results.rawValue] as? [String: Any],
+                    let result = results[Fields.company.rawValue] as? [String: Any] {
                         
                     company = Company(with: result)
 

@@ -16,8 +16,6 @@ class SettingsViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
     private func confirmClear() {
@@ -26,7 +24,9 @@ class SettingsViewController: UITableViewController {
         let yesAction = UIAlertAction(title: "Yes", style: .destructive) {
             action in
             
-            clearAllData()
+            Game.deleteAll()
+            Platform.deleteAll()
+            Company.deleteAll()
         }
         alertController.addAction(yesAction)
         
@@ -48,15 +48,5 @@ class SettingsViewController: UITableViewController {
             }
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

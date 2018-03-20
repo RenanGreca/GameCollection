@@ -12,7 +12,6 @@ import CoreData
 class CollectionViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var collectionTableView: UITableView!
-//    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var games: [String: [Game]]?
     
@@ -24,15 +23,12 @@ class CollectionViewController: UIViewController, UITableViewDataSource, UITable
         self.collectionTableView.delegate = self
         self.collectionTableView.tableFooterView = UIView()
         self.collectionTableView.sectionIndexColor = .green
-        
-//        self.activityIndicator.isHidden = true
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        
+        // The same ViewController is used for Collection and Wishlist, since the displays are nearly the same.
         if let title = self.title,
             title == "Wishlist" {
             self.reload(with: .wishlist)
@@ -42,7 +38,8 @@ class CollectionViewController: UIViewController, UITableViewDataSource, UITable
 
     }
     
-    func reload(with status: Status?) {
+    private func reload(with status: Status?) {
+        // Reload information depending on chosen status.
         
         DispatchQueue.global().sync {
             
@@ -55,6 +52,7 @@ class CollectionViewController: UIViewController, UITableViewDataSource, UITable
                 title = "Collection"
             }
             
+            // Gets first letters for alphabetical indexing
             self.indexSections = [String](self.games!.keys).sorted()
             
             DispatchQueue.main.async {
@@ -64,6 +62,8 @@ class CollectionViewController: UIViewController, UITableViewDataSource, UITable
             
         }
     }
+    
+    // MARK: - TableView data source & delegate
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -101,7 +101,7 @@ class CollectionViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        self.tableView(tableView, titleForHeaderInSection: section)
+        // Section titles are letters
         
         guard let sectionTitle = self.tableView(tableView, titleForHeaderInSection: section) else {
             return nil
@@ -127,6 +127,7 @@ class CollectionViewController: UIViewController, UITableViewDataSource, UITable
         
         let charIndex = self.indexSections[indexPath.section]
         
+        // List of platform abbreviations
         if let game = self.games?[charIndex]?[indexPath.row] {
             cell.textLabel?.text = game.title
             cell.detailTextLabel?.text = (game.platforms.flatMap({ platform -> String in
@@ -143,9 +144,11 @@ class CollectionViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     @IBAction func didTapFilterButton(_ sender: UIBarButtonItem) {
+        // Show filter options
         
         let alertController = UIAlertController(title: "Filter", message: "Find games with status:", preferredStyle: .actionSheet)
         
+        // Fake "All" status to show everything (minus wishlist)
         let action = UIAlertAction(title: "All", style: .default) {
             action in
             
@@ -156,6 +159,7 @@ class CollectionViewController: UIViewController, UITableViewDataSource, UITable
         for i in 0..<Status.count {
             let status = Status(rawValue: i)!
             
+            // These statuses are not filters
             if status == .notInCollection || status == .wishlist {
                 continue
             }
@@ -170,9 +174,11 @@ class CollectionViewController: UIViewController, UITableViewDataSource, UITable
         present(alertController, animated: true)
     }
     
-
+    // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "collectionToGameSegue" {
+        if  segue.identifier == "collectionToGameSegue" ||
+            segue.identifier == "wishlistToGameSegue" {
+            
             let gameViewController = segue.destination as! GameDetailsViewController
             let indexPath = self.collectionTableView.indexPath(for: sender as! UITableViewCell)!
             let charIndex = self.indexSections[indexPath.section]

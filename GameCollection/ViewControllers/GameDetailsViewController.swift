@@ -35,6 +35,7 @@ class GameDetailsViewController: UIViewController, UITableViewDataSource, UITabl
         self.platformsTableView.dataSource = self
         self.platformsTableView.delegate = self        
         
+        // Check if game is already in collection
         if let game = Game.fetchWith(guid: self.game!.guid) {
             
             for platform in game.platforms {
@@ -42,17 +43,14 @@ class GameDetailsViewController: UIViewController, UITableViewDataSource, UITabl
             }
             
             self.game?.status = game.status
-//            self.game = game
         }
         
+        // NavigationBar title changes according to game title
         self.configureTitleView(title: self.game!.title)
         
-//        self.statusButton.setTitle(self.game?.status.string, for: UIControlState.normal)
-//
-//        self.isCollection = (self.storedPlatforms.count > 0)
-//        self.notesButton.isEnabled = self.isCollection
-//        self.statusButton.isEnabled = self.isCollection
         
+        // Load art from database or save it from the Internet
+        self.boxartView.contentMode = .scaleAspectFit
         if let image = self.game?.boxartImage {
             self.boxartView.image = image
         } else {
@@ -80,8 +78,7 @@ class GameDetailsViewController: UIViewController, UITableViewDataSource, UITabl
             }
         }
             
-        
-        self.boxartView.contentMode = .scaleAspectFit
+        // We only want the year
         if let date = self.game?.releaseDate {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy"
@@ -91,10 +88,12 @@ class GameDetailsViewController: UIViewController, UITableViewDataSource, UITabl
             self.releaseDateLabel.text = ""
         }
         
+        // Notes and status buttons are dynamic according to status
         self.updateButtons(status: self.game!.status)
     }
     
     private func configureTitleView(title: String) {
+        // The display is a bit different depending on whether or not there's a colon in the title
         
         let gameTitleArray = title.split(separator: ":", maxSplits: 1)
         
@@ -115,6 +114,8 @@ class GameDetailsViewController: UIViewController, UITableViewDataSource, UITabl
         self.navigationItem.backBarButtonItem?.title = ""
         
     }
+    
+    // MARK: - TableView data source & delegate
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let game = self.game {
@@ -137,6 +138,7 @@ class GameDetailsViewController: UIViewController, UITableViewDataSource, UITabl
         cell.textLabel?.text = platform.name
         cell.accessoryType = .none
         
+        // If the game is already in the collection, check the related platforms
         if storedPlatforms.contains(where: { $0 == platform.id }) {
             cell.accessoryType = .checkmark
         }
@@ -147,12 +149,13 @@ class GameDetailsViewController: UIViewController, UITableViewDataSource, UITabl
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = self.platformsTableView.cellForRow(at: indexPath)!
         
-//        cell.isSelected = false
         self.platformsTableView.deselectRow(at: indexPath, animated: true)
         
         let platform = self.game!.platforms[indexPath.row]
 
+        
         if cell.accessoryType == .none {
+            // Game-Platform relationship is not in collection, add it
 
             cell.accessoryType = .checkmark
             self.game!.insert(platform: platform)
@@ -160,6 +163,7 @@ class GameDetailsViewController: UIViewController, UITableViewDataSource, UITabl
             self.updateButtons(status: self.game!.status)
 
         } else if cell.accessoryType == .checkmark {
+            // Game-Platform relationship is in collection, remove it
 
             cell.accessoryType = .none
             self.game!.remove(platform: platform)
@@ -167,6 +171,7 @@ class GameDetailsViewController: UIViewController, UITableViewDataSource, UITabl
                 self.storedPlatforms.remove(at: i)
             }
             
+            // If there are no more platforms, the game is no longer in the collection. (see Game.remove(platform:))
             if self.storedPlatforms.count == 0 {
                 self.updateButtons(status: .notInCollection)
             }
@@ -177,6 +182,8 @@ class GameDetailsViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     @IBAction func didTapStatusButton(_ sender: UIButton) {
+        // Show status options
+        
         let alertController = UIAlertController(title: "Select status", message: "What is this game's current status?", preferredStyle: .actionSheet)
         
         for i in 0..<Status.count {
@@ -196,7 +203,7 @@ class GameDetailsViewController: UIViewController, UITableViewDataSource, UITabl
         present(alertController, animated: true)
     }
     
-    func updateButtons(status: Status) {
+    private func updateButtons(status: Status) {
         let isCollection = (status != .notInCollection)
         self.isCollection = isCollection
         self.notesButton.isEnabled = isCollection
@@ -205,30 +212,6 @@ class GameDetailsViewController: UIViewController, UITableViewDataSource, UITabl
         
         self.platformsTableView.reloadData()
     }
-    
-    //    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        return "Available on: "
-//    }
-//    
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        
-//        guard let sectionTitle = self.tableView(tableView, titleForHeaderInSection: section) else {
-//            return nil
-//        }
-//        
-//        let label = UILabel()
-//        label.frame = CGRect(x: 20, y: 8, width: 320, height: 20)
-//        label.backgroundColor = .clear
-//        label.textColor = .white
-//        label.font = UIFont.boldSystemFont(ofSize: 16)
-//        label.text = sectionTitle
-//        
-//        let view = UIView()
-//        view.addSubview(label)
-//        
-//        return view
-//        
-//    }
 
     // MARK: - Navigation
 
