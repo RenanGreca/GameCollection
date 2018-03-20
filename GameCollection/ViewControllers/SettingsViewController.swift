@@ -30,9 +30,12 @@ class SettingsViewController: UITableViewController {
         }
         alertController.addAction(yesAction)
         
-        let noAction = UIAlertAction(title: "Cancel", style: .default)
-        alertController.addAction(noAction)
-        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) {
+            (alertAction: UIAlertAction!) in
+            alertController.dismiss(animated: true)
+        }
+        alertController.addAction(cancelAction)
+
         present(alertController, animated: true)
     }
     

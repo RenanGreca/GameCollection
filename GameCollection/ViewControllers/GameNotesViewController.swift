@@ -24,6 +24,7 @@ class GameNotesViewController: UIViewController, UITextViewDelegate {
 
         self.configureTitleView(title: self.game!.title)
         
+        self.textView.tintColor = .green
         self.textView.text = self.game!.notes
         
         // Fake a placeholder text

@@ -49,9 +49,11 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDa
             self.gameGrabber.searchForGamesWith(query: text) {
                 error in
                 
-                self.activityIndicator.isHidden = true
-                self.activityIndicator.stopAnimating()
-                self.tableView.reloadData()
+                DispatchQueue.main.async {
+                    self.activityIndicator.isHidden = true
+                    self.activityIndicator.stopAnimating()
+                    self.tableView.reloadData()
+                }
                 
                 // TODO: Alert if error?
             }

@@ -171,6 +171,12 @@ class CollectionViewController: UIViewController, UITableViewDataSource, UITable
             alertController.addAction(action)
         }
         
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) {
+            (alertAction: UIAlertAction!) in
+            alertController.dismiss(animated: true)
+        }
+        alertController.addAction(cancelAction)
+        
         present(alertController, animated: true)
     }
     

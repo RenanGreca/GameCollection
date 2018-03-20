@@ -41,8 +41,8 @@ class GameCollectionTests: XCTestCase {
         let guid = "3030-56733"
         let platforms = [
             [
-                Fields.title.rawValue: "Nintendo Switch",
-                Fields.platformAbbrev.rawValue: "NSW",
+                Fields.name.rawValue: "Nintendo Switch",
+                Fields.abbreviation.rawValue: "NSW",
                 Fields.id.rawValue: 157
             ]
         ]
@@ -125,13 +125,13 @@ class GameCollectionTests: XCTestCase {
         let guid = "3030-56733"
         let platforms = [
             [
-                Fields.title.rawValue: "Nintendo Switch",
-                Fields.platformAbbrev.rawValue: "NSW",
+                Fields.name.rawValue: "Nintendo Switch",
+                Fields.abbreviation.rawValue: "NSW",
                 Fields.id.rawValue: 0
             ],
             [
-                Fields.title.rawValue: "Wii U",
-                Fields.platformAbbrev.rawValue: "WiiU",
+                Fields.name.rawValue: "Wii U",
+                Fields.abbreviation.rawValue: "WiiU",
                 Fields.id.rawValue: 1
             ]
         ]

@@ -7,16 +7,31 @@
 		<key>GameCollection.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>4</integer>
+			<integer>0</integer>
+		</dict>
+		<key>GameCollectionDebug.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
 		</dict>
 		<key>GameCollectionTests.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>5</integer>
+			<integer>2</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>3F0C0DED20613FBF00D0E314</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3F0C0E0B206141DB00D0E314</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>3F6A30A92059C7F2002F11A7</key>
 		<dict>
 			<key>primary</key>
