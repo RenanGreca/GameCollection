@@ -10,9 +10,6 @@ import Foundation
 import CoreData
 import UIKit
 
-let apiURL = "https://www.giantbomb.com/api/"
-let apiKey = "5bd368f7ac8e636668e952a16f2e58fce297e516"
-
 enum Fields:String {
     case guid = "guid"
     case image = "image"

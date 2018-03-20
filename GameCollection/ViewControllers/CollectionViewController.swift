@@ -43,22 +43,23 @@ class CollectionViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func reload(with status: Status?) {
-//        self.activityIndicator.startAnimating()
         
         DispatchQueue.global().sync {
             
+            let title:String
             if let status = status {
                 self.games = Game.fetchAll(with: status)
+                title = status.string
             } else {
                 self.games = Game.fetchAllInCollection()
+                title = "Collection"
             }
             
             self.indexSections = [String](self.games!.keys).sorted()
             
             DispatchQueue.main.async {
-//                self.activityIndicator.isHidden = true
-//                self.activityIndicator.stopAnimating()
                 self.collectionTableView.reloadData()
+                self.navigationItem.title = title
             }
             
         }
@@ -165,8 +166,6 @@ class CollectionViewController: UIViewController, UITableViewDataSource, UITable
             }
             alertController.addAction(action)
         }
-        
-        
         
         present(alertController, animated: true)
     }

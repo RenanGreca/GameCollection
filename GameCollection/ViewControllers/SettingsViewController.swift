@@ -20,6 +20,22 @@ class SettingsViewController: UITableViewController {
         // Do any additional setup after loading the view.
     }
     
+    private func confirmClear() {
+        let alertController = UIAlertController(title: "Clear all data", message: "Are you sure you wish to delete all data from the app?", preferredStyle: .actionSheet)
+        
+        let yesAction = UIAlertAction(title: "Yes", style: .destructive) {
+            action in
+            
+            clearAllData()
+        }
+        alertController.addAction(yesAction)
+        
+        let noAction = UIAlertAction(title: "Cancel", style: .default)
+        alertController.addAction(noAction)
+        
+        present(alertController, animated: true)
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)
         
@@ -28,7 +44,7 @@ class SettingsViewController: UITableViewController {
         if let reuseIdentifier = cell?.reuseIdentifier {
             switch (ReuseIdentifier(rawValue: reuseIdentifier)!) {
             case .deleteAllData:
-                clearAllData()
+                self.confirmClear()
             }
         }
     }

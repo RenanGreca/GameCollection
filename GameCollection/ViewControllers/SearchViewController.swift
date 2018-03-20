@@ -45,6 +45,9 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDa
     
     // MARK : SearchBar delegate
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.gameGrabber.clear()
+        self.tableView.reloadData()
+        
         if let text = searchBar.text {
             searchBar.resignFirstResponder()
             self.activityIndicator.isHidden = false
@@ -59,10 +62,10 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDa
         }
     }
     
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        self.gameGrabber.clear()
-        self.tableView.reloadData()
-    }
+//    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+//        self.gameGrabber.clear()
+//        self.tableView.reloadData()
+//    }
     
     // MARK : TableView data source
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

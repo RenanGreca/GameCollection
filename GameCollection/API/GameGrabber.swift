@@ -28,6 +28,10 @@ class GameGrabber {
         self.games = []
     }
     
+    let apiURL = "https://www.giantbomb.com/api/"
+    
+    let apiKey = "5bd368f7ac8e636668e952a16f2e58fce297e516"
+    
     func searchForGamesWith(query: String, _ completion: CompletionClosure? ) {
         self.games = []
         
