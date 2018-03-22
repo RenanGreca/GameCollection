@@ -248,11 +248,13 @@ class Game: Hashable {
 
         }
         
+//        if self.status != .wishlist {
         game.addToOwnedPlatforms(managedPlatform)
         
         if !self.ownedPlatforms.contains(platform) {
             self.ownedPlatforms.append(platform)
         }
+//        }
         
         for platform in self.allPlatforms {
             // Update all platforms list
@@ -265,6 +267,11 @@ class Game: Hashable {
             }
             
             game.addToAllPlatforms(managedPlatform)
+            
+            if !self.allPlatforms.contains(platform) {
+                self.allPlatforms.append(platform)
+            }
+
         }
         
     

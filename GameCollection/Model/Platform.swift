@@ -42,7 +42,9 @@ class Platform: Hashable {
         "VITA": (name: "PlayStation Vita", abbreviation: "PSV"),
         
         "MAC" : (name: "PC", abbreviation: "PC"),
-        "LIN" : (name: "PC", abbreviation: "PC")
+        "LIN" : (name: "PC", abbreviation: "PC"),
+        
+        "NSW" : (name: "Nintendo Switch", abbreviation: "Switch")
         
     ]
     
@@ -83,7 +85,13 @@ class Platform: Hashable {
         self.name = managedPlatform.name!
         self.id = Int(managedPlatform.id)
         self.company = Company.from(platformName: name)
-        managedPlatform.company = Int64(self.company.rawValue)
+        managedPlatform.company = Int64(Company.from(platformName: name).rawValue)
+        
+        
+        if let platformTuple = Platform.relatedPlatforms[abbreviation] {
+            managedPlatform.abbreviation = platformTuple.abbreviation
+            managedPlatform.name = platformTuple.name
+        }
         
 //        if let company = managedPlatform.company {
 //            self.company = Company.from(name: company.name)
@@ -102,7 +110,12 @@ class Platform: Hashable {
         self.name = managedPlatform.name!
         self.id = Int(managedPlatform.id)
         self.company = Company.from(platformName: name)
-        managedPlatform.company = Int64(self.company.rawValue)
+        managedPlatform.company = Int64(Company.from(platformName: name).rawValue)
+        
+        if let platformTuple = Platform.relatedPlatforms[abbreviation] {
+            managedPlatform.abbreviation = platformTuple.abbreviation
+            managedPlatform.name = platformTuple.name
+        }
         
 //        if let company = managedPlatform.company {
 //            self.company = Company.from(name: company.name)
