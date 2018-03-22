@@ -19,7 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         if let tabBarController = window?.rootViewController as? UITabBarController {
-            tabBarController.tabBar.tintColor = .green
+            #if DEBUG
+                tabBarController.tabBar.tintColor = .red
+            #else
+                tabBarController.tabBar.tintColor = .green
+            #endif
         }
         
         return true

@@ -12,8 +12,10 @@ import CoreData
 class CollectionViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var collectionTableView: UITableView!
+    @IBOutlet weak var filterButton: UIBarButtonItem!
     
     var games: [String: [Game]]?
+    var platform: Platform?
     
     var indexSections: [String] = []
     
@@ -28,17 +30,24 @@ class CollectionViewController: UIViewController, UITableViewDataSource, UITable
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        // The same ViewController is used for Collection and Wishlist, since the displays are nearly the same.
-        if let title = self.title,
+        // The same ViewController is used for different lists, since the displays are nearly the same.
+        
+        if let platform = self.platform {
+            // In case it came from the platforms list
+            self.navigationItem.leftBarButtonItem = nil
+            self.reload(with: platform)
+        } else if let title = self.title,
             title == "Wishlist" {
+            // Wishlist
             self.reload(with: .wishlist)
         } else {
+            // Collection
             self.reload(with: nil)
         }
 
     }
     
-    private func reload(with status: Status?) {
+    private func reload(with status: Game.Status?) {
         // Reload information depending on chosen status.
         
         DispatchQueue.global().sync {
@@ -52,6 +61,25 @@ class CollectionViewController: UIViewController, UITableViewDataSource, UITable
                 title = "Collection"
             }
             
+            // Gets first letters for alphabetical indexing
+            self.indexSections = [String](self.games!.keys).sorted()
+            
+            DispatchQueue.main.async {
+                self.collectionTableView.reloadData()
+                self.navigationItem.title = title
+            }
+            
+        }
+    }
+    
+    private func reload(with platform: Platform) {
+        // Reload information depending on chosen status.
+        
+        DispatchQueue.global().sync {
+            
+            self.games = Game.fetchAll(with: platform)
+            let title = platform.name
+
             // Gets first letters for alphabetical indexing
             self.indexSections = [String](self.games!.keys).sorted()
             
@@ -120,27 +148,40 @@ class CollectionViewController: UIViewController, UITableViewDataSource, UITable
         return view
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        let charIndex = self.indexSections[indexPath.section]
+        if let game = self.games?[charIndex]?[indexPath.row] {
+
+            var numberOfExtraLines:CGFloat = CGFloat(game.ownedPlatforms.count / 7)
+            if game.ownedPlatforms.count % 7 == 0 {
+                numberOfExtraLines -= 1
+            }
+            
+            return 60.0 + (22.0 * numberOfExtraLines)
+        }
+        return 60.0
+
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cellIdentifier = "GameCollectionCell"
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+        let cellIdentifier = "GameTableViewCell"
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! GameTableViewCell
         
         let charIndex = self.indexSections[indexPath.section]
         
         // List of platform abbreviations
         if let game = self.games?[charIndex]?[indexPath.row] {
-            cell.textLabel?.text = game.title
-            cell.detailTextLabel?.text = (game.platforms.flatMap({ platform -> String in
-                return platform.abbreviation
-            }) as Array).joined(separator: ", ")
+            cell.gameTitle?.text = game.title
+            cell.draw(ownedPlatforms: game.ownedPlatforms)
         }
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = self.collectionTableView.cellForRow(at: indexPath)!
-        cell.isSelected = false
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     @IBAction func didTapFilterButton(_ sender: UIBarButtonItem) {
@@ -156,8 +197,8 @@ class CollectionViewController: UIViewController, UITableViewDataSource, UITable
         }
         alertController.addAction(action)
         
-        for i in 0..<Status.count {
-            let status = Status(rawValue: i)!
+        for i in 0..<Game.Status.count {
+            let status = Game.Status(rawValue: i)!
             
             // These statuses are not filters
             if status == .notInCollection || status == .wishlist {

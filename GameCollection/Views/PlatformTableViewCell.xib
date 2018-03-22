@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PlatformTableViewCell" rowHeight="60" id="KGk-i7-Jjw" customClass="PlatformTableViewCell" customModule="GameCollection" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="286" height="59.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nintendo Switch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sho-HL-prt">
+                        <rect key="frame" x="16" y="11" width="222" height="21"/>
+                        <fontDescription key="fontDescription" type="system" weight="black" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FDL-Qr-uKP">
+                        <rect key="frame" x="16" y="33" width="222" height="16"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WL7-9T-iSu">
+                                <rect key="frame" x="0.0" y="1" width="64" height="14.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nintendo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W4x-d6-aG3">
+                                        <rect key="frame" x="6" y="0.0" width="52" height="14.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="W4x-d6-aG3" secondAttribute="bottom" id="1Oj-xz-0jc"/>
+                                    <constraint firstItem="W4x-d6-aG3" firstAttribute="leading" secondItem="WL7-9T-iSu" secondAttribute="leading" constant="6" id="Qno-XI-1tI"/>
+                                    <constraint firstAttribute="trailing" secondItem="W4x-d6-aG3" secondAttribute="trailing" constant="6" id="Tpr-un-S4A"/>
+                                    <constraint firstItem="W4x-d6-aG3" firstAttribute="top" secondItem="WL7-9T-iSu" secondAttribute="top" id="aXC-gi-0tp"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="WL7-9T-iSu" firstAttribute="centerY" secondItem="FDL-Qr-uKP" secondAttribute="centerY" id="XXM-8k-ynS"/>
+                            <constraint firstItem="WL7-9T-iSu" firstAttribute="leading" secondItem="FDL-Qr-uKP" secondAttribute="leading" id="XcY-Ya-Cgf"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mXg-kW-tr0">
+                        <rect key="frame" x="246" y="21" width="40" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="krq-db-yQ0"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="FDL-Qr-uKP" secondAttribute="bottom" constant="10" id="72V-Lh-wsq"/>
+                    <constraint firstAttribute="trailing" secondItem="mXg-kW-tr0" secondAttribute="trailing" id="XpA-Pk-hcl"/>
+                    <constraint firstItem="FDL-Qr-uKP" firstAttribute="top" secondItem="sho-HL-prt" secondAttribute="bottom" constant="1" id="by1-pJ-vcl"/>
+                    <constraint firstItem="mXg-kW-tr0" firstAttribute="leading" secondItem="FDL-Qr-uKP" secondAttribute="trailing" constant="8" id="cGY-Wy-8r0"/>
+                    <constraint firstItem="sho-HL-prt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="dNO-X9-ojT"/>
+                    <constraint firstItem="FDL-Qr-uKP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="hkS-We-b61"/>
+                    <constraint firstItem="mXg-kW-tr0" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="j4W-zx-rGl"/>
+                    <constraint firstItem="sho-HL-prt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="pyR-N7-BNZ"/>
+                    <constraint firstItem="mXg-kW-tr0" firstAttribute="leading" secondItem="sho-HL-prt" secondAttribute="trailing" constant="8" id="zTe-Ri-0nQ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="companyView" destination="FDL-Qr-uKP" id="uIe-dJ-ffd"/>
+                <outlet property="gameCountLabel" destination="mXg-kW-tr0" id="r9H-eG-235"/>
+                <outlet property="titleLabel" destination="sho-HL-prt" id="OPK-ia-bLc"/>
+            </connections>
+            <point key="canvasLocation" x="74" y="68"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -2,13 +2,13 @@
 //  GameManagedObject+CoreDataProperties.swift
 //  
 //
-//  Created by Cinq Technologies on 19/03/18.
+//  Created by Cinq Technologies on 22/03/18.
 //
 //
 
 import Foundation
 import CoreData
-import GameCollection
+
 
 extension GameManagedObject {
 
@@ -21,25 +21,43 @@ extension GameManagedObject {
     @NSManaged public var guid: String?
     @NSManaged public var notes: String?
     @NSManaged public var releaseDate: NSDate?
-    @NSManaged public var title: String?
     @NSManaged public var status: Int64
-    @NSManaged public var platforms: NSSet?
+    @NSManaged public var title: String?
+    @NSManaged public var allPlatforms: NSSet?
+    @NSManaged public var ownedPlatforms: NSSet?
 
 }
 
-// MARK: Generated accessors for platforms
+// MARK: Generated accessors for allPlatforms
 extension GameManagedObject {
 
-    @objc(addPlatformsObject:)
-    @NSManaged public func addToPlatforms(_ value: PlatformManagedObject)
+    @objc(addAllPlatformsObject:)
+    @NSManaged public func addToAllPlatforms(_ value: PlatformManagedObject)
 
-    @objc(removePlatformsObject:)
-    @NSManaged public func removeFromPlatforms(_ value: PlatformManagedObject)
+    @objc(removeAllPlatformsObject:)
+    @NSManaged public func removeFromAllPlatforms(_ value: PlatformManagedObject)
 
-    @objc(addPlatforms:)
-    @NSManaged public func addToPlatforms(_ values: NSSet)
+    @objc(addAllPlatforms:)
+    @NSManaged public func addToAllPlatforms(_ values: NSSet)
 
-    @objc(removePlatforms:)
-    @NSManaged public func removeFromPlatforms(_ values: NSSet)
+    @objc(removeAllPlatforms:)
+    @NSManaged public func removeFromAllPlatforms(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for ownedPlatforms
+extension GameManagedObject {
+
+    @objc(addOwnedPlatformsObject:)
+    @NSManaged public func addToOwnedPlatforms(_ value: PlatformManagedObject)
+
+    @objc(removeOwnedPlatformsObject:)
+    @NSManaged public func removeFromOwnedPlatforms(_ value: PlatformManagedObject)
+
+    @objc(addOwnedPlatforms:)
+    @NSManaged public func addToOwnedPlatforms(_ values: NSSet)
+
+    @objc(removeOwnedPlatforms:)
+    @NSManaged public func removeFromOwnedPlatforms(_ values: NSSet)
 
 }

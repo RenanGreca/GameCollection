@@ -23,15 +23,15 @@ class GameCollectionTests: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        Game.deleteAll()
-        Platform.deleteAll()
-        Company.deleteAll()
+//        Game.deleteAll()
+//        Platform.deleteAll()
+//        Company.deleteAll()
     }
     
     override func tearDown() {
-        Game.deleteAll()
-        Platform.deleteAll()
-        Company.deleteAll()
+//        Game.deleteAll()
+//        Platform.deleteAll()
+//        Company.deleteAll()
         
         super.tearDown()
     }

@@ -33,8 +33,22 @@ class GameCollectionUITests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
-    func testSearch() {
-        
-    }
+//    func testSearch() {
+//        XCUIDevice.shared.orientation = .portrait
+//        
+//        let app = XCUIApplication()
+//        app.tabBars.buttons["Add games"].tap()
+//        app.navigationBars["Add games"].searchFields["Search for a game..."].tap()
+//        
+//        let element = app.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element(boundBy: 2)
+//        element/*@START_MENU_TOKEN@*/.swipeLeft()/*[[".swipeUp()",".swipeLeft()"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+//        element.tap()
+//        element.tap()
+//        element.tap()
+//        app.otherElements["candidate"].children(matching: .other).element(boundBy: 1).children(matching: .key).element(boundBy: 1).tap()
+//        element.tap()
+//        element.tap()
+//        
+//    }
     
 }

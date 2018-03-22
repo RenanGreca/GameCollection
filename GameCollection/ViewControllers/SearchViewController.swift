@@ -21,6 +21,8 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDa
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.tableFooterView = UIView()
+//        tableView.rowHeight = UITableViewAutomaticDimension
+//        tableView.estimatedRowHeight = 60
         
         self.activityIndicator.isHidden = true
         
@@ -32,8 +34,12 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDa
         searchBar.returnKeyType = .search
         self.navigationItem.titleView = searchBar
         
-        self.tableView.reloadData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
+        self.tableView.reloadData()
     }
     
     // MARK: - SearchBar delegate
@@ -65,18 +71,34 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDa
         return gameGrabber.count
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let game = gameGrabber.list[indexPath.row]
+
+        var numberOfExtraLines:CGFloat = CGFloat(game.allPlatforms.count / 7)
+        if game.allPlatforms.count % 7 == 0 {
+            numberOfExtraLines -= 1
+        }
+        
+        return 60.0 + (22.0 * numberOfExtraLines)
+        
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cellIdentifier = "GameSearchCell"
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+        let cellIdentifier = "GameTableViewCell"
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! GameTableViewCell
         
         let game = gameGrabber.list[indexPath.row]
         
-        cell.textLabel?.text = game.title
+        cell.gameTitle?.text = game.title
+        cell.draw(ownedPlatforms: game.ownedPlatforms, allPlatforms: game.allPlatforms)
+//        cell.accessoryType = .disclosureIndicator
+        
+//        cell.textLabel?.text = game.title
         // List of platform abbreviations
-        cell.detailTextLabel?.text = (game.platforms.flatMap({ platform -> String in
-                                         return platform.abbreviation
-                                     }) as Array).joined(separator: ", ")
+//        cell.detailTextLabel?.text = (game.platforms.flatMap({ platform -> String in
+//                                         return platform.abbreviation
+//                                     }) as Array).joined(separator: ", ")
         
         return cell
     }

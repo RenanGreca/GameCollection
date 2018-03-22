@@ -26,7 +26,7 @@ class SettingsViewController: UITableViewController {
             
             Game.deleteAll()
             Platform.deleteAll()
-            Company.deleteAll()
+//            Company.deleteAll()
         }
         alertController.addAction(yesAction)
         

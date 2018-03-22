@@ -12,6 +12,21 @@ import SwiftHTTP
 typealias CompletionClosure = (_ error: Error?) -> Void
 typealias CompanyClosure = (_ company: Company?, _ error: Error?) -> Void
 
+// Field keys for the API
+// Used for indexing JSON objects; safer than using String literals
+enum Fields:String {
+    case guid
+    case image
+    case imageScale = "small_url"
+    case name
+    case releaseDate = "original_release_date"
+    case platforms
+    case abbreviation
+    case id
+    case results
+    case company
+}
+
 class GameGrabber {
     
     private var games:[Game] = []
@@ -100,7 +115,7 @@ class GameGrabber {
                     let results = json[Fields.results.rawValue] as? [String: Any],
                     let result = results[Fields.company.rawValue] as? [String: Any] {
                         
-                    company = Company(with: result)
+                    company = Company.from(name: result[Fields.name.rawValue] as? String) //Company(with: result)
 
                 }
             } catch let error {

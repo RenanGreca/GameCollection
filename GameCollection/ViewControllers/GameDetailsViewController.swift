@@ -26,7 +26,7 @@ class GameDetailsViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet weak var notesButton: UIBarButtonItem!
     
     var game: Game?
-    var storedPlatforms: [Int] = []
+    var storedPlatforms: [Platform] = []
     var isCollection: Bool = false
     
     override func viewDidLoad() {
@@ -38,8 +38,8 @@ class GameDetailsViewController: UIViewController, UITableViewDataSource, UITabl
         // Check if game is already in collection
         if let game = Game.fetchWith(guid: self.game!.guid) {
             
-            for platform in game.platforms {
-                self.storedPlatforms.append(platform.id)
+            for platform in game.ownedPlatforms {
+                self.storedPlatforms.append(platform)
             }
             
             self.game?.status = game.status
@@ -119,7 +119,7 @@ class GameDetailsViewController: UIViewController, UITableViewDataSource, UITabl
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let game = self.game {
-            return game.platforms.count
+            return game.allPlatforms.count
         } else {
             return 0
         }
@@ -133,13 +133,13 @@ class GameDetailsViewController: UIViewController, UITableViewDataSource, UITabl
         let cellIdentifier = "AvailablePlatformsCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
         
-        let platform = self.game!.platforms[indexPath.row]
+        let platform = self.game!.allPlatforms[indexPath.row]
 
         cell.textLabel?.text = platform.name
         cell.accessoryType = .none
         
         // If the game is already in the collection, check the related platforms
-        if storedPlatforms.contains(where: { $0 == platform.id }) {
+        if storedPlatforms.contains(platform) {
             cell.accessoryType = .checkmark
         }
         
@@ -151,7 +151,7 @@ class GameDetailsViewController: UIViewController, UITableViewDataSource, UITabl
         
         self.platformsTableView.deselectRow(at: indexPath, animated: true)
         
-        let platform = self.game!.platforms[indexPath.row]
+        let platform = self.game!.allPlatforms[indexPath.row]
 
         
         if cell.accessoryType == .none {
@@ -159,7 +159,7 @@ class GameDetailsViewController: UIViewController, UITableViewDataSource, UITabl
 
             cell.accessoryType = .checkmark
             self.game!.insert(platform: platform)
-            self.storedPlatforms.append(platform.id)
+            self.storedPlatforms.append(platform)
             self.updateButtons(status: self.game!.status)
 
         } else if cell.accessoryType == .checkmark {
@@ -167,7 +167,7 @@ class GameDetailsViewController: UIViewController, UITableViewDataSource, UITabl
 
             cell.accessoryType = .none
             self.game!.remove(platform: platform)
-            if let i = self.storedPlatforms.index(of: platform.id) {
+            if let i = self.storedPlatforms.index(of: platform) {
                 self.storedPlatforms.remove(at: i)
             }
             
@@ -186,8 +186,8 @@ class GameDetailsViewController: UIViewController, UITableViewDataSource, UITabl
         
         let alertController = UIAlertController(title: "Select status", message: "What is this game's current status?", preferredStyle: .actionSheet)
         
-        for i in 0..<Status.count {
-            let status = Status(rawValue: i)!
+        for i in 0..<Game.Status.count {
+            let status = Game.Status(rawValue: i)!
             
             let action = UIAlertAction(title: status.string, style: .default) {
                 action in
@@ -209,12 +209,13 @@ class GameDetailsViewController: UIViewController, UITableViewDataSource, UITabl
         present(alertController, animated: true)
     }
     
-    private func updateButtons(status: Status) {
+    private func updateButtons(status: Game.Status) {
         let isCollection = (status != .notInCollection)
         self.isCollection = isCollection
         self.notesButton.isEnabled = isCollection
         self.statusButton.isEnabled = isCollection
         self.statusButton.setTitle(status.string, for: UIControlState.normal)
+        self.storedPlatforms = self.game!.ownedPlatforms
         
         self.platformsTableView.reloadData()
     }
