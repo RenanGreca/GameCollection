@@ -12,6 +12,7 @@ import CoreData
 class CollectionViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var collectionTableView: UITableView!
+    @IBOutlet weak var filterControl: UISegmentedControl!
     @IBOutlet weak var filterButton: UIBarButtonItem!
     
     var games: [String: [Game]]?
@@ -34,7 +35,7 @@ class CollectionViewController: UIViewController, UITableViewDataSource, UITable
         
         if let platform = self.platform {
             // In case it came from the platforms list
-            self.navigationItem.leftBarButtonItem = nil
+//            self.navigationItem.leftBarButtonItem = nil
             self.reload(with: platform)
         } else if let title = self.title,
             title == "Wishlist" {
@@ -42,7 +43,8 @@ class CollectionViewController: UIViewController, UITableViewDataSource, UITable
             self.reload(with: .wishlist)
         } else {
             // Collection
-            self.reload(with: nil)
+            self.didChangeFilter(self.filterControl)
+//            self.reload(with: nil)
         }
 
     }
@@ -50,7 +52,7 @@ class CollectionViewController: UIViewController, UITableViewDataSource, UITable
     private func reload(with status: Game.Status?) {
         // Reload information depending on chosen status.
         
-        DispatchQueue.global().sync {
+        DispatchQueue.global().async {
             
             let title:String
             if let status = status {
@@ -182,6 +184,20 @@ class CollectionViewController: UIViewController, UITableViewDataSource, UITable
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    @IBAction func didChangeFilter(_ sender: UISegmentedControl) {
+        let status = Game.Status(rawValue: sender.selectedSegmentIndex)
+
+        if let status = status, status == .notInCollection {
+            self.reload(with: nil)
+        } else {
+            self.reload(with: status)
+        }
+        
+//        switch status {
+//
+//        }
     }
     
     @IBAction func didTapFilterButton(_ sender: UIBarButtonItem) {

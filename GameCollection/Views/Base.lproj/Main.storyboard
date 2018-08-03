@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14295.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14270.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -65,7 +65,7 @@
                                                     <rect key="frame" x="16" y="33" width="310" height="16"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2J6-C6-4in">
-                                                            <rect key="frame" x="0.0" y="0.0" width="40" height="16"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="40.5" height="16"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NSW" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6xq-vN-spz">
                                                                     <rect key="frame" x="6" y="0.0" width="28.5" height="16"/>
@@ -164,7 +164,7 @@
                                                     <rect key="frame" x="16" y="33" width="310" height="16"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M3n-Ar-rTB">
-                                                            <rect key="frame" x="0.0" y="0.0" width="40" height="16"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="40.5" height="16"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NSW" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B4e-f9-qnh">
                                                                     <rect key="frame" x="6" y="0.0" width="28.5" height="16"/>
@@ -258,7 +258,7 @@
                                 <rect key="frame" x="16" y="80" width="343" height="200"/>
                                 <subviews>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="zI1-RC-zTL">
-                                        <rect key="frame" x="153" y="82" width="37" height="37"/>
+                                        <rect key="frame" x="153" y="81.5" width="37" height="37"/>
                                     </activityIndicatorView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TWc-Bv-BMO">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="200"/>
@@ -282,7 +282,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yjm-Lb-qKt">
-                                <rect key="frame" x="112" y="317" width="149.5" height="30"/>
+                                <rect key="frame" x="113" y="317" width="149.5" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M2Z-26-wT2">
                                         <rect key="frame" x="8" y="0.0" width="59.5" height="30"/>
@@ -291,7 +291,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hUN-EB-LZu">
-                                        <rect key="frame" x="75.5" y="0.5" width="66" height="30"/>
+                                        <rect key="frame" x="75.5" y="0.0" width="66" height="30"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="tintColor" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
                                         <state key="normal" title="Backlog"/>
@@ -359,8 +359,8 @@
                         <viewLayoutGuide key="safeArea" id="2YZ-OJ-gjF"/>
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="2Fa-1Z-d0y">
-                        <view key="titleView" contentMode="scaleToFill" id="Xy4-Xm-J2d" customClass="GameTitleView" customModule="GameCollection" customModuleProvider="target">
-                            <rect key="frame" x="33" y="0.0" width="279" height="44"/>
+                        <view key="titleView" contentMode="scaleToFill" misplaced="YES" id="Xy4-Xm-J2d" customClass="GameTitleView" customModule="GameCollection" customModuleProvider="target">
+                            <rect key="frame" x="50" y="0.0" width="262" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Legend of Zelda:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Kd-r5-MbQ">
@@ -449,7 +449,7 @@
                         <nil key="title"/>
                         <barButtonItem key="backBarButtonItem" title="Save" id="lZB-bD-vL0"/>
                         <view key="titleView" contentMode="scaleToFill" id="oz3-dr-vwn" customClass="GameTitleView" customModule="GameCollection" customModuleProvider="target">
-                            <rect key="frame" x="71" y="0.0" width="279" height="44"/>
+                            <rect key="frame" x="50" y="0.0" width="279" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Legend of Zelda:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="263-9y-rh2">
@@ -526,7 +526,7 @@
                                                     <rect key="frame" x="16" y="33" width="310" height="16"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rBt-FO-pXd">
-                                                            <rect key="frame" x="0.0" y="0.0" width="40" height="16"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="40.5" height="16"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NSW" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qjC-J5-zHJ">
                                                                     <rect key="frame" x="6" y="0.0" width="28.5" height="16"/>
@@ -585,15 +585,26 @@
                         <viewLayoutGuide key="safeArea" id="1SJ-jE-5JV"/>
                     </view>
                     <navigationItem key="navigationItem" title="Collection" id="qMn-0H-TSg">
-                        <barButtonItem key="leftBarButtonItem" image="filter" largeContentSizeImage="Filter" id="BpU-UE-YzK">
-                            <connections>
-                                <action selector="didTapFilterButton:" destination="5I0-YD-99H" id="gNZ-6h-akS"/>
-                            </connections>
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="OQf-jN-hzM">
+                            <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="MlD-cN-7TH">
+                                <rect key="frame" x="16" y="7" width="345" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="All"/>
+                                    <segment title="" image="layers"/>
+                                    <segment title="" image="game_controller"/>
+                                    <segment title="" image="checked"/>
+                                    <segment title="" image="cancel"/>
+                                </segments>
+                                <connections>
+                                    <action selector="didChangeFilter:" destination="5I0-YD-99H" eventType="valueChanged" id="fJ8-rs-y6C"/>
+                                </connections>
+                            </segmentedControl>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionTableView" destination="rdB-Sl-apX" id="HfD-I6-rCy"/>
-                        <outlet property="filterButton" destination="BpU-UE-YzK" id="tcY-Fp-CwI"/>
+                        <outlet property="filterControl" destination="MlD-cN-7TH" id="lPt-bs-wYa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jg2-jw-LZs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -700,7 +711,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RkK-Fx-mHO">
-                                                    <rect key="frame" x="16" y="33" width="278" height="16"/>
+                                                    <rect key="frame" x="16" y="33" width="278" height="16.5"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e3m-kD-RPl">
                                                             <rect key="frame" x="0.0" y="1" width="64" height="14.5"/>
@@ -883,10 +894,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Filter" width="16" height="16"/>
         <image name="Notes" width="16" height="16"/>
+        <image name="cancel" width="30" height="30"/>
+        <image name="checked" width="30" height="30"/>
         <image name="create_new" width="30" height="30"/>
-        <image name="filter" width="30" height="30"/>
         <image name="game_controller" width="30" height="30"/>
         <image name="layers" width="30" height="30"/>
         <image name="search" width="30" height="30"/>
@@ -895,6 +906,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="3lE-xd-kDc"/>
-        <segue reference="JXo-ZI-Kw4"/>
+        <segue reference="nf5-FA-JTf"/>
     </inferredMetricsTieBreakers>
 </document>
