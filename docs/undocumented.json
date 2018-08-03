@@ -1,0 +1,1685 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/API/GameGrabber.swift",
+      "line": 12,
+      "symbol": "CompletionClosure",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/API/GameGrabber.swift",
+      "line": 13,
+      "symbol": "CompanyClosure",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/API/GameGrabber.swift",
+      "line": 17,
+      "symbol": "Fields",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/API/GameGrabber.swift",
+      "line": 18,
+      "symbol": "Fields.guid",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/API/GameGrabber.swift",
+      "line": 19,
+      "symbol": "Fields.image",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/API/GameGrabber.swift",
+      "line": 20,
+      "symbol": "Fields.imageScale",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/API/GameGrabber.swift",
+      "line": 21,
+      "symbol": "Fields.name",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/API/GameGrabber.swift",
+      "line": 22,
+      "symbol": "Fields.releaseDate",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/API/GameGrabber.swift",
+      "line": 23,
+      "symbol": "Fields.platforms",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/API/GameGrabber.swift",
+      "line": 24,
+      "symbol": "Fields.abbreviation",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/API/GameGrabber.swift",
+      "line": 25,
+      "symbol": "Fields.id",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/API/GameGrabber.swift",
+      "line": 26,
+      "symbol": "Fields.results",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/API/GameGrabber.swift",
+      "line": 27,
+      "symbol": "Fields.company",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/API/GameGrabber.swift",
+      "line": 30,
+      "symbol": "GameGrabber",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/API/GameGrabber.swift",
+      "line": 34,
+      "symbol": "GameGrabber.count",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/API/GameGrabber.swift",
+      "line": 38,
+      "symbol": "GameGrabber.list",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/API/GameGrabber.swift",
+      "line": 42,
+      "symbol": "GameGrabber.clear()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/API/GameGrabber.swift",
+      "line": 46,
+      "symbol": "GameGrabber.apiURL",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/API/GameGrabber.swift",
+      "line": 48,
+      "symbol": "GameGrabber.apiKey",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/API/GameGrabber.swift",
+      "line": 105,
+      "symbol": "GameGrabber.findCompanyForPlatformWith(id:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/AppDelegate.swift",
+      "line": 13,
+      "symbol": "AppDelegate",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/AppDelegate.swift",
+      "line": 15,
+      "symbol": "AppDelegate.window",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/AppDelegate.swift",
+      "line": 18,
+      "symbol": "AppDelegate.application(_:didFinishLaunchingWithOptions:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/AppDelegate.swift",
+      "line": 32,
+      "symbol": "AppDelegate.applicationWillResignActive(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/AppDelegate.swift",
+      "line": 37,
+      "symbol": "AppDelegate.applicationDidEnterBackground(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/AppDelegate.swift",
+      "line": 42,
+      "symbol": "AppDelegate.applicationWillEnterForeground(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/AppDelegate.swift",
+      "line": 46,
+      "symbol": "AppDelegate.applicationDidBecomeActive(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/AppDelegate.swift",
+      "line": 50,
+      "symbol": "AppDelegate.applicationWillTerminate(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/AppDelegate.swift",
+      "line": 58,
+      "symbol": "AppDelegate.persistentContainer",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/AppDelegate.swift",
+      "line": 87,
+      "symbol": "AppDelegate.saveContext()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Constants.swift",
+      "line": 14,
+      "symbol": "context",
+      "symbol_kind": "source.lang.swift.decl.var.global",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Model/Company.swift",
+      "line": 13,
+      "symbol": "Company",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Model/Company.swift",
+      "line": 15,
+      "symbol": "Company.nintendo",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Model/Company.swift",
+      "line": 16,
+      "symbol": "Company.sony",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Model/Company.swift",
+      "line": 17,
+      "symbol": "Company.microsoft",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Model/Company.swift",
+      "line": 18,
+      "symbol": "Company.sega",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Model/Company.swift",
+      "line": 19,
+      "symbol": "Company.other",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Model/Company.swift",
+      "line": 23,
+      "symbol": "Company.from(name:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Model/Company.swift",
+      "line": 41,
+      "symbol": "Company.from(platformName:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Model/Company.swift",
+      "line": 72,
+      "symbol": "Company.name",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Model/Company.swift",
+      "line": 88,
+      "symbol": "Company.color",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Model/Game.swift",
+      "line": 14,
+      "symbol": "Game",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Model/Game.swift",
+      "line": 25,
+      "symbol": "Game.Status",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Model/Game.swift",
+      "line": 26,
+      "symbol": "Game.Status.notInCollection",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Model/Game.swift",
+      "line": 27,
+      "symbol": "Game.Status.backlog",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Model/Game.swift",
+      "line": 28,
+      "symbol": "Game.Status.playing",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Model/Game.swift",
+      "line": 29,
+      "symbol": "Game.Status.completed",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Model/Game.swift",
+      "line": 30,
+      "symbol": "Game.Status.abandoned",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Model/Game.swift",
+      "line": 31,
+      "symbol": "Game.Status.wishlist",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Model/Game.swift",
+      "line": 33,
+      "symbol": "Game.Status.string",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Model/Game.swift",
+      "line": 55,
+      "symbol": "Game.title",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Model/Game.swift",
+      "line": 56,
+      "symbol": "Game.guid",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Model/Game.swift",
+      "line": 57,
+      "symbol": "Game.boxart",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Model/Game.swift",
+      "line": 58,
+      "symbol": "Game.notes",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Model/Game.swift",
+      "line": 66,
+      "symbol": "Game.status",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Model/Game.swift",
+      "line": 85,
+      "symbol": "Game.boxartImage",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Model/Game.swift",
+      "line": 93,
+      "symbol": "Game.allPlatforms",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Model/Game.swift",
+      "line": 94,
+      "symbol": "Game.ownedPlatforms",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Model/Game.swift",
+      "line": 95,
+      "symbol": "Game.releaseDate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Model/Game.swift",
+      "line": 98,
+      "symbol": "Game.init(with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Model/Game.swift",
+      "line": 155,
+      "symbol": "Game.init(from:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Model/Game.swift",
+      "line": 191,
+      "symbol": "Game.init(with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Model/Game.swift",
+      "line": 217,
+      "symbol": "Game.insert(platform:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Model/Game.swift",
+      "line": 281,
+      "symbol": "Game.remove(platform:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Model/Game.swift",
+      "line": 308,
+      "symbol": "Game.fetchOne()",
+      "symbol_kind": "source.lang.swift.decl.function.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Model/Game.swift",
+      "line": 320,
+      "symbol": "Game.fetchWith(guid:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Model/Game.swift",
+      "line": 329,
+      "symbol": "Game.fetchManagedWith(guid:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Model/Game.swift",
+      "line": 344,
+      "symbol": "Game.fetchAllInCollection()",
+      "symbol_kind": "source.lang.swift.decl.function.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Model/Game.swift",
+      "line": 373,
+      "symbol": "Game.fetchAll(with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Model/Game.swift",
+      "line": 402,
+      "symbol": "Game.fetchAll(with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Model/Game.swift",
+      "line": 435,
+      "symbol": "Game.deleteAll()",
+      "symbol_kind": "source.lang.swift.decl.function.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Model/Platform.swift",
+      "line": 13,
+      "symbol": "PlatformTuple",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Model/Platform.swift",
+      "line": 15,
+      "symbol": "Platform",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Model/Platform.swift",
+      "line": 26,
+      "symbol": "Platform.relatedPlatforms",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Model/Platform.swift",
+      "line": 51,
+      "symbol": "Platform.abbreviation",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Model/Platform.swift",
+      "line": 52,
+      "symbol": "Platform.name",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Model/Platform.swift",
+      "line": 53,
+      "symbol": "Platform.id",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Model/Platform.swift",
+      "line": 54,
+      "symbol": "Platform.games",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Model/Platform.swift",
+      "line": 55,
+      "symbol": "Platform.company",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Model/Platform.swift",
+      "line": 57,
+      "symbol": "Platform.init(id:abbreviation:name:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Model/Platform.swift",
+      "line": 83,
+      "symbol": "Platform.init(from:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Model/Platform.swift",
+      "line": 108,
+      "symbol": "Platform.init(with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Model/Platform.swift",
+      "line": 127,
+      "symbol": "Platform.insert()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Model/Platform.swift",
+      "line": 161,
+      "symbol": "Platform.fetchWith(id:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Model/Platform.swift",
+      "line": 169,
+      "symbol": "Platform.fetchManagedWith(id:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Model/Platform.swift",
+      "line": 183,
+      "symbol": "Platform.fetchWith(abbreviation:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Model/Platform.swift",
+      "line": 191,
+      "symbol": "Platform.fetchManagedWith(abbreviation:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Model/Platform.swift",
+      "line": 205,
+      "symbol": "Platform.fetchAllInCollection()",
+      "symbol_kind": "source.lang.swift.decl.function.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Model/Platform.swift",
+      "line": 229,
+      "symbol": "Platform.deleteAll()",
+      "symbol_kind": "source.lang.swift.decl.function.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/CollectionViewController.swift",
+      "line": 12,
+      "symbol": "CollectionViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/CollectionViewController.swift",
+      "line": 14,
+      "symbol": "CollectionViewController.collectionTableView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/CollectionViewController.swift",
+      "line": 15,
+      "symbol": "CollectionViewController.filterButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/CollectionViewController.swift",
+      "line": 17,
+      "symbol": "CollectionViewController.games",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/CollectionViewController.swift",
+      "line": 18,
+      "symbol": "CollectionViewController.platform",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/CollectionViewController.swift",
+      "line": 20,
+      "symbol": "CollectionViewController.indexSections",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/CollectionViewController.swift",
+      "line": 22,
+      "symbol": "CollectionViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/CollectionViewController.swift",
+      "line": 30,
+      "symbol": "CollectionViewController.viewWillAppear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/CollectionViewController.swift",
+      "line": 96,
+      "symbol": "CollectionViewController.tableView(_:numberOfRowsInSection:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/CollectionViewController.swift",
+      "line": 107,
+      "symbol": "CollectionViewController.numberOfSections(in:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/CollectionViewController.swift",
+      "line": 111,
+      "symbol": "CollectionViewController.tableView(_:titleForHeaderInSection:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/CollectionViewController.swift",
+      "line": 115,
+      "symbol": "CollectionViewController.sectionIndexTitles(for:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/CollectionViewController.swift",
+      "line": 119,
+      "symbol": "CollectionViewController.tableView(_:sectionForSectionIndexTitle:at:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/CollectionViewController.swift",
+      "line": 123,
+      "symbol": "CollectionViewController.tableView(_:heightForHeaderInSection:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/CollectionViewController.swift",
+      "line": 127,
+      "symbol": "CollectionViewController.tableView(_:heightForFooterInSection:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/CollectionViewController.swift",
+      "line": 131,
+      "symbol": "CollectionViewController.tableView(_:viewForHeaderInSection:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/CollectionViewController.swift",
+      "line": 151,
+      "symbol": "CollectionViewController.tableView(_:heightForRowAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/CollectionViewController.swift",
+      "line": 167,
+      "symbol": "CollectionViewController.tableView(_:cellForRowAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/CollectionViewController.swift",
+      "line": 183,
+      "symbol": "CollectionViewController.tableView(_:didSelectRowAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/CollectionViewController.swift",
+      "line": 187,
+      "symbol": "CollectionViewController.didTapFilterButton(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/CollectionViewController.swift",
+      "line": 225,
+      "symbol": "CollectionViewController.prepare(for:sender:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/GameDetailsViewController.swift",
+      "line": 25,
+      "symbol": "GameDetailsViewController.imageContainerView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/GameDetailsViewController.swift",
+      "line": 26,
+      "symbol": "GameDetailsViewController.boxartView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/GameDetailsViewController.swift",
+      "line": 27,
+      "symbol": "GameDetailsViewController.releaseDateLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/GameDetailsViewController.swift",
+      "line": 28,
+      "symbol": "GameDetailsViewController.platformsTableView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/GameDetailsViewController.swift",
+      "line": 30,
+      "symbol": "GameDetailsViewController.gameTitleView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/GameDetailsViewController.swift",
+      "line": 31,
+      "symbol": "GameDetailsViewController.titleToTop",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/GameDetailsViewController.swift",
+      "line": 32,
+      "symbol": "GameDetailsViewController.titleLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/GameDetailsViewController.swift",
+      "line": 33,
+      "symbol": "GameDetailsViewController.subtitleLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/GameDetailsViewController.swift",
+      "line": 35,
+      "symbol": "GameDetailsViewController.activityIndicator",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/GameDetailsViewController.swift",
+      "line": 36,
+      "symbol": "GameDetailsViewController.statusButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/GameDetailsViewController.swift",
+      "line": 37,
+      "symbol": "GameDetailsViewController.notesButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/GameDetailsViewController.swift",
+      "line": 39,
+      "symbol": "GameDetailsViewController.game",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/GameDetailsViewController.swift",
+      "line": 40,
+      "symbol": "GameDetailsViewController.storedPlatforms",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/GameDetailsViewController.swift",
+      "line": 45,
+      "symbol": "GameDetailsViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/GameDetailsViewController.swift",
+      "line": 133,
+      "symbol": "GameDetailsViewController.tableView(_:numberOfRowsInSection:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/GameDetailsViewController.swift",
+      "line": 141,
+      "symbol": "GameDetailsViewController.numberOfSections(in:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/GameDetailsViewController.swift",
+      "line": 145,
+      "symbol": "GameDetailsViewController.tableView(_:cellForRowAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/GameDetailsViewController.swift",
+      "line": 162,
+      "symbol": "GameDetailsViewController.tableView(_:didSelectRowAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/GameDetailsViewController.swift",
+      "line": 197,
+      "symbol": "GameDetailsViewController.didTapStatusButton(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/GameDetailsViewController.swift",
+      "line": 239,
+      "symbol": "GameDetailsViewController.prepare(for:sender:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/GameNotesViewController.swift",
+      "line": 11,
+      "symbol": "GameNotesViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/GameNotesViewController.swift",
+      "line": 13,
+      "symbol": "GameNotesViewController.textView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/GameNotesViewController.swift",
+      "line": 14,
+      "symbol": "GameNotesViewController.gameTitleView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/GameNotesViewController.swift",
+      "line": 16,
+      "symbol": "GameNotesViewController.titleLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/GameNotesViewController.swift",
+      "line": 17,
+      "symbol": "GameNotesViewController.subtitleLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/GameNotesViewController.swift",
+      "line": 18,
+      "symbol": "GameNotesViewController.titleToTop",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/GameNotesViewController.swift",
+      "line": 20,
+      "symbol": "GameNotesViewController.game",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/GameNotesViewController.swift",
+      "line": 22,
+      "symbol": "GameNotesViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/GameNotesViewController.swift",
+      "line": 42,
+      "symbol": "GameNotesViewController.viewWillDisappear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/GameNotesViewController.swift",
+      "line": 49,
+      "symbol": "GameNotesViewController.textViewDidBeginEditing(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/GameNotesViewController.swift",
+      "line": 58,
+      "symbol": "GameNotesViewController.textViewDidEndEditing(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/PlatformsViewController.swift",
+      "line": 11,
+      "symbol": "PlatformsViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/PlatformsViewController.swift",
+      "line": 13,
+      "symbol": "PlatformsViewController.tableView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/PlatformsViewController.swift",
+      "line": 15,
+      "symbol": "PlatformsViewController.platforms",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/PlatformsViewController.swift",
+      "line": 17,
+      "symbol": "PlatformsViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/PlatformsViewController.swift",
+      "line": 26,
+      "symbol": "PlatformsViewController.viewWillAppear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/PlatformsViewController.swift",
+      "line": 42,
+      "symbol": "PlatformsViewController.tableView(_:numberOfRowsInSection:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/PlatformsViewController.swift",
+      "line": 47,
+      "symbol": "PlatformsViewController.numberOfSections(in:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/PlatformsViewController.swift",
+      "line": 51,
+      "symbol": "PlatformsViewController.tableView(_:heightForRowAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/PlatformsViewController.swift",
+      "line": 56,
+      "symbol": "PlatformsViewController.tableView(_:cellForRowAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/PlatformsViewController.swift",
+      "line": 70,
+      "symbol": "PlatformsViewController.tableView(_:didSelectRowAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/PlatformsViewController.swift",
+      "line": 77,
+      "symbol": "PlatformsViewController.prepare(for:sender:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/SearchViewController.swift",
+      "line": 11,
+      "symbol": "SearchViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/SearchViewController.swift",
+      "line": 13,
+      "symbol": "SearchViewController.tableView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/SearchViewController.swift",
+      "line": 14,
+      "symbol": "SearchViewController.activityIndicator",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/SearchViewController.swift",
+      "line": 16,
+      "symbol": "SearchViewController.gameGrabber",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/SearchViewController.swift",
+      "line": 18,
+      "symbol": "SearchViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/SearchViewController.swift",
+      "line": 39,
+      "symbol": "SearchViewController.viewWillAppear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/SearchViewController.swift",
+      "line": 46,
+      "symbol": "SearchViewController.searchBarSearchButtonClicked(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/SearchViewController.swift",
+      "line": 70,
+      "symbol": "SearchViewController.tableView(_:numberOfRowsInSection:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/SearchViewController.swift",
+      "line": 74,
+      "symbol": "SearchViewController.tableView(_:heightForRowAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/SearchViewController.swift",
+      "line": 86,
+      "symbol": "SearchViewController.tableView(_:cellForRowAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/SearchViewController.swift",
+      "line": 106,
+      "symbol": "SearchViewController.tableView(_:didSelectRowAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/SearchViewController.swift",
+      "line": 111,
+      "symbol": "SearchViewController.prepare(for:sender:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/SettingsViewController.swift",
+      "line": 11,
+      "symbol": "SettingsViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/SettingsViewController.swift",
+      "line": 13,
+      "symbol": "SettingsViewController.ReuseIdentifier",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/SettingsViewController.swift",
+      "line": 14,
+      "symbol": "SettingsViewController.ReuseIdentifier.deleteAllData",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/SettingsViewController.swift",
+      "line": 17,
+      "symbol": "SettingsViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/ViewControllers/SettingsViewController.swift",
+      "line": 42,
+      "symbol": "SettingsViewController.tableView(_:didSelectRowAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Views/GameTableViewCell.swift",
+      "line": 11,
+      "symbol": "GameTableViewCell",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Views/GameTableViewCell.swift",
+      "line": 13,
+      "symbol": "GameTableViewCell.PlatformView",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Views/GameTableViewCell.swift",
+      "line": 15,
+      "symbol": "GameTableViewCell.PlatformView.name",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Views/GameTableViewCell.swift",
+      "line": 17,
+      "symbol": "GameTableViewCell.PlatformView.init(platform:spacing:owned:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Views/GameTableViewCell.swift",
+      "line": 41,
+      "symbol": "GameTableViewCell.PlatformView.updateConstraints()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Views/GameTableViewCell.swift",
+      "line": 65,
+      "symbol": "GameTableViewCell.PlatformView.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Views/GameTableViewCell.swift",
+      "line": 70,
+      "symbol": "GameTableViewCell.PlatformView.intrinsicContentSize",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Views/GameTableViewCell.swift",
+      "line": 75,
+      "symbol": "GameTableViewCell.gameTitle",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Views/GameTableViewCell.swift",
+      "line": 76,
+      "symbol": "GameTableViewCell.platformsView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Views/GameTableViewCell.swift",
+      "line": 77,
+      "symbol": "GameTableViewCell.samplePlatformView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Views/GameTableViewCell.swift",
+      "line": 80,
+      "symbol": "GameTableViewCell.awakeFromNib()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Views/GameTableViewCell.swift",
+      "line": 85,
+      "symbol": "GameTableViewCell.setSelected(_:animated:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Views/GameTableViewCell.swift",
+      "line": 91,
+      "symbol": "GameTableViewCell.draw(ownedPlatforms:allPlatforms:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Views/GameTableViewCell.swift",
+      "line": 139,
+      "symbol": "GameTableViewCell.draw(ownedPlatforms:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Views/GameTitleView.swift",
+      "line": 12,
+      "symbol": "GameTitleView",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Views/GameTitleView.swift",
+      "line": 67,
+      "symbol": "GameTitleView.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Views/GameTitleView.swift",
+      "line": 71,
+      "symbol": "GameTitleView.intrinsicContentSize",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Views/PlatformTableViewCell.swift",
+      "line": 11,
+      "symbol": "PlatformTableViewCell",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Views/PlatformTableViewCell.swift",
+      "line": 13,
+      "symbol": "PlatformTableViewCell.CompanyView",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Views/PlatformTableViewCell.swift",
+      "line": 15,
+      "symbol": "PlatformTableViewCell.CompanyView.name",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Views/PlatformTableViewCell.swift",
+      "line": 17,
+      "symbol": "PlatformTableViewCell.CompanyView.init(company:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Views/PlatformTableViewCell.swift",
+      "line": 35,
+      "symbol": "PlatformTableViewCell.CompanyView.updateConstraints()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Views/PlatformTableViewCell.swift",
+      "line": 59,
+      "symbol": "PlatformTableViewCell.CompanyView.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Views/PlatformTableViewCell.swift",
+      "line": 64,
+      "symbol": "PlatformTableViewCell.CompanyView.intrinsicContentSize",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Views/PlatformTableViewCell.swift",
+      "line": 69,
+      "symbol": "PlatformTableViewCell.titleLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Views/PlatformTableViewCell.swift",
+      "line": 70,
+      "symbol": "PlatformTableViewCell.companyView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Views/PlatformTableViewCell.swift",
+      "line": 71,
+      "symbol": "PlatformTableViewCell.gameCountLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Views/PlatformTableViewCell.swift",
+      "line": 73,
+      "symbol": "PlatformTableViewCell.awakeFromNib()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Views/PlatformTableViewCell.swift",
+      "line": 78,
+      "symbol": "PlatformTableViewCell.setSelected(_:animated:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/GameCollection/Views/PlatformTableViewCell.swift",
+      "line": 84,
+      "symbol": "PlatformTableViewCell.draw(company:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/build/GameCollection.build/Release-iphoneos/GameCollection.build/DerivedSources/CoreDataGenerated/GameCollection/GameManagedObject+CoreDataClass.swift",
+      "line": null,
+      "symbol": "GameManagedObject",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/build/GameCollection.build/Release-iphoneos/GameCollection.build/DerivedSources/CoreDataGenerated/GameCollection/GameManagedObject+CoreDataClass.swift",
+      "line": null,
+      "symbol": "GameManagedObject",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/build/GameCollection.build/Release-iphoneos/GameCollection.build/DerivedSources/CoreDataGenerated/GameCollection/GameManagedObject+CoreDataClass.swift",
+      "line": null,
+      "symbol": "GameManagedObject",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/build/GameCollection.build/Release-iphoneos/GameCollection.build/DerivedSources/CoreDataGenerated/GameCollection/GameManagedObject+CoreDataClass.swift",
+      "line": 14,
+      "symbol": "GameManagedObject",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/build/GameCollection.build/Release-iphoneos/GameCollection.build/DerivedSources/CoreDataGenerated/GameCollection/GameManagedObject+CoreDataProperties.swift",
+      "line": 16,
+      "symbol": "GameManagedObject.fetchRequest()",
+      "symbol_kind": "source.lang.swift.decl.function.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/build/GameCollection.build/Release-iphoneos/GameCollection.build/DerivedSources/CoreDataGenerated/GameCollection/GameManagedObject+CoreDataProperties.swift",
+      "line": 20,
+      "symbol": "GameManagedObject.boxart",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/build/GameCollection.build/Release-iphoneos/GameCollection.build/DerivedSources/CoreDataGenerated/GameCollection/GameManagedObject+CoreDataProperties.swift",
+      "line": 21,
+      "symbol": "GameManagedObject.boxartData",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/build/GameCollection.build/Release-iphoneos/GameCollection.build/DerivedSources/CoreDataGenerated/GameCollection/GameManagedObject+CoreDataProperties.swift",
+      "line": 22,
+      "symbol": "GameManagedObject.guid",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/build/GameCollection.build/Release-iphoneos/GameCollection.build/DerivedSources/CoreDataGenerated/GameCollection/GameManagedObject+CoreDataProperties.swift",
+      "line": 23,
+      "symbol": "GameManagedObject.notes",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/build/GameCollection.build/Release-iphoneos/GameCollection.build/DerivedSources/CoreDataGenerated/GameCollection/GameManagedObject+CoreDataProperties.swift",
+      "line": 24,
+      "symbol": "GameManagedObject.releaseDate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/build/GameCollection.build/Release-iphoneos/GameCollection.build/DerivedSources/CoreDataGenerated/GameCollection/GameManagedObject+CoreDataProperties.swift",
+      "line": 25,
+      "symbol": "GameManagedObject.status",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/build/GameCollection.build/Release-iphoneos/GameCollection.build/DerivedSources/CoreDataGenerated/GameCollection/GameManagedObject+CoreDataProperties.swift",
+      "line": 26,
+      "symbol": "GameManagedObject.title",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/build/GameCollection.build/Release-iphoneos/GameCollection.build/DerivedSources/CoreDataGenerated/GameCollection/GameManagedObject+CoreDataProperties.swift",
+      "line": 27,
+      "symbol": "GameManagedObject.allPlatforms",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/build/GameCollection.build/Release-iphoneos/GameCollection.build/DerivedSources/CoreDataGenerated/GameCollection/GameManagedObject+CoreDataProperties.swift",
+      "line": 28,
+      "symbol": "GameManagedObject.ownedPlatforms",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/build/GameCollection.build/Release-iphoneos/GameCollection.build/DerivedSources/CoreDataGenerated/GameCollection/GameManagedObject+CoreDataProperties.swift",
+      "line": 36,
+      "symbol": "GameManagedObject.addToAllPlatforms(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/build/GameCollection.build/Release-iphoneos/GameCollection.build/DerivedSources/CoreDataGenerated/GameCollection/GameManagedObject+CoreDataProperties.swift",
+      "line": 39,
+      "symbol": "GameManagedObject.removeFromAllPlatforms(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/build/GameCollection.build/Release-iphoneos/GameCollection.build/DerivedSources/CoreDataGenerated/GameCollection/GameManagedObject+CoreDataProperties.swift",
+      "line": 42,
+      "symbol": "GameManagedObject.addToAllPlatforms(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/build/GameCollection.build/Release-iphoneos/GameCollection.build/DerivedSources/CoreDataGenerated/GameCollection/GameManagedObject+CoreDataProperties.swift",
+      "line": 45,
+      "symbol": "GameManagedObject.removeFromAllPlatforms(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/build/GameCollection.build/Release-iphoneos/GameCollection.build/DerivedSources/CoreDataGenerated/GameCollection/GameManagedObject+CoreDataProperties.swift",
+      "line": 53,
+      "symbol": "GameManagedObject.addToOwnedPlatforms(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/build/GameCollection.build/Release-iphoneos/GameCollection.build/DerivedSources/CoreDataGenerated/GameCollection/GameManagedObject+CoreDataProperties.swift",
+      "line": 56,
+      "symbol": "GameManagedObject.removeFromOwnedPlatforms(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/build/GameCollection.build/Release-iphoneos/GameCollection.build/DerivedSources/CoreDataGenerated/GameCollection/GameManagedObject+CoreDataProperties.swift",
+      "line": 59,
+      "symbol": "GameManagedObject.addToOwnedPlatforms(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/build/GameCollection.build/Release-iphoneos/GameCollection.build/DerivedSources/CoreDataGenerated/GameCollection/GameManagedObject+CoreDataProperties.swift",
+      "line": 62,
+      "symbol": "GameManagedObject.removeFromOwnedPlatforms(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/build/GameCollection.build/Release-iphoneos/GameCollection.build/DerivedSources/CoreDataGenerated/GameCollection/PlatformManagedObject+CoreDataClass.swift",
+      "line": null,
+      "symbol": "PlatformManagedObject",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/build/GameCollection.build/Release-iphoneos/GameCollection.build/DerivedSources/CoreDataGenerated/GameCollection/PlatformManagedObject+CoreDataClass.swift",
+      "line": null,
+      "symbol": "PlatformManagedObject",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/build/GameCollection.build/Release-iphoneos/GameCollection.build/DerivedSources/CoreDataGenerated/GameCollection/PlatformManagedObject+CoreDataClass.swift",
+      "line": null,
+      "symbol": "PlatformManagedObject",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/build/GameCollection.build/Release-iphoneos/GameCollection.build/DerivedSources/CoreDataGenerated/GameCollection/PlatformManagedObject+CoreDataClass.swift",
+      "line": 14,
+      "symbol": "PlatformManagedObject",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/build/GameCollection.build/Release-iphoneos/GameCollection.build/DerivedSources/CoreDataGenerated/GameCollection/PlatformManagedObject+CoreDataProperties.swift",
+      "line": 16,
+      "symbol": "PlatformManagedObject.fetchRequest()",
+      "symbol_kind": "source.lang.swift.decl.function.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/build/GameCollection.build/Release-iphoneos/GameCollection.build/DerivedSources/CoreDataGenerated/GameCollection/PlatformManagedObject+CoreDataProperties.swift",
+      "line": 20,
+      "symbol": "PlatformManagedObject.abbreviation",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/build/GameCollection.build/Release-iphoneos/GameCollection.build/DerivedSources/CoreDataGenerated/GameCollection/PlatformManagedObject+CoreDataProperties.swift",
+      "line": 21,
+      "symbol": "PlatformManagedObject.company",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/build/GameCollection.build/Release-iphoneos/GameCollection.build/DerivedSources/CoreDataGenerated/GameCollection/PlatformManagedObject+CoreDataProperties.swift",
+      "line": 22,
+      "symbol": "PlatformManagedObject.id",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/build/GameCollection.build/Release-iphoneos/GameCollection.build/DerivedSources/CoreDataGenerated/GameCollection/PlatformManagedObject+CoreDataProperties.swift",
+      "line": 23,
+      "symbol": "PlatformManagedObject.name",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/build/GameCollection.build/Release-iphoneos/GameCollection.build/DerivedSources/CoreDataGenerated/GameCollection/PlatformManagedObject+CoreDataProperties.swift",
+      "line": 24,
+      "symbol": "PlatformManagedObject.allGames",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/build/GameCollection.build/Release-iphoneos/GameCollection.build/DerivedSources/CoreDataGenerated/GameCollection/PlatformManagedObject+CoreDataProperties.swift",
+      "line": 25,
+      "symbol": "PlatformManagedObject.ownedGames",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/build/GameCollection.build/Release-iphoneos/GameCollection.build/DerivedSources/CoreDataGenerated/GameCollection/PlatformManagedObject+CoreDataProperties.swift",
+      "line": 33,
+      "symbol": "PlatformManagedObject.addToAllGames(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/build/GameCollection.build/Release-iphoneos/GameCollection.build/DerivedSources/CoreDataGenerated/GameCollection/PlatformManagedObject+CoreDataProperties.swift",
+      "line": 36,
+      "symbol": "PlatformManagedObject.removeFromAllGames(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/build/GameCollection.build/Release-iphoneos/GameCollection.build/DerivedSources/CoreDataGenerated/GameCollection/PlatformManagedObject+CoreDataProperties.swift",
+      "line": 39,
+      "symbol": "PlatformManagedObject.addToAllGames(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/build/GameCollection.build/Release-iphoneos/GameCollection.build/DerivedSources/CoreDataGenerated/GameCollection/PlatformManagedObject+CoreDataProperties.swift",
+      "line": 42,
+      "symbol": "PlatformManagedObject.removeFromAllGames(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/build/GameCollection.build/Release-iphoneos/GameCollection.build/DerivedSources/CoreDataGenerated/GameCollection/PlatformManagedObject+CoreDataProperties.swift",
+      "line": 50,
+      "symbol": "PlatformManagedObject.addToOwnedGames(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/build/GameCollection.build/Release-iphoneos/GameCollection.build/DerivedSources/CoreDataGenerated/GameCollection/PlatformManagedObject+CoreDataProperties.swift",
+      "line": 53,
+      "symbol": "PlatformManagedObject.removeFromOwnedGames(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/build/GameCollection.build/Release-iphoneos/GameCollection.build/DerivedSources/CoreDataGenerated/GameCollection/PlatformManagedObject+CoreDataProperties.swift",
+      "line": 56,
+      "symbol": "PlatformManagedObject.addToOwnedGames(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/cinq/repos/GameCollection/build/GameCollection.build/Release-iphoneos/GameCollection.build/DerivedSources/CoreDataGenerated/GameCollection/PlatformManagedObject+CoreDataProperties.swift",
+      "line": 59,
+      "symbol": "PlatformManagedObject.removeFromOwnedGames(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/cinq/repos/GameCollection"
+}

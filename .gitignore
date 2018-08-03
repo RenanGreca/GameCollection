@@ -4,6 +4,10 @@
 
 .DS_Store
 
+## Carthage
+Cartfile.resolved
+Carthage/
+
 ## Build generated
 build/
 DerivedData/

@@ -47,7 +47,12 @@ class GameGrabber {
     
     let apiKey = "5bd368f7ac8e636668e952a16f2e58fce297e516"
     
-    // Standard game search
+    /**
+        Standard game search. Results are stored in ```self.games```.
+     
+     - parameter query: The game's title.
+     - parameter completion: A closure to execute upon completion.
+    */
     func searchForGamesWith(query: String, _ completion: CompletionClosure? ) {
         self.games = []
         
@@ -81,7 +86,9 @@ class GameGrabber {
                     if let results = json[Fields.results.rawValue] as? [[String: Any]] {
                         for result in results {
                             let game = Game(with: result)
-                            self.games.append(game)
+                            if game.allPlatforms.count > 0 {
+                                self.games.append(game)
+                            }
                         }
                     }
                 }

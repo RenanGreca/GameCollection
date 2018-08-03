@@ -55,26 +55,7 @@ class GameTableViewCell: UITableViewCell {
                                             multiplier: 1,
                                             constant: 0)
             
-//            let titleLeading = NSLayoutConstraint(item: self.name,
-//                                                  attribute: .leading,
-//                                                  relatedBy: .equal,
-//                                                  toItem: self,
-//                                                  attribute: .leading,
-//                                                  multiplier: 1,
-//                                                  constant: 6)
-//
-//            let titleTrailing = NSLayoutConstraint(item: self.name,
-//                                                   attribute: .trailing,
-//                                                   relatedBy: .equal,
-//                                                   toItem: self,
-//                                                   attribute: .trailing,
-//                                                   multiplier: 1,
-//                                                   constant: 6)
-            
             self.addConstraints([titleX,titleY])
-//                                 titleBottom,
-//                                 titleLeading,
-//                                 titleTrailing])
             
             self.sizeToFit()
             

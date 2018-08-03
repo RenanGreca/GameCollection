@@ -9,6 +9,17 @@
 import UIKit
 import CoreData
 
+/**
+    Handles the view with the game's details.
+ 
+ ### Can be activated from:
+ * ```SearchViewController```
+ * ```CollectionViewController```
+ 
+ ### Can activate:
+ * ```GameNotesViewController```
+ 
+ */
 class GameDetailsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var imageContainerView: UIView!
@@ -25,8 +36,10 @@ class GameDetailsViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet weak var statusButton: UIButton!
     @IBOutlet weak var notesButton: UIBarButtonItem!
     
-    var game: Game?
+    var game: Game!
     var storedPlatforms: [Platform] = []
+    
+    /// Whether it is showing a game in the collection or not.
     var isCollection: Bool = false
     
     override func viewDidLoad() {
@@ -36,25 +49,25 @@ class GameDetailsViewController: UIViewController, UITableViewDataSource, UITabl
         self.platformsTableView.delegate = self        
         
         // Check if game is already in collection
-        if let game = Game.fetchWith(guid: self.game!.guid) {
+        if let game = Game.fetchWith(guid: self.game.guid) {
             
             for platform in game.ownedPlatforms {
                 self.storedPlatforms.append(platform)
             }
             
-            self.game?.status = game.status
+            self.game.status = game.status
         }
         
         // NavigationBar title changes according to game title
-        self.configureTitleView(title: self.game!.title)
+        self.configureTitleView(title: self.game.title)
         
         
         // Load art from database or save it from the Internet
         self.boxartView.contentMode = .scaleAspectFit
-        if let image = self.game?.boxartImage {
+        if let image = self.game.boxartImage {
             self.boxartView.image = image
         } else {
-            if let url = URL(string: self.game!.boxart) {
+            if let url = URL(string: self.game.boxart) {
                 self.activityIndicator.isHidden = false
                 self.activityIndicator.startAnimating()
                 
@@ -64,7 +77,7 @@ class GameDetailsViewController: UIViewController, UITableViewDataSource, UITabl
                     DispatchQueue.main.async() {
                         
                         if let downloadedImage = UIImage(data: data) {
-                            self.game?.boxartImage = downloadedImage
+                            self.game.boxartImage = downloadedImage
                             self.activityIndicator.isHidden = true
                             self.activityIndicator.stopAnimating()
                             self.boxartView.image = downloadedImage
@@ -79,7 +92,7 @@ class GameDetailsViewController: UIViewController, UITableViewDataSource, UITabl
         }
             
         // We only want the year
-        if let date = self.game?.releaseDate {
+        if let date = self.game.releaseDate {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy"
 
@@ -89,7 +102,7 @@ class GameDetailsViewController: UIViewController, UITableViewDataSource, UITabl
         }
         
         // Notes and status buttons are dynamic according to status
-        self.updateButtons(status: self.game!.status)
+        self.updateButtons(status: self.game.status)
     }
     
     private func configureTitleView(title: String) {
@@ -133,7 +146,7 @@ class GameDetailsViewController: UIViewController, UITableViewDataSource, UITabl
         let cellIdentifier = "AvailablePlatformsCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
         
-        let platform = self.game!.allPlatforms[indexPath.row]
+        let platform = self.game.allPlatforms[indexPath.row]
 
         cell.textLabel?.text = platform.name
         cell.accessoryType = .none
@@ -151,22 +164,22 @@ class GameDetailsViewController: UIViewController, UITableViewDataSource, UITabl
         
         self.platformsTableView.deselectRow(at: indexPath, animated: true)
         
-        let platform = self.game!.allPlatforms[indexPath.row]
+        let platform = self.game.allPlatforms[indexPath.row]
 
         
         if cell.accessoryType == .none {
             // Game-Platform relationship is not in collection, add it
 
             cell.accessoryType = .checkmark
-            self.game!.insert(platform: platform)
+            self.game.insert(platform: platform)
             self.storedPlatforms.append(platform)
-            self.updateButtons(status: self.game!.status)
+            self.updateButtons(status: self.game.status)
 
         } else if cell.accessoryType == .checkmark {
             // Game-Platform relationship is in collection, remove it
 
             cell.accessoryType = .none
-            self.game!.remove(platform: platform)
+            self.game.remove(platform: platform)
             if let i = self.storedPlatforms.index(of: platform) {
                 self.storedPlatforms.remove(at: i)
             }
@@ -191,7 +204,7 @@ class GameDetailsViewController: UIViewController, UITableViewDataSource, UITabl
             
             let action = UIAlertAction(title: status.string, style: .default) {
                 action in
-                self.game?.status = status
+                self.game.status = status
                 
                 DispatchQueue.main.async {
                     self.updateButtons(status: status)
@@ -215,7 +228,7 @@ class GameDetailsViewController: UIViewController, UITableViewDataSource, UITabl
         self.notesButton.isEnabled = isCollection
         self.statusButton.isEnabled = isCollection
         self.statusButton.setTitle(status.string, for: UIControlState.normal)
-        self.storedPlatforms = self.game!.ownedPlatforms
+        self.storedPlatforms = self.game.ownedPlatforms
         
         self.platformsTableView.reloadData()
     }

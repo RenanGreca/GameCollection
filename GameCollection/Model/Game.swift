@@ -48,6 +48,7 @@ class Game: Hashable {
         }
         
         // This MUST be manually updated if the number of cases changes (it is used elsewhere for iteration).
+        /// Number of cases in the enum.
         static let count:Int = 6
     }
     
